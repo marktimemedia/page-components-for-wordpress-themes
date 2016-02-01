@@ -1,0 +1,203 @@
+/* Some General Resets */
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+/* General Panel Rules */
+.mtm-component {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid #eee;
+	position: relative;
+
+	.content--page {
+		padding: $sm-pad;
+		padding-top: 4em !important;
+		margin-top: -2em !important;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+	.mtm-component--main-full {
+		position: relative;
+		overflow: auto;
+	}
+
+	.mtm-component--home {
+		background-size: cover;
+		text-align: center;
+		border-top: 1px solid #eee;
+	}
+
+	.mtm-component--term-list {
+		padding: 1em 0;
+		margin: 0;
+
+		li {
+			list-style: none;
+			display: inline-block;
+		}
+
+		a {
+			padding-right: .5em;
+		}
+	}
+
+
+
+/* Button Rules */
+.mtm-home-buttons {
+	margin-bottom: 1em;
+}
+
+.button.mtm-button {
+	display: block;
+	margin-bottom: .5em;
+}
+
+.post-edit-link {
+	font-size: .7em;
+}
+
+/* List Rules */
+
+.mtm-list--single {
+	margin: 1em 0;
+	border-bottom: 1px solid #eee;
+}
+
+	.mtm-list--image {
+		width: 100%;
+	}
+
+	.mtm-list--post-content {
+		width: 100%;
+}
+
+/* Grid Rules */
+
+.mtm-grid--single {
+	width: 100%;
+}
+
+/* Tab Rules */
+
+.mtm-tabs--title-container {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		cursor: pointer;
+		padding: .2em 0;
+
+		&.current {
+			font-weight: bold;
+
+		}
+	}
+
+
+}
+
+.mtm-tabs--content {
+	display: none;
+	border-top: 1px solid #eee;
+	padding: .5em 0;
+
+	&.current {
+
+		display:inherit;
+
+	}
+}
+
+
+@media only screen and ( min-width:$sm-bp ) {
+	.button.mtm-button {
+		display:inline-block;
+	}
+
+	.mtm-tabs--title-container {
+		li {
+			padding: .3em 0;
+			margin-right:1em;
+			display:inline-block;
+		}
+	}
+}
+
+/* MEDIA QUERIES */
+
+
+@media only screen and ( min-width: $sm-bp ) and ( max-width: $med-bp ) {
+	
+	.mtm-list--image {
+		@include pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: 6, $padtop: 0, $padside: $defaultpad );
+		@include pinkrow( $rowitems: 2, $before: 0, $after: 0 ) 
+	}
+
+	.mtm-grid--single {
+		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 2% );
+
+	}	
+	
+	.mtm-home-featured--single {
+		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 2% );
+	}
+}
+
+@media only screen and ( min-width: $med-bp ) and ( max-width: $lg-bp ) {
+
+	.mtm-list--image {
+		@include pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: 5, $padtop: 0, $padside: $defaultpad );
+		@include pinkrow( $rowitems: 2, $before: 0, $after: 0 ) 
+	}
+
+	.mtm-list--post-content {
+		@include pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: 7, $padtop: 0, $padside: 2% );
+		@include pinkrow( $rowitems: 2, $before: 0, $after: 0 ) 
+	}
+
+	.mtm-grid--single {
+		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 2% );
+	}
+
+	.mtm-home-featured--single {
+		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 2% );
+	}
+
+}
+
+@media only screen and ( min-width: $med-bp ) {
+	.mtm-component .content--page {
+		padding: $big-pad;
+	}
+}
+
+
+@media only screen and ( min-width: $lg-bp ) {
+
+	.mtm-list--image {
+		@include pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: 3, $padtop: 0, $padside: $defaultpad );
+		@include pinkrow( $rowitems: 2, $before: 0, $after: 0 ) 
+	}
+
+	.mtm-list--post-content {
+		@include pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: 9, $padtop: 0, $padside: $defaultpad );
+		@include pinkrow( $rowitems: 2, $before: 0, $after: 0 ) 
+	}
+
+	.mtm-grid--single {
+		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 2% );
+	}
+
+	.mtm-home-featured--single {
+		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 2% );
+	}
+	
+}

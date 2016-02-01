@@ -1,0 +1,42 @@
+<div class="mtm-home-featured--single">
+		
+		<?php
+		$image = _get_sub_field( 'mtm_home_featured_image_manual' );
+		$imageAlt = get_field( 'mtm_default_featured_image', 'option' );
+		$url = _get_sub_field( 'mtm_home_featured_content_link_manual' );
+
+		if ( _get_sub_field( 'mtm_home_featured_content_link_custom' ) ) {
+			$url = _get_sub_field( 'mtm_home_featured_content_link_custom' );
+		} 
+		
+		if ( $image ) { 
+
+			$thumb = $image['sizes'][ 'medium_large' ];
+			$alt = $image['alt'];
+			?>
+
+			<a href="<?php echo esc_url( $url ); ?>">
+				<figure class="post--thumbnail mtm-home-featured--image"><img src="<?php echo esc_url( $thumb ); ?>" alt="<?php echo esc_html( $alt ); ?>" /></figure>
+			</a>
+
+		<?php } elseif ( $imageAlt ) { // make sure field value exists 
+
+			$thumb = $imageAlt['sizes'][ 'medium_large' ];
+			$alt = $imageAlt['alt'];
+			?>
+
+			<a href="<?php echo esc_url( $url ); ?>">
+				<figure class="post--thumbnail default-thumbnail <?php echo $class; ?>"><img src="<?php echo esc_url( $thumb ); ?>" alt="<?php echo esc_html( $alt ); ?>" /></figure>
+			</a>
+		
+		<?php } ?>
+
+	<h3><a href="<?php echo esc_url( $url ); ?>">
+			
+		<?php esc_html( _the_sub_field( 'mtm_home_featured_box_manual_title' ) ); ?>
+
+		</a></h3>
+
+	<?php esc_html( _the_sub_field( 'mtm_home_featured_content_manual' ) ); ?>
+
+</div>
