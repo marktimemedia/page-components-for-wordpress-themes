@@ -10,14 +10,12 @@
 
 /* General Panel Rules */
 .mtm-component {
-  padding-top: 1em;
-  padding-bottom: 1em;
   border-bottom: 1px solid #eee;
+  margin-top: -2rem;
+  padding-top: 2rem;
   position: relative; }
   .mtm-component .content--page {
-    padding: 1rem;
-    padding-top: 4em !important;
-    margin-top: -2em !important; }
+    padding: 1rem; }
   .mtm-component img {
     width: 100%;
     height: auto; }
@@ -28,8 +26,10 @@
 
 .mtm-component--home {
   background-size: cover;
-  text-align: center;
-  border-top: 1px solid #eee; }
+  border-top: 1px solid #eee;
+  margin-top: 0;
+  padding-top: 0;
+  text-align: center; }
 
 .mtm-component--term-list {
   padding: 1em 0;
@@ -111,11 +111,11 @@
     vertical-align: top;
     width: 50%;
     padding: 0 0;
-    padding-right: 2%;
-    width: 51%; }
+    padding-right: 3%;
+    width: 51.5%; }
     .mtm-grid--single:nth-of-type(2n+2) {
       padding-right: 0;
-      width: 49%; }
+      width: 48.5%; }
 
   .mtm-home-featured--single {
     display: inline-block;
@@ -123,11 +123,11 @@
     vertical-align: top;
     width: 50%;
     padding: 0 0;
-    padding-right: 2%;
-    width: 51%; }
+    padding-right: 3%;
+    width: 51.5%; }
     .mtm-home-featured--single:nth-of-type(2n+2) {
       padding-right: 0;
-      width: 49%; } }
+      width: 48.5%; } }
 @media only screen and (min-width: 45em) and (max-width: 61em) {
   .mtm-list--image {
     display: inline-block;
@@ -157,11 +157,11 @@
     vertical-align: top;
     width: 50%;
     padding: 0 0;
-    padding-right: 2%;
-    width: 51%; }
+    padding-right: 3%;
+    width: 51.5%; }
     .mtm-grid--single:nth-of-type(2n+2) {
       padding-right: 0;
-      width: 49%; }
+      width: 48.5%; }
 
   .mtm-home-featured--single {
     display: inline-block;
@@ -169,11 +169,11 @@
     vertical-align: top;
     width: 33.3333333333%;
     padding: 0 0;
-    padding-right: 2%;
-    width: 34%; }
+    padding-right: 3%;
+    width: 34.3333333333%; }
     .mtm-home-featured--single:nth-of-type(3n+3) {
       padding-right: 0;
-      width: 32%; } }
+      width: 31.3333333333%; } }
 @media only screen and (min-width: 45em) {
   .mtm-component .content--page {
     padding: 3rem; } }
@@ -206,11 +206,11 @@
     vertical-align: top;
     width: 33.3333333333%;
     padding: 0 0;
-    padding-right: 2%;
-    width: 34%; }
+    padding-right: 3%;
+    width: 34.3333333333%; }
     .mtm-grid--single:nth-of-type(3n+3) {
       padding-right: 0;
-      width: 32%; }
+      width: 31.3333333333%; }
 
   .mtm-home-featured--single {
     display: inline-block;
@@ -218,8 +218,8 @@
     vertical-align: top;
     width: 33.3333333333%;
     padding: 0 0;
-    padding-right: 2%;
-    width: 34%; }
+    padding-right: 3%;
+    width: 34.3333333333%; }
     .mtm-home-featured--single:nth-of-type(3n+3) {
       padding-right: 0;
-      width: 32%; } }
+      width: 31.3333333333%; } }

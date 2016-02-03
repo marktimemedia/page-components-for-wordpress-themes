@@ -10,11 +10,15 @@ if( $scroll_posts ):
 	
 		setup_postdata( $post ); ?>
 
-		<section class= "mtm-component mtm-section-<?php echo $j++; ?>">
+		<section id="<?php echo $post->post_name; ?>" class= "mtm-component mtm-section-<?php echo $j++; ?>">
 
-			<section id="<?php echo $post->post_name; ?>" class="content--page content--<?php echo $post->post_name; ?>">
+			<section class="content--<?php echo $post->post_name; ?>">
 
-				<?php mtm_get_template_part('mtm-logic', 'components'); ?>
+				<div class="content--page">
+
+					<?php mtm_get_template_part('mtm-logic', 'components'); ?>
+
+				</div>
 
 			</section>
 

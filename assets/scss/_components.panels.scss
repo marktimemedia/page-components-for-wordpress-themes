@@ -6,15 +6,13 @@
 
 /* General Panel Rules */
 .mtm-component {
-	padding-top: 1em;
-	padding-bottom: 1em;
 	border-bottom: 1px solid #eee;
+	margin-top: -2rem;
+	padding-top: 2rem;
 	position: relative;
 
 	.content--page {
 		padding: $sm-pad;
-		padding-top: 4em !important;
-		margin-top: -2em !important;
 	}
 
 	img {
@@ -29,8 +27,11 @@
 
 	.mtm-component--home {
 		background-size: cover;
-		text-align: center;
 		border-top: 1px solid #eee;
+		margin-top: 0;
+		padding-top: 0;
+		text-align: center;
+		
 	}
 
 	.mtm-component--term-list {
@@ -142,12 +143,12 @@
 	}
 
 	.mtm-grid--single {
-		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 2% );
+		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 3% );
 
 	}	
 	
 	.mtm-home-featured--single {
-		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 2% );
+		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 3% );
 	}
 }
 
@@ -164,11 +165,11 @@
 	}
 
 	.mtm-grid--single {
-		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 2% );
+		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 3% );
 	}
 
 	.mtm-home-featured--single {
-		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 2% );
+		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 3% );
 	}
 
 }
@@ -193,11 +194,11 @@
 	}
 
 	.mtm-grid--single {
-		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 2% );
+		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 3% );
 	}
 
 	.mtm-home-featured--single {
-		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 2% );
+		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 3% );
 	}
 	
 }
