@@ -60,6 +60,15 @@ function mtm_register_required_plugins() {
 			'external_url' => 'https://github.com/marktimemedia/acf-term-and-taxonomy-chooser', // If set, overrides default API URL and points to an external URL.
 		),
 
+		array(
+			'name'      => 'ACF Options Page',
+			'slug'      => 'mtm-options-page',
+			'source'    => 'https://github.com/marktimemedia/acf-theme-settings/archive/master.zip',
+			'required'     => true, // If false, the plugin is only 'recommended' instead of required.
+			'external_url' => 'https://github.com/marktimemedia/acf-theme-settings', // If set, overrides default API URL and points to an external URL.
+		),
+
+
 	);
 
 	/*
