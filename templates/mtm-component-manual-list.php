@@ -3,6 +3,7 @@
 $list_posts = _get_field( 'mtm_list_archive_manual' );
 $taxonomy = get_field( 'mtm_manual_archive_taxonomy' ); ?>
 
+<h3 class="h1"><?php the_title(); ?><?php edit_post_link( '(Edit)', ' • ' ); ?></h3>
 <div <?php post_class( 'mtm-component--main' ); ?>>
 	<?php mtm_get_template_part( 'mtm-content', 'component-page' ); ?>
 </div>

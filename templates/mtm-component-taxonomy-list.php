@@ -3,6 +3,7 @@
 $list_query = mtm_taxonomy_query( 'list' );
 $taxonomy = mtm_acf_taxonomy_property( 'list', 'taxonomy' ); ?>
 
+<h1><?php the_title(); ?><?php edit_post_link( '(Edit)', ' • ' ); ?></h1>
 <div <?php post_class( 'mtm-component--main' ); ?>>
 	<?php mtm_get_template_part( 'mtm-content', 'component-page' ); ?>
 </div>
