@@ -48,7 +48,19 @@
 		}
 	}
 
+/* Home Rules */
 
+.mtm-home-news--content, .mtm-home-featured--story {
+	text-align:left;
+}
+
+.mtm-home-featured--single, .mtm-home-topic--single {
+	margin-bottom: 2%;
+}
+
+.mtm-home-sidebar--widget {
+	display: none;
+}
 
 /* Button Rules */
 .mtm-home-buttons {
@@ -147,7 +159,7 @@
 
 	}	
 	
-	.mtm-home-featured--single {
+	.mtm-home-featured--single, .mtm-home-topic--single {
 		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 3% );
 	}
 }
@@ -168,8 +180,29 @@
 		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 3% );
 	}
 
-	.mtm-home-featured--single {
+	.mtm-home-featured--single, .mtm-home-topic--single {
 		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 3% );
+	}
+
+	.mtm-home-news--content {
+		@include pinkgrid( $colspan: 6 );
+		@include pinkrow( $rowitems: 2 ); 
+
+		&.full {
+			@include pinkgrid( $colspan: 12 );
+			@include pinkrow( $rowitems: 1 ); 
+
+			.mtm-home-sidebar--widget {
+				@include pinkgrid( $colspan: 4 );
+				@include pinkrow( $rowitems: 3 ); 
+				margin: 1.5em 0;
+			}
+		}
+	}
+
+	.mtm-home-featured--story {
+		@include pinkgrid( $colspan: 6 );
+		@include pinkrow( $rowitems: 2 ); 
 	}
 
 }
@@ -177,6 +210,14 @@
 @media only screen and ( min-width: $med-bp ) {
 	.mtm-component .content--page {
 		padding: $big-pad;
+	}
+
+	.mtm-home-sidebar--widget {
+		display: block;
+		
+		&:first-of-type {
+			margin-top: 1.5em;
+		}
 	}
 }
 
@@ -197,8 +238,29 @@
 		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 3% );
 	}
 
-	.mtm-home-featured--single {
+	.mtm-home-featured--single, .mtm-home-topic--single {
 		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 3% );
+	}
+
+	.mtm-home-news--content {
+		@include pinkgrid( $colspan: 4 );
+		@include pinkrow( $rowitems: 2 ); 
+
+		&.full {
+			@include pinkgrid( $colspan: 12 );
+			@include pinkrow( $rowitems: 1 ); 
+
+			.mtm-home-sidebar--widget {
+				@include pinkgrid( $colspan: 4 );
+				@include pinkrow( $rowitems: 3 ); 
+				margin: 1.5em 0;
+			}
+		}
+	}
+
+	.mtm-home-featured--story {
+		@include pinkgrid( $colspan: 8 );
+		@include pinkrow( $rowitems: 2 ); 
 	}
 	
 }

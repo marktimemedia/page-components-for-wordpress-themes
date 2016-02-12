@@ -5,8 +5,19 @@ Template Name: Home Page Builder
 
 mtm_load_wrap_header();
 
-mtm_get_template_part( 'mtm-content', 'home' ); 
+// News Homepage
+if( "News" == _get_field( 'mtm_homepage_type' ) ) { 
+	
+	mtm_get_template_part( 'mtm-layout', 'home-news' ); 
 
+// Standard Homepage
+} else {
+	
+	mtm_get_template_part( 'mtm-layout', 'home-standard' );
+
+}
+
+// Single Scroll
 if( _get_field( 'mtm_enable_single_scroll_page' ) ) {
 
 	mtm_get_template_part( 'mtm-logic', 'single-scroll' );

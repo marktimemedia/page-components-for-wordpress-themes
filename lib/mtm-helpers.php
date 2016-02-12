@@ -8,9 +8,20 @@ function mtm_get_template_part( $slug, $name = null ) {
     $templates->get_template_part( $slug, $name );
 }
 
+// Post Type Query
+function mtm_page_component_post_query( $posttype = 'post', $perpage = 1, $orderby = 'date', $order = 'ASC', $notin = 'sticky_posts' ) {
+    return new WP_Query( array(
+        'post_type'         => array( $posttype ),
+        'posts_per_page'    => $perpage,
+        'orderby'           => $orderby,
+        'order'             => $order,
+        'post__not_in'      => get_option( $notin )
+        )
+    );
+}
+
 // Taxonomy Query
 function mtm_page_component_taxonomy_query( $taxonomy, $terms, $perpage = 3, $orderby = 'date', $order = 'ASC' ) {
-
     return new WP_Query( array(
         'posts_per_page'    => $perpage,
         'orderby'           => $orderby,
@@ -40,21 +51,24 @@ function mtm_acf_taxonomy_sub_property( $archivetype, $property ){
 }
 
 // Taxonomy Query for Archive Field
-function mtm_taxonomy_query( $archivetype ) {
+function mtm_taxonomy_query( $archivetype, $display = 1 ) {
 
     $taxonomy = mtm_acf_taxonomy_property( $archivetype, 'taxonomy' );
     $terms = mtm_acf_taxonomy_property( $archivetype, 'name' );
-    $display = get_field( 'mtm_' . $archivetype . '_archive_taxonomy_number' );
+    
+    if( get_field( 'mtm_' . $archivetype . '_archive_taxonomy_number' ) ) {
+        $display = get_field( 'mtm_' . $archivetype . '_archive_taxonomy_number' );
+    }
 
     return mtm_page_component_taxonomy_query( $taxonomy, $terms, $display );
 }
 
 // Taxonomy Query for Sub Field
-function mtm_taxonomy_query_sub( $archivetype, $display ) {
+function mtm_taxonomy_query_sub( $archivetype, $display, $order = 'ASC', $orderby = 'date' ) {
     $taxonomy = mtm_acf_taxonomy_sub_property( $archivetype, 'taxonomy' );
     $terms = mtm_acf_taxonomy_sub_property( $archivetype, 'name' );
 
-    return mtm_page_component_taxonomy_query( $taxonomy, $terms, $display );
+    return mtm_page_component_taxonomy_query( $taxonomy, $terms, $display, $orderby, $order );
 }
 
 // Term Links From Defined Taxonomy

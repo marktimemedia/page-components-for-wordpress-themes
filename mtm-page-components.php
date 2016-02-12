@@ -31,5 +31,28 @@ function mtm_page_components_load_scripts() {
 add_action( 'wp_enqueue_scripts', 'mtm_page_components_load_scripts' );
 
 
+if ( ! function_exists( 'mtm_news_page_sidebar' ) ) {
+
+    // Register News Page Sidebar
+    function mtm_news_page_sidebar() {
+
+        $args = array(
+            'name'          => __( 'News Page', 'mtm' ),
+            'id'            => 'news-page-sidebar',
+            'class'         => 'mtm-home-sidebar',
+            'before_title'  => '<h3 class="mtm-home-sidebar--title widget-title">',
+            'after_title'   => '</h3>',
+            'before_widget' => '<div class="mtm-home-sidebar--widget widget">',
+            'after_widget'  => '</div>',
+        );
+        register_sidebar( $args );
+
+    }
+
+    add_action( 'widgets_init', 'mtm_news_page_sidebar' );
+
+}
+
+
 add_action( 'plugins_loaded', array( 'Mtm_Component_Templates', 'get_instance' ) );
 ?>
