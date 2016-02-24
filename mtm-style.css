@@ -17,7 +17,7 @@
   .mtm-component .content--page {
     padding: 1rem; }
   .mtm-component img {
-    width: 100%;
+    max-width: 100%;
     height: auto; }
 
 .mtm-component--main-full {
