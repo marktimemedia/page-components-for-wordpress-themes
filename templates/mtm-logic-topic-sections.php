@@ -11,7 +11,9 @@ if( have_rows( 'mtm_home_topic_sections' ) ): ?>
 
 				<?php $topic_tax_query = mtm_taxonomy_query_sub( 'home_topic', $display, 'DESC' );
 
-					$i = 1; ?>
+				$i = 1; ?>
+
+				<?php if( $topic_tax_query->have_posts() ) : ?>
 
 					<div class="mtm-home-topic--single">
 						<div class="mtm-home-topic--single-content">
@@ -36,6 +38,8 @@ if( have_rows( 'mtm_home_topic_sections' ) ): ?>
 
 						</div>
 					</div>
+
+				<?php endif; ?>
 
 				<?php wp_reset_postdata();
 

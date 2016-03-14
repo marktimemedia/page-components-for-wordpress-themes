@@ -13,7 +13,7 @@
 
 
 $defaultcols: 12 !default; 
-$defaultpad: 1% !default;
+$defaultpad: 2% !default;
 
 @mixin pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: $defaultcols, $padtop: 0, $padside: $defaultpad ) {
 

@@ -238,11 +238,11 @@
 	}
 
 	.mtm-grid--single {
-		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 3% );
+		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 4% );
 	}
 
 	.mtm-home-featured--single, .mtm-home-topic--single {
-		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 3% );
+		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 4% );
 	}
 
 	.mtm-home-news--content {
