@@ -1,0 +1,17 @@
+<?php // Post Object/Gallery
+$post_object = get_sub_field( 'mtm_select_post_source' );
+$title = get_sub_field( 'mtm_post_source_title' );
+
+if( $post_object ):  // override $post
+	
+	$post = $post_object;
+	setup_postdata( $post ); 
+
+    if( $title ) : ?><h3 class="mtm-module--post-heading mtm-module-title"><?php the_title(); ?></h3><?php endif; ?>
+    <div class="mtm-module--post-content">
+	    <?php the_content(); ?>
+	</div>
+
+    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+
+<?php endif; ?>

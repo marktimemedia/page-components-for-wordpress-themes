@@ -51,6 +51,60 @@
 		}
 	}
 
+/* Module Rules */
+
+.mtm-module {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+	
+	.mtm-module--hero {
+
+	}
+
+		.mtm-module--hero-title {
+			margin: .75em auto;
+		}
+
+		.mtm-module--hero-subtitle {
+			margin-bottom: .75em;
+		}
+
+	.mtm-hero-image {
+		padding: 2em;
+		background-size:cover;
+		text-align: center;
+	}
+
+		.mtm-hero-image-title, .mtm-hero-image-subtitle p {
+			color: #fff;
+			//text-align: center;
+		}
+
+	.mtm-hero-media {
+
+	}
+
+	.mtm-logo-grid {
+		@include pinkmagic( $rowitems: 5, $padside: 6%, $align: middle )
+	}
+
+.mtm-modular-sidebar--widget {
+
+}
+
+	.mtm-per-row-2 {
+		@include pinkmagic( $rowitems: 2, $padside: 4% );
+	}
+
+	.mtm-per-row-3 {
+		@include pinkmagic( $rowitems: 3, $padside: 4%  );
+	}
+
+	.mtm-per-row-4 {
+		@include pinkmagic( $rowitems: 4, $padside: 4%  );
+	}
+
 /* Home Rules */
 
 .mtm-home-news--content, .mtm-home-featured--story {
@@ -145,6 +199,15 @@
 			display:inline-block;
 		}
 	}
+
+	.mtm-module--cta-subheading{
+		display: inline-block;
+		margin-right: 1em;
+	}
+
+	.mtm-module--cta-buttons {
+		display: inline-block;
+	}
 }
 
 /* MEDIA QUERIES */
@@ -222,6 +285,13 @@
 			margin-top: 1.5em;
 		}
 	}
+
+	.mtm_module_dual_content_area {
+		.mtm-module--content-primary, .mtm-module--content-secondary {
+			@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 3% );
+		}
+	}
+	
 }
 
 

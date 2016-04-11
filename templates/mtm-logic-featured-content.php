@@ -1,46 +1,37 @@
 <?php // Home Buttons (ACF Repeater Field)
 
-if( have_rows( 'mtm_home_featured_content_boxes' ) ): ?>
+while( have_rows( 'mtm_home_featured_content_boxes' ) ): the_row(); // Loop through each item 
 
-	<div class="mtm-component mtm-home-featured">
-		<section class="content--page content--home-featured">
+	// Specific Content
+	if( "Specific Content" == _get_sub_field( 'mtm_home_featured_type' ) ) {
+		
+		$post_object = get_sub_field('mtm_home_featured_select_single');
 
-			<?php while( have_rows( 'mtm_home_featured_content_boxes' ) ): the_row(); // Loop through each item 
+		if( $post_object ) { 
 
-				// Specific Content
-				if( "Specific Content" == _get_sub_field( 'mtm_home_featured_type' ) ) {
-					
-					$post_object = get_sub_field('mtm_home_featured_select_single');
+			$post = $post_object;
+			setup_postdata( $post ); 
 
-					if( $post_object ) { 
+			mtm_get_template_part( 'mtm-content', 'home-feature-select' );
 
-						$post = $post_object;
-						setup_postdata( $post ); 
+		}
 
-						mtm_get_template_part( 'mtm-content', 'home-feature-select' );
+	// Show Latest Post
+	} elseif( "Show Latest Post" == _get_sub_field( 'mtm_home_featured_type' ) ) {
 
-					}
+		$home_tax_query = mtm_taxonomy_query_sub( 'home_featured', 1 );
 
-				// Show Latest Post
-				} elseif( "Show Latest Post" == _get_sub_field( 'mtm_home_featured_type' ) ) {
+		while( $home_tax_query->have_posts() ) {
+			$home_tax_query->the_post();
 
-					$home_tax_query = mtm_taxonomy_query_sub( 'home_featured', 1 );
+			mtm_get_template_part( 'mtm-content', 'home-feature-select' );
+		}
 
-					while( $home_tax_query->have_posts() ) {
-						$home_tax_query->the_post();
+	// Manual Entry	
+	} else {
 
-						mtm_get_template_part( 'mtm-content', 'home-feature-select' );
-					}
+		mtm_get_template_part( 'mtm-content', 'home-feature-manual' );
 
-				// Manual Entry	
-				} else {
+	}?>
 
-					mtm_get_template_part( 'mtm-content', 'home-feature-manual' );
-
-				}?>
-			
-			<?php endwhile; ?>
-		</section>
-	</div>
-
-<?php endif; // End ACF Repeater Field ?>
+<?php endwhile; ?>

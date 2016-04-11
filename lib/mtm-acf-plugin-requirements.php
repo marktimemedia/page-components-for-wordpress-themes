@@ -1,10 +1,6 @@
 <?php
 /**
- * This file represents an example of the code that themes would use to register
- * the required plugins.
- *
- * It is expected that theme authors would copy and paste this code into their
- * functions.php file, and amend to suit.
+ * This file registers the required plugins
  *
  * @see http://tgmpluginactivation.com/configuration/ for detailed documentation.
  *
@@ -21,11 +17,6 @@
 add_action( 'tgmpa_register', 'mtm_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
- *
- * In this example, we register five plugins:
- * - one included with the TGMPA library
- * - two from an external source, one from an arbitrary source, one from a GitHub repository
- * - two from the .org repo, where one demonstrates the use of the `is_callable` argument
  *
  * The variable passed to tgmpa_register_plugins() should be an array of plugin
  * arrays.
@@ -47,6 +38,13 @@ function mtm_register_required_plugins() {
 			'source'       => 'http://www.advancedcustomfields.com/pro/', // The plugin source.
 			'required'     => true, // If false, the plugin is only 'recommended' instead of required.
 			'external_url' => 'http://www.advancedcustomfields.com/pro/', // If set, overrides default API URL and points to an external URL.
+		),
+
+		// Include a plugin from the WordPress Plugin Repository.
+		array(
+			'name'      => 'Advanced Custom Fields: Widget Area Field',
+			'slug'      => 'advanced-custom-fields-widget-area-field',
+			'required'  => true, // If false, the plugin is only 'recommended' instead of required.
 		),
 
 		// Include a plugin from a GitHub repository in your theme.

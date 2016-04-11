@@ -1,4 +1,4 @@
-<?php if( _get_field( 'mtm_cta_button_repeater' ) ) { 
+<?php if( get_field( 'mtm_cta_button_repeater' ) ) :
 
 	if( have_rows( 'mtm_cta_button_repeater' ) ): 
 
@@ -16,4 +16,4 @@
 
 	<?php endif; // End ACF Repeater Field 
 
- } 
+ endif; 

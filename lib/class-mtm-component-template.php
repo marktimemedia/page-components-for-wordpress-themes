@@ -76,7 +76,8 @@ if ( ! class_exists( 'Mtm_Component_Templates' ) )  {
                     //'FILE_PATH_AND_NAME'     => 'TEMPLATE_TITLE'
                     $this->templates = array(
                             '../templates/template-components.php' => 'Components Page',
-                            '../templates/template-home.php' => 'Home Page Builder',
+                            '../templates/template-home.php' => 'Landing Page Builder',
+                            '../templates/template-modules.php' => 'Modular Content Page',
                     );
     				
             } 

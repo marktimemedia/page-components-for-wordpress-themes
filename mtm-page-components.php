@@ -31,12 +31,12 @@ function mtm_page_components_load_scripts() {
 add_action( 'wp_enqueue_scripts', 'mtm_page_components_load_scripts' );
 
 
-if ( ! function_exists( 'mtm_news_page_sidebar' ) ) {
+if ( ! function_exists( 'mtm_template_sidebars' ) ) {
 
     // Register News Page Sidebar
-    function mtm_news_page_sidebar() {
+    function mtm_template_sidebars() {
 
-        $args = array(
+        register_sidebar( array(
             'name'          => __( 'News Page', 'mtm' ),
             'id'            => 'news-page-sidebar',
             'class'         => 'mtm-home-sidebar',
@@ -44,14 +44,27 @@ if ( ! function_exists( 'mtm_news_page_sidebar' ) ) {
             'after_title'   => '</h3>',
             'before_widget' => '<div class="mtm-home-sidebar--widget widget">',
             'after_widget'  => '</div>',
+            ) 
         );
-        register_sidebar( $args );
+
+        register_sidebar( array(
+            'name'          => __( 'Modular Page', 'mtm' ),
+            'id'            => 'modular-page-sidebar',
+            'class'         => 'mtm-modular-sidebar',
+            'before_title'  => '<h3 class="mtm-modular-sidebar--title widget-title">',
+            'after_title'   => '</h3>',
+            'before_widget' => '<div class="mtm-modular-sidebar--widget widget ' . slbd_count_widgets( "modular-page-sidebar" ) . '">',
+            'after_widget'  => '</div>',
+            ) 
+        );
 
     }
 
-    add_action( 'widgets_init', 'mtm_news_page_sidebar' );
+    add_action( 'widgets_init', 'mtm_template_sidebars' );
 
 }
+
+
 
 
 add_action( 'plugins_loaded', array( 'Mtm_Component_Templates', 'get_instance' ) );

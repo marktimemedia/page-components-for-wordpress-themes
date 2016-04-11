@@ -28,6 +28,6 @@
 // Featured Content
 if( _get_field( 'mtm_enable_featured_content' ) ) {
 
-	mtm_get_template_part( 'mtm-logic', 'featured-content' );
+	mtm_get_template_part( 'mtm-home', 'featured-content' );
 
 } ?>
