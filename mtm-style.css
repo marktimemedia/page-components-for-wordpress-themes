@@ -80,6 +80,10 @@
         padding-right: 0;
         width: 15.2%; } }
 
+.mtm_module_call_to_action {
+  padding: 1em;
+  background: #f2f2f2; }
+
 .mtm-per-row-2 {
   display: inline-block;
   vertical-align: top;

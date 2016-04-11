@@ -4,7 +4,11 @@ $j=1; ?>
 
 <div class="content--page">
 
-	<h1 class="page--title"><?php the_title(); ?></h1>
+	<?php if( get_field('mtm_module_show_page_title') ) : ?>
+
+		<h1 class="page--title"><?php the_title(); ?><?php edit_post_link( '(Edit)', ' • ' ); ?></h1>
+
+	<?php endif; ?>
 
 	<?php if( have_rows('mtm_content_modules') ) :
 

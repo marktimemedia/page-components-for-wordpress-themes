@@ -9,9 +9,21 @@ if( "No Featured Story" == _get_field( 'mtm_home_select_featured_story_source' )
 
 	<section class ="content--page">
 
+		<?php if( get_field('mtm_news_show_page_title') ) : ?>
+
+			<h1 class="page--title"><?php the_title(); ?><?php edit_post_link( '(Edit)', ' • ' ); ?></h1>
+
+		<?php endif; ?>
+
+		<?php // Featured Story
+		if( "No Featured Story" != _get_field( 'mtm_home_select_featured_story_source' ) ) {  ?>
+
+			<?php mtm_get_template_part( 'mtm-logic', 'featured-story' ); ?>
+
+		<?php } ?>
+
 		<div class="mtm-home-news--content <?php echo $class; ?>">
 	
-			<h1><?php the_title(); ?><?php edit_post_link( '(Edit)', ' • ' ); ?></h1>
 			<?php // the_content(); ?>
 
 			<?php // Something is filtering the_content, figure out what that is so I can change this
@@ -32,13 +44,6 @@ if( "No Featured Story" == _get_field( 'mtm_home_select_featured_story_source' )
 			}?>
 
 		</div>
-
-	    <?php // Featured Story
-		if( "No Featured Story" != _get_field( 'mtm_home_select_featured_story_source' ) ) {  ?>
-
-			<?php mtm_get_template_part( 'mtm-logic', 'featured-story' ); ?>
-
-		<?php } ?>
 
 	</section>
 

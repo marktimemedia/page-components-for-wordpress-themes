@@ -708,6 +708,22 @@ acf_add_local_field_group(array (
 	'title' => 'Content Modules',
 	'fields' => array (
 		array (
+			'key' => 'field_570c0e236b517',
+			'label' => 'Show Page Title?',
+			'name' => 'mtm_module_show_page_title',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Yes, show the page title at the top of the page (unchecking this will hide the page title)',
+			'default_value' => 0,
+		),
+		array (
 			'key' => 'field_56f5778adcb85',
 			'label' => 'Add Content Modules',
 			'name' => 'mtm_content_modules',
@@ -1091,7 +1107,7 @@ acf_add_local_field_group(array (
 							'min' => '',
 							'max' => '',
 							'layout' => 'block',
-							'button_label' => 'Add Row',
+							'button_label' => 'Add Feature Box',
 							'sub_fields' => array (
 								array (
 									'key' => 'field_56f57a25aaafd',
@@ -2263,6 +2279,22 @@ acf_add_local_field_group(array (
 			),
 			'placement' => 'top',
 			'endpoint' => 0,
+		),
+		array (
+			'key' => 'field_570c11068a259',
+			'label' => 'Show Page Title?',
+			'name' => 'mtm_news_show_page_title',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Yes, I\'d like to show the page title at the top of the page (leaving unchecked will hide the page title)',
+			'default_value' => 0,
 		),
 		array (
 			'key' => 'field_56bcbe7315d31',

@@ -81,12 +81,17 @@
 			//text-align: center;
 		}
 
-	.mtm-hero-media {
+		.mtm-hero-media {
 
-	}
+		}
 
 	.mtm-logo-grid {
 		@include pinkmagic( $rowitems: 5, $padside: 6%, $align: middle )
+	}
+
+	.mtm_module_call_to_action {
+		padding: 1em;
+		background: #f2f2f2;
 	}
 
 .mtm-modular-sidebar--widget {
