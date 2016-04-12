@@ -15,10 +15,24 @@ function mtm_page_component_post_query( $posttype = 'post', $perpage = 1, $order
         'posts_per_page'    => $perpage,
         'orderby'           => $orderby,
         'order'             => $order,
-        'post__not_in'      => get_option( $notin )
+        'post__not_in'      => get_option( $notin ),
         )
     );
 }
+
+// Post Type Query
+function mtm_page_component_post_query_paged( $posttype = 'post', $perpage = 1, $orderby = 'date', $order = 'DESC', $notin = 'sticky_posts' ) {
+    return new WP_Query( array(
+        'post_type'         => array( $posttype ),
+        'posts_per_page'    => $perpage,
+        'orderby'           => $orderby,
+        'order'             => $order,
+        'post__not_in'      => get_option( $notin ),
+        'paged'             => get_query_var( 'paged' ),
+        )
+    );
+}
+
 
 // Taxonomy Query
 function mtm_page_component_taxonomy_query( $taxonomy, $terms, $perpage = 3, $orderby = 'date', $order = 'DESC' ) {
@@ -79,7 +93,7 @@ function mtm_terms_from_taxonomy_links( $tax = '' ){
     if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
         $count = count( $terms );
         $i = 0;
-        $term_list = '<ul class="mtm-component--term-list"><li><a href="';
+        $term_list = '<ul class="mtm-component--term-list">';
         foreach ( $terms as $term ) {
             $i++;
             $term_list .= '<li><a href="' . get_term_link( $term ) . '" title="' . sprintf( __( 'View all filed under %s', 'my_localization_domain' ), $term->name ) . '" data-id="' . $term->term_id . '">' . $term->name . '</a></li>';
