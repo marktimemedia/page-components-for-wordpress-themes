@@ -3,7 +3,9 @@
 // Latest Post
 if( "Latest Post" == _get_field( 'mtm_home_select_featured_story_source' ) ) {
 	
-	$news_post_query = mtm_page_component_post_query();
+	$posttype = get_field( 'mtm_home_select_featured_story_type' );
+	
+	$news_post_query = mtm_page_component_post_query( $posttype );
 
 	while( $news_post_query->have_posts() ) {
 		$news_post_query->the_post();

@@ -293,7 +293,7 @@
 
 	.mtm_module_dual_content_area {
 		.mtm-module--content-primary, .mtm-module--content-secondary {
-			@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 3% );
+			@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 5% );
 		}
 	}
 	

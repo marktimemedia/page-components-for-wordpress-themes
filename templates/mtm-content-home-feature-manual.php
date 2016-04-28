@@ -32,13 +32,16 @@
 		
 		<?php } ?>
 
-		<h3><a href="<?php echo esc_url( $url ); ?>">
+		<div class="mtm-home-featured--single-text">
+
+			<h3 class="mtm-home-featured--single-title"><a href="<?php echo esc_url( $url ); ?>">
 				
-			<?php esc_html( _the_sub_field( 'mtm_home_featured_box_manual_title' ) ); ?>
+				<?php esc_html( _the_sub_field( 'mtm_home_featured_box_manual_title' ) ); ?>
 
 			</a></h3>
 
-		<?php esc_html( _the_sub_field( 'mtm_home_featured_content_manual' ) ); ?>
+			<?php esc_html( _the_sub_field( 'mtm_home_featured_content_manual' ) ); ?>
+		</div>
 		
 	</div>
 </div>

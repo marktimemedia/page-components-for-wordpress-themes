@@ -2327,6 +2327,32 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 		),
 		array (
+			'key' => 'field_571011a354604',
+			'label' => 'Which Post Type?',
+			'name' => 'mtm_home_select_featured_story_type',
+			'type' => 'post_type_selector',
+			'instructions' => 'Choose which post type will be the source for your featured story.',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_56bcbe7315d31',
+						'operator' => '==',
+						'value' => 'Latest Post',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'fields[mtm_home_select_featured_story_type' => array (
+				'select_type' => 1,
+			),
+			'select_type' => 0,
+		),
+		array (
 			'key' => 'field_56bcbf7315d35',
 			'label' => 'Featured Story Topic',
 			'name' => 'mtm_home_featured_story_archive_taxonomy',
