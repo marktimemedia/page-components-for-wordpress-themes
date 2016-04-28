@@ -15,12 +15,12 @@ Works with most standard WordPress themes, including Roots/Sage based themes wit
 6. Extra Content – displays extra WYSIWYG editor content
 
 ##### Landing Page Builder
-Stnadard Page
+######Standard Page
 1. Buttons – Add a row of call to action buttons
 2. Background Image – Add a full sized background image
 3. Feature Boxes – Custom feature boxes of manual or selected post content
 
-News Page
+######News Page
 1. Featured Story - manual or automatic
 2. Topics - archives for specific topics
 
