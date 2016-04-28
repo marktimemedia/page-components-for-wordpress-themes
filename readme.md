@@ -14,16 +14,33 @@ Works with most standard WordPress themes, including Roots/Sage based themes wit
 5. Call to Action – displays a custom CTA button
 6. Extra Content – displays extra WYSIWYG editor content
 
-##### Home Page Builder
+##### Landing Page Builder
+Stnadard Page
 1. Buttons – Add a row of call to action buttons
 2. Background Image – Add a full sized background image
 3. Feature Boxes – Custom feature boxes of manual or selected post content
-4. Single Scroll Page – Build a long page out of multiple Page Component pages to create a unique site
+
+News Page
+1. Featured Story - manual or automatic
+2. Topics - archives for specific topics
+
+Both have option for Single Scroll Page – Build a long page out of multiple Page Component pages to create a unique site
+
+##### Modular Content (Flexible Fields)
+1. Single Column Content with heading
+2. Dual Column Content with heading
+3. Call to Action with heading, subheading, buttons
+4. Logo Feature with image/link repeater
+5. Hero Image/Video with text and call to action
+6. Feature Boxes repeater (post content or manual)
+7. Widget Area
+8. Gallery (select post content)
 
 ### Vague Description of How To Use
 1. Install and activate the plugin
 2. On Pages, select the Page Template called "Page Components" in order to use the extra field groups
-3. On your front page, or any page with single-scroll/multi-page capabilities, select the Page Template called "Home Page Builder" to enable the special home page functionality (like buttons and feature boxes) and single-scroll page builder.
+3. On your front page, or any page with single-scroll/multi-page capabilities, select the Page Template called "Landing Page Builder" to enable the special home page functionality (like buttons and feature boxes) and single-scroll page builder.
+4. For modular content, select the Page Template called "Modular Content Page"
 
 
 ### Vague Description of How To Theme
@@ -32,9 +49,9 @@ Works with most standard WordPress themes, including Roots/Sage based themes wit
 3. To call any of the custom template parts from another part of your theme, use the `mtm_get_template_part()` function
 
 
-### Screenshots
+### Screenshots (these are old)
 
-##### Homepage Builder Field Samples
+##### Homepage Builder Field Samples 
 ![Screenshot 1](screenshots/home-1.png)
 
 ![Screenshot 2](screenshots/home-2.png)
