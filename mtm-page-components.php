@@ -9,7 +9,7 @@
  
 define( 'MTM_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
-//require_once( MTM_PLUGIN_DIR . 'lib/mtm-acf-fields.php' ); 
+/equire_once( MTM_PLUGIN_DIR . 'lib/mtm-acf-fields.php' ); 
 require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-component-template.php' );
 require_once( MTM_PLUGIN_DIR . 'lib/class-gamajo-template-loader.php' );
 require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-template-loader.php' );
