@@ -1816,7 +1816,7 @@ acf_add_local_field_group(array (
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
-										'width' => '',
+										'width' => 50,
 										'class' => '',
 										'id' => '',
 									),
@@ -1827,6 +1827,22 @@ acf_add_local_field_group(array (
 									'maxlength' => '',
 									'readonly' => 0,
 									'disabled' => 0,
+								),
+								array (
+									'key' => 'field_5728eaf86b3ca',
+									'label' => 'Link',
+									'name' => 'mtm_list_item_link',
+									'type' => 'url',
+									'instructions' => '',
+									'required' => 0,
+									'conditional_logic' => 0,
+									'wrapper' => array (
+										'width' => 50,
+										'class' => '',
+										'id' => '',
+									),
+									'default_value' => '',
+									'placeholder' => '',
 								),
 								array (
 									'key' => 'field_5728d6b0cf642',
