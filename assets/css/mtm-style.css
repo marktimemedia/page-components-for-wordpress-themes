@@ -335,11 +335,11 @@
     margin-right: -.275em;
     vertical-align: top;
     padding: 0 0;
-    padding-right: 3%;
-    width: 51.5%; }
+    padding-right: 5%;
+    width: 52.5%; }
     .mtm_module_dual_content_area .mtm-module--content-primary:nth-of-type(2n+2), .mtm_module_dual_content_area .mtm-module--content-secondary:nth-of-type(2n+2) {
       padding-right: 0;
-      width: 48.5%; } }
+      width: 47.5%; } }
 @media only screen and (min-width: 61em) {
   .mtm-list--image {
     display: inline-block;

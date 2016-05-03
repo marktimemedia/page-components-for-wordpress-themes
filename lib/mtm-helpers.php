@@ -20,7 +20,7 @@ function mtm_page_component_post_query( $posttype = 'post', $perpage = 1, $order
     );
 }
 
-// Post Type Query
+// Post Type Query Paged
 function mtm_page_component_post_query_paged( $posttype = 'post', $perpage = 1, $orderby = 'date', $order = 'DESC', $notin = 'sticky_posts' ) {
     return new WP_Query( array(
         'post_type'         => array( $posttype ),
