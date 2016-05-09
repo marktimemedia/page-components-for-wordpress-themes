@@ -2,108 +2,105 @@
 
 $j=1; ?>
 
-<div class="content--page">
+<?php if( get_field('mtm_module_show_page_title') ) : ?>
 
-	<?php if( get_field('mtm_module_show_page_title') ) : ?>
+	<h1 class="page--title"><?php the_title(); ?><?php edit_post_link( '(Edit)', ' • ' ); ?></h1>
 
-		<h1 class="page--title"><?php the_title(); ?><?php edit_post_link( '(Edit)', ' • ' ); ?></h1>
+<?php endif; ?>
 
-	<?php endif; ?>
+<?php if( have_rows('mtm_content_modules') ) :
 
-	<?php if( have_rows('mtm_content_modules') ) :
+     // loop through the rows of data
+    while ( have_rows('mtm_content_modules') ) : ?>
 
-	     // loop through the rows of data
-	    while ( have_rows('mtm_content_modules') ) : ?>
+    	<section id="mtm-module-<?php echo $j++; ?>" class="mtm-module">
 
-	    	<section id="mtm-module-<?php echo $j++; ?>" class="mtm-module">
+	    	<?php the_row(); ?>
 
-		    	<?php the_row(); ?>
+			<?php // Logos
+			if( "mtm_module_logo_showcase" == get_row_layout() ) : ?>			
+				
+				<div class="<?php echo get_row_layout(); ?>">
 
-				<?php // Logos
-				if( "mtm_module_logo_showcase" == get_row_layout() ) : ?>			
-					
-					<div class="<?php echo get_row_layout(); ?>">
+					<?php mtm_get_template_part( 'mtm-module', 'logos' ); ?>
 
-						<?php mtm_get_template_part( 'mtm-module', 'logos' ); ?>
+				</div>
 
-					</div>
+			<?php // Call To Action
+			elseif( "mtm_module_call_to_action" == get_row_layout() ) : ?>
+				
+				<div class="<?php echo get_row_layout(); ?>">
 
-				<?php // Call To Action
-				elseif( "mtm_module_call_to_action" == get_row_layout() ) : ?>
-					
-					<div class="<?php echo get_row_layout(); ?>">
+					<?php mtm_get_template_part( 'mtm-module', 'call-to-action' ); ?>
 
-						<?php mtm_get_template_part( 'mtm-module', 'call-to-action' ); ?>
+				</div>
 
-					</div>
+			<?php // Feature Boxes
+			elseif( "mtm_module_feature_boxes" == get_row_layout() ) : ?>
+				
+				<div class="<?php echo get_row_layout(); ?>">
 
-				<?php // Feature Boxes
-				elseif( "mtm_module_feature_boxes" == get_row_layout() ) : ?>
-					
-					<div class="<?php echo get_row_layout(); ?>">
+					<?php mtm_get_template_part( 'mtm-module', 'featured-content' ); ?>
 
-						<?php mtm_get_template_part( 'mtm-module', 'featured-content' ); ?>
+				</div>
 
-					</div>
+			<?php // Hero Image/Video
+			elseif( "mtm_module_hero_image" == get_row_layout() ) : ?>
+				
+				<div class="<?php echo get_row_layout(); ?>">
 
-				<?php // Hero Image/Video
-				elseif( "mtm_module_hero_image" == get_row_layout() ) : ?>
-					
-					<div class="<?php echo get_row_layout(); ?>">
+					<?php mtm_get_template_part( 'mtm-module', 'hero-media' ); ?>
 
-						<?php mtm_get_template_part( 'mtm-module', 'hero-media' ); ?>
+				</div>
 
-					</div>
+			<?php // Single Content
+			elseif( "mtm_module_single_content_area" == get_row_layout() ) : ?>
+				
+				<div class="<?php echo get_row_layout(); ?>">
 
-				<?php // Single Content
-				elseif( "mtm_module_single_content_area" == get_row_layout() ) : ?>
-					
-					<div class="<?php echo get_row_layout(); ?>">
+					<?php mtm_get_template_part( 'mtm-module', 'text' ); ?>
 
-						<?php mtm_get_template_part( 'mtm-module', 'text' ); ?>
+				</div>
 
-					</div>
+			<?php // Dual Content
+			elseif( "mtm_module_dual_content_area" == get_row_layout() ) : ?>
+				
+				<div class="<?php echo get_row_layout(); ?>">
 
-				<?php // Dual Content
-				elseif( "mtm_module_dual_content_area" == get_row_layout() ) : ?>
-					
-					<div class="<?php echo get_row_layout(); ?>">
+					<?php mtm_get_template_part( 'mtm-module', 'text' ); ?>
 
-						<?php mtm_get_template_part( 'mtm-module', 'text' ); ?>
+				</div>
 
-					</div>
+			<?php // Gallery
+			elseif( "mtm_module_gallery" == get_row_layout() ) : ?>
+				
+				<div class="<?php echo get_row_layout(); ?>">
 
-				<?php // Gallery
-				elseif( "mtm_module_gallery" == get_row_layout() ) : ?>
-					
-					<div class="<?php echo get_row_layout(); ?>">
+					<?php mtm_get_template_part( 'mtm-module', 'post-object' ); ?>
 
-						<?php mtm_get_template_part( 'mtm-module', 'post-object' ); ?>
+				</div>
 
-					</div>
+			<?php // Widgets
+			elseif( "mtm_module_widget_area" == get_row_layout() ) : ?>
+				
+				<div class="<?php echo get_row_layout(); ?>">
 
-				<?php // Widgets
-				elseif( "mtm_module_widget_area" == get_row_layout() ) : ?>
-					
-					<div class="<?php echo get_row_layout(); ?>">
+					<?php mtm_get_template_part( 'mtm-module', 'widget-area' ); ?>
 
-						<?php mtm_get_template_part( 'mtm-module', 'widget-area' ); ?>
+				</div>
 
-					</div>
+			<?php // List/Grid
+			elseif( "mtm_module_listgrid" == get_row_layout() ) : ?>
+				
+				<div class="<?php echo get_row_layout(); ?>">
 
-				<?php // List/Grid
-				elseif( "mtm_module_listgrid" == get_row_layout() ) : ?>
-					
-					<div class="<?php echo get_row_layout(); ?>">
+					<?php mtm_get_template_part( 'mtm-module', 'list-grid' ); ?>
 
-						<?php mtm_get_template_part( 'mtm-module', 'list-grid' ); ?>
+				</div>
 
-					</div>
+			<?php endif; ?>
 
-				<?php endif; ?>
+		</section>
 
-			</section>
-
-		<?php endwhile;
-	endif; ?>
-</div>
+	<?php endwhile;
+endif; ?>
