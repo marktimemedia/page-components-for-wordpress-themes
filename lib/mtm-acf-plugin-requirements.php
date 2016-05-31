@@ -35,9 +35,10 @@ function mtm_register_required_plugins() {
 		array(
 			'name'         => 'Advanced Custom Fields Pro', // The plugin name.
 			'slug'         => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name).
-			'source'       => 'http://www.advancedcustomfields.com/pro/', // The plugin source.
+			'source'       => WP_PLUGIN_DIR . '/advanced-custom-fields-pro', // The plugin source.
 			'required'     => true, // If false, the plugin is only 'recommended' instead of required.
-			'external_url' => 'http://www.advancedcustomfields.com/pro/', // If set, overrides default API URL and points to an external URL.
+			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			//'external_url' => 'http://www.advancedcustomfields.com/pro/', // If set, overrides default API URL and points to an external URL.
 		),
 
 		// Include a plugin from the WordPress Plugin Repository.
@@ -45,6 +46,7 @@ function mtm_register_required_plugins() {
 			'name'      => 'Advanced Custom Fields: Widget Area Field',
 			'slug'      => 'advanced-custom-fields-widget-area-field',
 			'required'  => true, // If false, the plugin is only 'recommended' instead of required.
+			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 		),
 
 		// Include a plugin from a GitHub repository in your theme.
@@ -55,6 +57,7 @@ function mtm_register_required_plugins() {
 			'slug'      => 'acf-taxonomy-chooser',
 			'source'    => 'https://github.com/marktimemedia/acf-term-and-taxonomy-chooser/archive/master.zip',
 			'required'     => true, // If false, the plugin is only 'recommended' instead of required.
+			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'external_url' => 'https://github.com/marktimemedia/acf-term-and-taxonomy-chooser', // If set, overrides default API URL and points to an external URL.
 		),
 
@@ -63,8 +66,19 @@ function mtm_register_required_plugins() {
 			'slug'      => 'mtm-options-page',
 			'source'    => 'https://github.com/marktimemedia/acf-theme-settings/archive/master.zip',
 			'required'     => true, // If false, the plugin is only 'recommended' instead of required.
+			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'external_url' => 'https://github.com/marktimemedia/acf-theme-settings', // If set, overrides default API URL and points to an external URL.
 		),
+
+		array(
+			'name'      => 'ACF Post Type Selector',
+			'slug'      => 'acf-post-type-selector',
+			'source'    => 'https://github.com/TimPerry/acf-post-type-selector/archive/master.zip',
+			'required'     => true, // If false, the plugin is only 'recommended' instead of required.
+			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'external_url' => 'https://github.com/TimPerry/acf-post-type-selector', // If set, overrides default API URL and points to an external URL.
+		),
+
 
 
 	);
