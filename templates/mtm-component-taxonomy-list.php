@@ -3,7 +3,7 @@
 $list_query = mtm_taxonomy_query( 'list' );
 $taxonomy = mtm_acf_taxonomy_property( 'list', 'taxonomy' ); ?>
 
-<h1><?php the_title(); ?><?php edit_post_link( '(Edit)', ' • ' ); ?></h1>
+<h2 class="h1"><?php the_title(); ?><?php edit_post_link( '(Edit)', ' • ' ); ?></h2>
 <div <?php post_class( 'mtm-component--main' ); ?>>
 	<?php mtm_get_template_part( 'mtm-content', 'component-page' ); ?>
 </div>
@@ -12,19 +12,20 @@ $taxonomy = mtm_acf_taxonomy_property( 'list', 'taxonomy' ); ?>
 	mtm_terms_from_taxonomy_links( $taxonomy ); // output taxonomy
 } ?>
 
-<?php if( $list_query->have_posts() ) { ?>
+<?php if( $list_query->have_posts() ) : ?>
 
 	<div class="mtm-component--content mtm-list--wrapper">
 
-		<?php while( $list_query->have_posts() ) {
+		<?php while( $list_query->have_posts() ) :
 			
 			$list_query->the_post();
 
 			mtm_get_template_part( 'mtm-content', 'list-view' );
-		}
+		
+		endwhile;
 
 		wp_reset_postdata(); ?>
 
 	</div>
 
-<?php } // end list_query
+<?php endif; // end list_query

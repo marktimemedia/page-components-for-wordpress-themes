@@ -34,6 +34,7 @@ acf_add_local_field_group(array (
 			'save_other_choice' => 0,
 			'default_value' => '',
 			'layout' => 'horizontal',
+			'allow_null' => 0,
 		),
 		array (
 			'key' => 'field_565cb75b8c1af',
@@ -80,6 +81,7 @@ acf_add_local_field_group(array (
 			'save_other_choice' => 0,
 			'default_value' => '',
 			'layout' => 'horizontal',
+			'allow_null' => 0,
 		),
 		array (
 			'key' => 'field_565cce669fa4b',
@@ -322,6 +324,7 @@ acf_add_local_field_group(array (
 			'save_other_choice' => 0,
 			'default_value' => '',
 			'layout' => 'horizontal',
+			'allow_null' => 0,
 		),
 		array (
 			'key' => 'field_565cd760f6e8a',
@@ -884,6 +887,7 @@ acf_add_local_field_group(array (
 							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
+							'allow_null' => 0,
 						),
 						array (
 							'key' => 'field_56fe9f30fa59e',
@@ -906,6 +910,7 @@ acf_add_local_field_group(array (
 							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
+							'allow_null' => 0,
 						),
 						array (
 							'key' => 'field_56f57f57501f3',
@@ -1014,8 +1019,8 @@ acf_add_local_field_group(array (
 							),
 							'default_value' => '',
 							'tabs' => 'all',
-							'toolbar' => 'basic',
-							'media_upload' => 0,
+							'toolbar' => 'full',
+							'media_upload' => 1,
 						),
 						array (
 							'key' => 'field_56f57fcd501f6',
@@ -1131,6 +1136,7 @@ acf_add_local_field_group(array (
 									'save_other_choice' => 0,
 									'default_value' => '',
 									'layout' => 'horizontal',
+									'allow_null' => 0,
 								),
 								array (
 									'key' => 'field_56f57a7baaafe',
@@ -1167,6 +1173,7 @@ acf_add_local_field_group(array (
 									'save_other_choice' => 0,
 									'default_value' => 'Add Custom Title Here',
 									'layout' => 'vertical',
+									'allow_null' => 0,
 								),
 								array (
 									'key' => 'field_56f57ab7aab00',
@@ -1548,7 +1555,7 @@ acf_add_local_field_group(array (
 				array (
 					'key' => '56f59482418ef',
 					'name' => 'mtm_module_logo_showcase',
-					'label' => 'Logo Showcase',
+					'label' => 'Logo/Graphic Showcase',
 					'display' => 'block',
 					'sub_fields' => array (
 						array (
@@ -1643,56 +1650,6 @@ acf_add_local_field_group(array (
 					'max' => '',
 				),
 				array (
-					'key' => '56fe83ceed116',
-					'name' => 'mtm_module_gallery',
-					'label' => 'Gallery',
-					'display' => 'block',
-					'sub_fields' => array (
-						array (
-							'key' => 'field_56fe83dbed117',
-							'label' => 'Select Gallery Source',
-							'name' => 'mtm_select_post_source',
-							'type' => 'post_object',
-							'instructions' => 'Select which gallery post you would like to use',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array (
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'post_type' => array (
-								0 => 'post',
-								1 => 'page',
-							),
-							'taxonomy' => array (
-							),
-							'allow_null' => 0,
-							'multiple' => 0,
-							'return_format' => 'object',
-							'ui' => 1,
-						),
-						array (
-							'key' => 'field_56fe8cd4a8482',
-							'label' => 'Show Title of Gallery?',
-							'name' => 'mtm_post_source_title',
-							'type' => 'true_false',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array (
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'message' => 'Yes, show the title',
-							'default_value' => 0,
-						),
-					),
-					'min' => '',
-					'max' => '',
-				),
-				array (
 					'key' => '570bd7f0a52c7',
 					'name' => 'mtm_module_widget_area',
 					'label' => 'Widget Area',
@@ -1768,7 +1725,7 @@ acf_add_local_field_group(array (
 						),
 						array (
 							'key' => 'field_5728d783cf644',
-							'label' => 'List or Grid?',
+							'label' => 'Display as List or Grid?',
 							'name' => 'mtm_select_list_or_grid',
 							'type' => 'radio',
 							'instructions' => 'Choose whether to display these items as a list or a grid',
@@ -1783,10 +1740,94 @@ acf_add_local_field_group(array (
 								'List' => 'List',
 								'Grid' => 'Grid',
 							),
+							'allow_null' => 0,
 							'other_choice' => 0,
 							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
+						),
+						array (
+							'key' => 'field_57606fe667879',
+							'label' => 'Content Source',
+							'name' => 'mtm_list_archive_select',
+							'type' => 'radio',
+							'instructions' => '',
+							'required' => 1,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'choices' => array (
+								'Add Content Manually' => 'Add Content Manually',
+								'Pick From Taxonomy' => 'Pick From Taxonomy',
+							),
+							'allow_null' => 0,
+							'other_choice' => 0,
+							'save_other_choice' => 0,
+							'default_value' => '',
+							'layout' => 'horizontal',
+						),
+						array (
+							'key' => 'field_5760726ef86ba',
+							'label' => 'Select Source',
+							'name' => 'mtm_list_archive_taxonomy',
+							'type' => 'taxonomy-chooser',
+							'instructions' => '',
+							'required' => 1,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_57606fe667879',
+										'operator' => '==',
+										'value' => 'Pick From Taxonomy',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'tax_type' => 0,
+							'choices' => '',
+							'type_value' => 1,
+							'allow_null' => 0,
+							'ui' => 0,
+							'ajax' => 0,
+							'multiple' => 0,
+						),
+						array (
+							'key' => 'field_576077ebce840',
+							'label' => 'Number of Items to Display',
+							'name' => 'mtm_list_archive_taxonomy_number',
+							'type' => 'number',
+							'instructions' => '',
+							'required' => 1,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_57606fe667879',
+										'operator' => '==',
+										'value' => 'Pick From Taxonomy',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => 3,
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'min' => '',
+							'max' => '',
+							'step' => '',
+							'readonly' => 0,
+							'disabled' => 0,
 						),
 						array (
 							'key' => 'field_5728d666cf640',
@@ -1795,7 +1836,15 @@ acf_add_local_field_group(array (
 							'type' => 'repeater',
 							'instructions' => '',
 							'required' => 0,
-							'conditional_logic' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_57606fe667879',
+										'operator' => '==',
+										'value' => 'Add Content Manually',
+									),
+								),
+							),
 							'wrapper' => array (
 								'width' => '',
 								'class' => '',
@@ -1942,6 +1991,7 @@ acf_add_local_field_group(array (
 			'save_other_choice' => 0,
 			'default_value' => '',
 			'layout' => 'horizontal',
+			'allow_null' => 0,
 		),
 		array (
 			'key' => 'field_565e2f81c08ca',
@@ -2111,6 +2161,7 @@ acf_add_local_field_group(array (
 					'save_other_choice' => 0,
 					'default_value' => '',
 					'layout' => 'horizontal',
+					'allow_null' => 0,
 				),
 				array (
 					'key' => 'field_56830ef012152',
@@ -2147,6 +2198,7 @@ acf_add_local_field_group(array (
 					'save_other_choice' => 0,
 					'default_value' => 'Add Custom Title Here',
 					'layout' => 'vertical',
+					'allow_null' => 0,
 				),
 				array (
 					'key' => 'field_568311abdbeb9',

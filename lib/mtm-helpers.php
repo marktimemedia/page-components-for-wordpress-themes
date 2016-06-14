@@ -65,7 +65,7 @@ function mtm_acf_taxonomy_sub_property( $archivetype, $property ){
 }
 
 // Taxonomy Query for Archive Field
-function mtm_taxonomy_query( $archivetype, $display = 1 ) {
+function mtm_taxonomy_query( $archivetype, $display = 3 ) {
 
     $taxonomy = mtm_acf_taxonomy_property( $archivetype, 'taxonomy' );
     $terms = mtm_acf_taxonomy_property( $archivetype, 'name' );
@@ -78,9 +78,13 @@ function mtm_taxonomy_query( $archivetype, $display = 1 ) {
 }
 
 // Taxonomy Query for Sub Field
-function mtm_taxonomy_query_sub( $archivetype, $display, $order = 'ASC', $orderby = 'date' ) {
+function mtm_taxonomy_query_sub( $archivetype, $display = 3, $order = 'ASC', $orderby = 'date' ) {
     $taxonomy = mtm_acf_taxonomy_sub_property( $archivetype, 'taxonomy' );
     $terms = mtm_acf_taxonomy_sub_property( $archivetype, 'name' );
+
+    if( get_sub_field( 'mtm_' . $archivetype . '_archive_taxonomy_number' ) ) {
+        $display = get_sub_field( 'mtm_' . $archivetype . '_archive_taxonomy_number' );
+    }
 
     return mtm_page_component_taxonomy_query( $taxonomy, $terms, $display, $orderby, $order );
 }

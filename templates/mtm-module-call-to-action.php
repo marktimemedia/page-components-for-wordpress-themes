@@ -2,9 +2,9 @@
 
 if( get_sub_field( 'mtm_cta_headline' ) ) : ?>
 
-	<h3 class="mtm-module--cta-heading mtm-module-title">
+	<h2 class="mtm-module--cta-heading mtm-module-title">
 		<?php the_sub_field( 'mtm_cta_headline' ) ?>
-	</h3>
+	</h2>
 
 <?php endif;
 

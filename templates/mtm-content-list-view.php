@@ -13,7 +13,7 @@
 	<?php //endif; ?>
 
 	<section class="mtm-list--post-content<?php //echo $content_size; ?>">
-		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+		<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 		<p class="post--byline"><?php the_time( 'F j, Y' ); ?></p>
 		<p><?php the_excerpt(); ?></p>
 	</section>

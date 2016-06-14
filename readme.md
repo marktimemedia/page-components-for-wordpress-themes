@@ -32,15 +32,16 @@ Both have option for Single Scroll Page – Build a long page out of multiple Pa
 3. Call to Action with heading, subheading, buttons
 4. Logo Feature with image/link repeater
 5. Hero Image/Video with text and call to action
-6. Feature Boxes repeater (post content or manual)
+6. Feature Boxes (post content or manual)
 7. Widget Area
-8. Gallery (select post content)
+8. List/Grid (post content or manual)
 
 ### Vague Description of How To Use
 1. Install and activate the plugin
-2. On Pages, select the Page Template called "Page Components" in order to use the extra field groups
-3. On your front page, or any page with single-scroll/multi-page capabilities, select the Page Template called "Landing Page Builder" to enable the special home page functionality (like buttons and feature boxes) and single-scroll page builder.
-4. For modular content, select the Page Template called "Modular Content Page"
+2. To build a standard page, select the Page Template called "Landing Page Builder" and choose "Standard" under Landing Page Type to enable the special landing page functionality (like buttons and feature boxes) and single-scroll page builder using Components pages.
+3. To build a news-style page, select the Page Template called "Landing Page Builder" and choose "News" under Landing Page Type to enable the news page functionality (like featured story and topics) and single-scroll page builder using Components pages.
+4. To use extra fields on Pages, select the Page Template called "Page Components" (makes them compatible with single-scroll page as well)
+5. For modular content, select the Page Template called "Modular Content Page" to enable the flexible content fields
 
 
 ### Vague Description of How To Theme
@@ -49,26 +50,44 @@ Both have option for Single Scroll Page – Build a long page out of multiple Pa
 3. To call any of the custom template parts from another part of your theme, use the `mtm_get_template_part()` function
 
 
-### Screenshots (these are old)
+### Screenshots
 
-##### Homepage Builder Field Samples 
-![Screenshot 1](screenshots/home-1.png)
+##### Single Scroll Page Field Samples 
 
-![Screenshot 2](screenshots/home-2.png)
+![Home 1](screenshots/home-1.png)
 
-![Screenshot 3](screenshots/home-3.png)
+![Home 2](screenshots/home-2.png)
 
-![Screenshot 4](screenshots/home-4.png)
+![Home 3](screenshots/home-3.png)
+
+![Home 4](screenshots/home-4.png)
+
+![Home 5](screenshots/news-1.png)
 
 
 ##### Page Component Field Samples
 
-![Screenshot 3](screenshots/component-1.png)
+![Component 1](screenshots/component-1.png)
 
-![Screenshot 3](screenshots/component-2.png)
+![Component 2](screenshots/component-2.png)
+
+
+##### Modular Page Field Samples
+
+![Module 1](screenshots/module-1.png)
+
+![Module 2](screenshots/module-2.png)
 
 ##### Theme Demo
 
-In use with [Pink Spring Theme](https://github.com/marktimemedia/pink-spring)
-![Screenshot 1](screenshots/components.png)
+In use with [Pink Spring Theme](https://github.com/marktimemedia/pink-spring) and [ACF Options Page](https://github.com/marktimemedia/acf-theme-settings)
+
+###### Components/Single Scroll
+![Components](screenshots/components.png)
+
+###### News Page
+![News](screenshots/news.png)
+
+###### Modular Page
+![Modules](screenshots/modules.png)
 

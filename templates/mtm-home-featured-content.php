@@ -1,6 +1,6 @@
 <?php // Home Feature (ACF Repeater Field)
 
-if( have_rows( 'mtm_home_featured_content_boxes' ) ): ?>
+if( have_rows( 'mtm_home_featured_content_boxes' ) ) : ?>
 
 	<div class="mtm-component mtm-home-featured">
 		<section class="content--page content--home-featured">

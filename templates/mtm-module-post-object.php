@@ -7,7 +7,7 @@ if( $post_object ):  // override $post
 	$post = $post_object;
 	setup_postdata( $post ); 
 
-    if( $title ) : ?><h3 class="mtm-module--post-heading mtm-module-title"><?php the_title(); ?></h3><?php endif; ?>
+    if( $title ) : ?><h2 class="mtm-module--post-heading mtm-module-title"><?php the_title(); ?></h2><?php endif; ?>
     <div class="mtm-module--post-content">
 	    <?php the_content(); ?>
 	</div>

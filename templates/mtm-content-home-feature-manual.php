@@ -10,27 +10,27 @@
 			$url = _get_sub_field( 'mtm_home_featured_content_link_custom' );
 		} 
 		
-		if ( $image ) { 
+		if ( $image ) : 
 
-			$thumb = $image['sizes'][ 'medium_large' ];
-			$alt = $image['alt'];
+			$thumb = $image[ 'sizes' ][ 'medium_large' ];
+			$alt = $image[ 'alt' ];
 			?>
 
 			<a href="<?php echo esc_url( $url ); ?>">
 				<figure class="post--thumbnail mtm-home-featured--image"><img src="<?php echo esc_url( $thumb ); ?>" alt="<?php echo esc_html( $alt ); ?>" /></figure>
 			</a>
 
-		<?php } elseif ( $imageAlt ) { // make sure field value exists 
+		<?php elseif ( $imageAlt ) : // make sure field value exists 
 
-			$thumb = $imageAlt['sizes'][ 'medium_large' ];
-			$alt = $imageAlt['alt'];
+			$thumb = $imageAlt[ 'sizes' ][ 'medium_large' ];
+			$alt = $imageAlt[ 'alt' ];
 			?>
 
 			<a href="<?php echo esc_url( $url ); ?>">
 				<figure class="post--thumbnail default-thumbnail <?php echo $class; ?>"><img src="<?php echo esc_url( $thumb ); ?>" alt="<?php echo esc_html( $alt ); ?>" /></figure>
 			</a>
 		
-		<?php } ?>
+		<?php endif; ?>
 
 		<div class="mtm-home-featured--single-text">
 
