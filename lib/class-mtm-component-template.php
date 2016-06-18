@@ -26,8 +26,9 @@ if ( ! class_exists( 'Mtm_Component_Templates' ) )  {
 
             /**
              * The array of templates that this plugin tracks.
+             * This has been changed from 'protected' to 'public' in order to be filterable
              */
-            protected $templates;
+            public $templates;
 
             /**
              * Returns an instance of this class. 
@@ -105,7 +106,7 @@ if ( ! class_exists( 'Mtm_Component_Templates' ) )  {
 
                     // Now add our template to the list of templates by merging our templates
                     // with the existing templates array from the cache.
-                    $templates = array_merge( $templates, $this->templates );
+                    $templates = array_merge( $templates, apply_filters( 'mtm_filter_templates', $this->templates ) );
 
                     // Add the modified cache to allow WordPress to pick it up for listing
                     // available templates

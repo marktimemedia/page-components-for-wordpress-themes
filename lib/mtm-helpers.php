@@ -50,6 +50,7 @@ function mtm_page_component_taxonomy_query( $taxonomy, $terms, $perpage = 3, $or
         )
     );
 }
+
 // get taxonomy properties from Tax Term ID Field (when term is selected)
 function mtm_acf_taxonomy_property( $archivetype, $property ){
     $taxid = get_field( 'mtm_' . $archivetype . '_archive_taxonomy' );
@@ -122,7 +123,7 @@ function mtm_acf_image_property( $field = '', $property = '' ) {
     }
 }
 
-// Get Property from ACF Image Object
+// Get Property from ACF Sub Image Object
 function mtm_acf_sub_image_property( $field = '', $property = '' ) {
 
     if( get_sub_field( $field ) ) {

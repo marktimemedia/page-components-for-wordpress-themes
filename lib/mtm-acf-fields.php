@@ -1,7 +1,8 @@
 <?php 
-
-// Registers all ACF fields
-// Un-inlcude this file and import the JSON file to make changes to the fields, then re-export field data
+/**
+ * Registers all ACF Fields
+ * Un-inlcude this file and import the JSON file to make changes to the fields, then re-export field data
+ */
 
 if( function_exists('acf_add_local_field_group') ):
 

@@ -21,8 +21,8 @@
     height: auto; }
 
 .mtm-component--main-full {
-  position: relative;
-  overflow: auto; }
+  overflow: auto;
+  position: relative; }
 
 .mtm-component--home {
   background-size: cover;
@@ -42,8 +42,8 @@
 
 /* Module Rules */
 .mtm-module {
-  padding-top: 1em;
-  padding-bottom: 1em; }
+  padding-bottom: 1em;
+  padding-top: 1em; }
 
 .mtm-module--hero-title {
   margin: .75em auto; }
@@ -74,11 +74,11 @@
         width: 29.3333333333%; } }
   @media only screen and (min-width: 61em) {
     .mtm-logo-grid {
-      width: 21.2%;
+      width: 17.6666666667%;
       padding-right: 6%; }
-      .mtm-logo-grid:nth-of-type(5n+5) {
+      .mtm-logo-grid:nth-of-type(6n+6) {
         padding-right: 0;
-        width: 15.2%; } }
+        width: 11.6666666667%; } }
 
 .mtm_module_call_to_action {
   padding: 1em;

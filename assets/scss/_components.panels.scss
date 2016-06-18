@@ -24,8 +24,8 @@
 
 }
 	.mtm-component--main-full {
-		position: relative;
 		overflow: auto;
+		position: relative;
 	}
 
 	.mtm-component--home {
@@ -34,7 +34,6 @@
 		margin-top: 0;
 		padding-top: 0;
 		text-align: center;
-		
 	}
 
 	.mtm-component--term-list {
@@ -54,8 +53,8 @@
 /* Module Rules */
 
 .mtm-module {
-	padding-top: 1em;
 	padding-bottom: 1em;
+	padding-top: 1em;
 }
 	
 	.mtm-module--hero {
@@ -78,7 +77,6 @@
 
 		.mtm-hero-image-title, .mtm-hero-image-subtitle p {
 			color: #fff;
-			//text-align: center;
 		}
 
 		.mtm-hero-media {
@@ -86,7 +84,7 @@
 		}
 
 	.mtm-logo-grid {
-		@include pinkmagic( $rowitems: 5, $padside: 6%, $align: middle )
+		@include pinkmagic( $rowitems: 6, $padside: 6%, $align: middle )
 	}
 
 	.mtm_module_call_to_action {

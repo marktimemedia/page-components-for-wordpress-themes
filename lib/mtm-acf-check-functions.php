@@ -10,6 +10,7 @@
  * @return mixed
  * @uses get_field()
  */
+
 if( !function_exists( '_get_field' ) ){
   function _get_field( $key, $id=false, $default='' ) {
     global $post;
