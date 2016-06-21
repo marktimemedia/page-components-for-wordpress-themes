@@ -1,6 +1,6 @@
 <?php
 /*
-	Plugin Name: Page Components for ACF
+	Plugin Name: ACF Page Components
 	Description: Reusable page building components for layouts or single scroll sites
 	Author: Marktime Media
 	Version: 1.0
@@ -31,38 +31,7 @@ function mtm_page_components_load_scripts() {
 add_action( 'wp_enqueue_scripts', 'mtm_page_components_load_scripts' );
 
 
-if ( ! function_exists( 'mtm_template_sidebars' ) ) {
 
-    // Register News Page Sidebar
-    function mtm_template_sidebars() {
-
-        register_sidebar( array(
-            'name'          => __( 'News Page', 'mtm' ),
-            'id'            => 'news-page-sidebar',
-            'class'         => 'mtm-home-sidebar',
-            'before_title'  => '<h3 class="mtm-home-sidebar--title widget-title">',
-            'after_title'   => '</h3>',
-            'before_widget' => '<div class="mtm-home-sidebar--widget widget">',
-            'after_widget'  => '</div>',
-            ) 
-        );
-
-        register_sidebar( array(
-            'name'          => __( 'Modular Page', 'mtm' ),
-            'id'            => 'modular-page-sidebar',
-            'class'         => 'mtm-modular-sidebar',
-            'before_title'  => '<h3 class="mtm-modular-sidebar--title widget-title">',
-            'after_title'   => '</h3>',
-            'before_widget' => '<div class="mtm-modular-sidebar--widget widget ' . slbd_count_widgets( "modular-page-sidebar" ) . '">',
-            'after_widget'  => '</div>',
-            ) 
-        );
-
-    }
-
-    add_action( 'widgets_init', 'mtm_template_sidebars' );
-
-}
 
 
 

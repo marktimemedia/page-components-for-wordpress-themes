@@ -18,8 +18,9 @@ function acf_location_rules_values_component( $choices )
 	
 	$templates = array(
                         'Components Page' => '../templates/template-components.php',
-                        'Landing Page Builder' => '../templates/template-home.php',
-                        'Modular Content Page' => '../templates/template-modules.php',
+                        'Landing Page' => '../templates/template-home.php',
+                        'News Page'		=> '../templates/template-news.php',
+                        'Modular Content' => '../templates/template-modules.php',
                     );
 	
 	foreach( $templates as $k => $v ) {
