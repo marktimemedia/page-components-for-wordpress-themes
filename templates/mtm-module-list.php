@@ -1,4 +1,4 @@
-<?php // List/Grid (ACF Repeater Field)
+<?php // List (ACF Repeater Field)
 
 if( get_sub_field( 'mtm_list_title' ) ): ?>
 

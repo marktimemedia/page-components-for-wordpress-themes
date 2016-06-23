@@ -1,6 +1,7 @@
 <?php // Topic Sections (ACF Repeater Field)
 
 $display = get_field( 'mtm_home_stories_per_topic' );
+$mtm_news_feature_count = mtm_output_row_number();
 
 if( have_rows( 'mtm_home_topic_sections' ) ): ?>
 
@@ -15,7 +16,7 @@ if( have_rows( 'mtm_home_topic_sections' ) ): ?>
 
 				<?php if( $topic_tax_query->have_posts() ) : ?>
 
-					<div class="mtm-home-topic--single">
+					<div class="mtm-home-topic--single <?php echo $mtm_news_feature_count; ?>">
 						<div class="mtm-home-topic--single-content">
 					
 						<?php while( $topic_tax_query->have_posts() ) : // Each Topic

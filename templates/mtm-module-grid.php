@@ -1,4 +1,7 @@
-<?php // List/Grid (ACF Repeater Field)
+<?php // Grid (ACF Repeater Field)
+
+global $mtm_grid_row_class;
+$mtm_grid_row_class = mtm_output_row_number();
 
 if( get_sub_field( 'mtm_list_title' ) ): ?>
 
@@ -13,6 +16,7 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 
 		<?php $list_query = mtm_taxonomy_query_sub( 'list' );
 		$taxonomy = mtm_acf_taxonomy_sub_property( 'list', 'taxonomy' );
+
 
 		while( $list_query->have_posts() ) :
 

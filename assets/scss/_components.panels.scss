@@ -77,10 +77,6 @@
 	padding-top: 1em;
 }
 	
-	.mtm-module--hero {
-
-	}
-
 		.mtm-module--hero-title {
 			margin: .75em auto;
 		}
@@ -99,10 +95,6 @@
 			color: #fff;
 		}
 
-		.mtm-hero-media {
-
-		}
-
 	.mtm-logo-grid {
 		vertical-align: middle;
 	}
@@ -111,10 +103,6 @@
 		padding: 1em;
 		background: #f2f2f2;
 	}
-
-.mtm-modular-sidebar--widget {
-
-}
 
 
 
@@ -138,6 +126,7 @@
 }
 
 .button.mtm-button {
+	display:inline-block;
 	margin-bottom: .5em;
 }
 
@@ -195,9 +184,6 @@
 
 
 @media only screen and ( min-width:$sm-bp ) {
-	.button.mtm-button {
-		display:inline-block;
-	}
 
 	.mtm-tabs--title-container {
 		li {
@@ -227,10 +213,7 @@
 		@include pinkrow( $rowitems: 2, $before: 0, $after: 0 ) 
 	}
 
-	
-	.content--home-featured .mtm-home-featured--single, .mtm-home-topic--single {
-		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 3% );
-	}
+
 }
 
 @media only screen and ( min-width: $med-bp ) and ( max-width: $lg-bp ) {
@@ -243,10 +226,6 @@
 	.mtm-list--post-content {
 		@include pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: 7, $padtop: 0, $padside: 2% );
 		@include pinkrow( $rowitems: 2, $before: 0, $after: 0 ) 
-	}
-
-	.content--home-featured .mtm-home-featured--single, .mtm-home-topic--single {
-		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 3% );
 	}
 
 	.mtm-home-news--content {
@@ -304,10 +283,6 @@
 	.mtm-list--post-content {
 		@include pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: 9, $padtop: 0, $padside: $defaultpad );
 		@include pinkrow( $rowitems: 2, $before: 0, $after: 0 ) 
-	}
-
-	.content--home-featured .mtm-home-featured--single, .mtm-home-topic--single {
-		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 4% );
 	}
 
 	.mtm-home-news--content {

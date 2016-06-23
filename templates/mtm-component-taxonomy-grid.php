@@ -5,6 +5,7 @@ global $mtm_grid_row_class;
 $grid_query = mtm_taxonomy_query( 'grid' );
 $taxonomy = mtm_acf_taxonomy_property( 'grid', 'taxonomy' ); 
 $mtm_grid_row_class = mtm_output_row_number();
+$mtm_grid_module_class = 1 ;
 ?>
 
 <h2 class="h1"><?php the_title(); ?><?php edit_post_link( '(Edit)', ' • ' ); ?></h2>

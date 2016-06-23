@@ -2,7 +2,7 @@
 $url = _get_sub_field( 'mtm_list_item_link' );
 $image = _get_sub_field( 'mtm_list_item_image' ); ?>
 
-<div class="mtm-grid--single <?php echo mtm_output_row_number(); ?>">
+<div class="mtm-grid--single ">
 	<div class="mtm-grid--single-content">
 
 		<?php if ( $image ) : 

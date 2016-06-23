@@ -146,7 +146,7 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 	width:			100%;
 	padding:		$padtop 0;	
 
-	@if $rowitems <= 3 { // 3 items or less per row
+	@if $rowitems < 3 { // Less than 3 items per row
 
 		@media only screen and ( min-width: $sm-bp ) {
 
@@ -168,6 +168,65 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 		} // end $sm-bp
 
 	} // end 3 items or less per row
+
+	@else if $rowitems == 3 { // 3 items per row
+
+		@media only screen and ( min-width: $sm-bp ) and ( max-width: $med-bp ) {
+
+			$thisrow: 2; // intermediate row value, rounded up to nearest whole number
+			$itemwidth2: ( ( 100%  + $padside ) / $thisrow );
+			$lastwidth2: ( $itemwidth2 - $padside ); 	
+			$befrow: $before + $thisrow;	
+
+			width: $itemwidth2;
+			padding-right: $padside;
+
+			@if $thisrow <=1 { // Prevent weird broken values
+				width:100%;
+			}
+
+			@if $before > 0 or $after > 0 {
+
+				&:nth-of-type( #{$rowtotal}n+#{$befrow} ), &:nth-of-type( #{$rowtotal}n+#{$rowend} ) {
+					padding-right:0;
+					width: $lastwidth2;
+				}
+
+			}
+
+			@else { // no before or after value
+
+				&:nth-of-type( #{$thisrow}n+#{$thisrow} ){
+					padding-right:0;
+					width: $lastwidth2;
+				}
+
+			}
+
+
+		} // end $sm-bp
+
+		@media only screen and ( min-width: $med-bp ) {
+
+			width: ( ( 100% + $padside ) / $rowitems );
+			padding-right: $padside;
+
+			@if $rowitems <=1 { // Prevent weird broken values
+				width:100%;
+			}
+
+			@else { // all items
+
+				&:nth-of-type( #{$rowtotal}n+#{$rowend} ){
+					padding-right:0;
+					width: $lastwidth;
+				}
+			}
+
+		} // end $med-bp
+
+
+	} // end 3 items per row
 
 	@else if $rowitems > 3 and $rowitems <= 6 { // 4 to 6 items per row
 
@@ -195,7 +254,6 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 			}
 
 			@else { // no before or after value
-
 
 				&:nth-of-type( #{$thisrow}n+#{$thisrow} ){
 					padding-right:0;
