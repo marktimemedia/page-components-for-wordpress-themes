@@ -9,7 +9,7 @@ function mtm_get_template_part( $slug, $name = null ) {
 }
 
 // Post Type Query
-function mtm_page_component_post_query( $posttype = 'post', $perpage = 1, $orderby = 'date', $order = 'DESC', $notin = 'sticky_posts' ) {
+function mtm_page_component_post_query( $posttype = 'post', $perpage = 3, $orderby = 'date', $order = 'DESC', $notin = 'sticky_posts' ) {
     return new WP_Query( array(
         'post_type'         => array( $posttype ),
         'posts_per_page'    => $perpage,
@@ -21,7 +21,7 @@ function mtm_page_component_post_query( $posttype = 'post', $perpage = 1, $order
 }
 
 // Post Type Query Paged
-function mtm_page_component_post_query_paged( $posttype = 'post', $perpage = 1, $orderby = 'date', $order = 'DESC', $notin = 'sticky_posts' ) {
+function mtm_page_component_post_query_paged( $posttype = 'post', $perpage = 3, $orderby = 'date', $order = 'DESC', $notin = 'sticky_posts' ) {
     return new WP_Query( array(
         'post_type'         => array( $posttype ),
         'posts_per_page'    => $perpage,
