@@ -5,6 +5,26 @@
 }
 
 /* General Panel Rules */
+.mtm-per-row-2 {
+	@include pinkmagic( $rowitems: 2, $padside: 4% );
+}
+
+.mtm-per-row-3 {
+	@include pinkmagic( $rowitems: 3, $padside: 4%  );
+}
+
+.mtm-per-row-4 {
+	@include pinkmagic( $rowitems: 4, $padside: 4%  );
+}
+
+.mtm-per-row-5 {
+	@include pinkmagic( $rowitems: 5, $padside: 4%  );
+}
+
+.mtm-per-row-6 {
+	@include pinkmagic( $rowitems: 6, $padside: 4%  );
+}
+
 .mtm-component {
 	border-bottom: 1px solid #eee;
 	margin-top: -2rem;
@@ -20,7 +40,6 @@
 		height: auto;
 
 	}
-
 
 }
 	.mtm-component--main-full {
@@ -49,6 +68,7 @@
 			padding-right: .5em;
 		}
 	}
+
 
 /* Module Rules */
 
@@ -84,7 +104,7 @@
 		}
 
 	.mtm-logo-grid {
-		@include pinkmagic( $rowitems: 6, $padside: 6%, $align: middle )
+		vertical-align: middle;
 	}
 
 	.mtm_module_call_to_action {
@@ -96,17 +116,7 @@
 
 }
 
-	.mtm-per-row-2 {
-		@include pinkmagic( $rowitems: 2, $padside: 4% );
-	}
 
-	.mtm-per-row-3 {
-		@include pinkmagic( $rowitems: 3, $padside: 4%  );
-	}
-
-	.mtm-per-row-4 {
-		@include pinkmagic( $rowitems: 4, $padside: 4%  );
-	}
 
 /* Home Rules */
 
@@ -128,7 +138,6 @@
 }
 
 .button.mtm-button {
-	display: block;
 	margin-bottom: .5em;
 }
 
@@ -151,11 +160,6 @@
 		width: 100%;
 }
 
-/* Grid Rules */
-
-.mtm-grid--single {
-	width: 100%;
-}
 
 /* Tab Rules */
 
@@ -223,12 +227,8 @@
 		@include pinkrow( $rowitems: 2, $before: 0, $after: 0 ) 
 	}
 
-	.mtm-grid--single {
-		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 3% );
-
-	}	
 	
-	.mtm-home-featured--single, .mtm-home-topic--single {
+	.content--home-featured .mtm-home-featured--single, .mtm-home-topic--single {
 		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 3% );
 	}
 }
@@ -245,11 +245,7 @@
 		@include pinkrow( $rowitems: 2, $before: 0, $after: 0 ) 
 	}
 
-	.mtm-grid--single {
-		@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 3% );
-	}
-
-	.mtm-home-featured--single, .mtm-home-topic--single {
+	.content--home-featured .mtm-home-featured--single, .mtm-home-topic--single {
 		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 3% );
 	}
 
@@ -310,11 +306,7 @@
 		@include pinkrow( $rowitems: 2, $before: 0, $after: 0 ) 
 	}
 
-	.mtm-grid--single {
-		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 4% );
-	}
-
-	.mtm-home-featured--single, .mtm-home-topic--single {
+	.content--home-featured .mtm-home-featured--single, .mtm-home-topic--single {
 		@include pinkgridrow( $align: top, $rowitems: 3, $padtop: 0, $padside: 4% );
 	}
 

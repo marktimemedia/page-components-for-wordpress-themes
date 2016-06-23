@@ -1,7 +1,11 @@
 <?php // Manual Grid Component
 
+global $mtm_grid_row_class;
+
 $grid_posts = _get_field( 'mtm_grid_archive_manual' );
-$taxonomy = get_field( 'mtm_manual_archive_taxonomy' ); ?>
+$taxonomy = get_field( 'mtm_manual_archive_taxonomy' ); 
+$mtm_grid_row_class = mtm_output_row_number(); 
+?>
 
 <h2 class="h1"><?php the_title(); ?><?php edit_post_link( '(Edit)', ' • ' ); ?></h2>
 <div <?php post_class( 'mtm-component--main' ); ?>>

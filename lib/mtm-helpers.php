@@ -152,7 +152,7 @@ function slbd_count_widgets( $sidebar_id ) {
         $widget_count = count( $sidebars_widgets_count[ $sidebar_id ] );
         $widget_classes = 'widget-count-' . count( $sidebars_widgets_count[ $sidebar_id ] );
         if ( $widget_count % 4 == 0 || $widget_count > 6 ) :
-            // Four widgets er row if there are exactly four or more than six
+            // Four widgets per row if there are exactly four or more than six
             $widget_classes .= ' mtm-per-row-4';
         elseif ( $widget_count >= 3 ) :
             // Three widgets per row if there's three or more widgets 
@@ -165,4 +165,39 @@ function slbd_count_widgets( $sidebar_id ) {
     endif;
 }
 
+function mtm_count_classes( $count = 1, $prefix = 'item-count-' ) {
+    $item_count = $count;
+    $item_classes = $prefix . $item_count;
+    
+        if( 6 == $item_count || $item_count >= 11 ) :
+            // Six items per row if there's six or greater/equal to 10 items
+            $item_classes .= ' mtm-per-row-6';
+        elseif ( 5 == $item_count || $item_count == 10 ) :
+            // Three items per row if there's 5 or 8 items
+            $item_classes .= ' mtm-per-row-5';
+        elseif ( 4 == $item_count || $item_count >= 7 && $item_count <= 8 ) :
+            // Four items per row if there's 4, 7, or 8 items
+            $item_classes .= ' mtm-per-row-4';
+        elseif ( 3 == $item_count || $item_count == 9 ) :
+            // Three items per row if there's three or nine items
+            $item_classes .= ' mtm-per-row-3';
+        elseif ( 2 == $item_count ) :
+            // Otherwise show two widgets per row
+            $item_classes .= ' mtm-per-row-2';
+        endif; 
+        return $item_classes;
+}
+
+function mtm_output_row_number( $num = 3, $field = 'mtm_grid_archive_per_row' ) {
+     if( get_field( $field ) ) {
+        
+        $num = get_field( $field );
+
+     } elseif( get_sub_field( $field ) ) {
+
+        $num = get_sub_field( $field );
+     }
+
+    return 'mtm-per-row-' . $num;
+}
   

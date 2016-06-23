@@ -1,4 +1,8 @@
-<div class="mtm-home-featured--single">
+<?php 
+global $mtm_home_feature_count;
+?>
+
+<div class="mtm-home-featured--single <?php echo mtm_count_classes( $mtm_home_feature_count ) ?>">
 	<div class="mtm-home-featured--single-content">
 		
 		<?php
