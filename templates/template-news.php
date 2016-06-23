@@ -14,8 +14,4 @@ if( _get_field( 'mtm_enable_single_scroll_page' ) ) {
 	mtm_get_template_part( 'mtm-logic', 'single-scroll' );
 }
 
-if( _get_field( 'mtm_enable_news_widgets' ) ) {
-	echo 'hi';
-}
-
 mtm_load_wrap_footer();

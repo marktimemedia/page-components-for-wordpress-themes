@@ -34,27 +34,25 @@ function mtm_load_wrap_footer() {
 // Register News Page Sidebar
 function mtm_template_sidebars() {
 
-    register_sidebar( array(
-        'name'          => __( 'News Page', 'mtm' ),
+    register_sidebar(array(
+        'name'          => __('News Page', 'mtm'),
         'id'            => 'news-page-sidebar',
         'class'         => 'mtm-home-sidebar',
-        'before_title'  => '<h3 class="mtm-home-sidebar--title widget-title">',
-        'after_title'   => '</h3>',
-        'before_widget' => '<div class="mtm-home-sidebar--widget widget">',
-        'after_widget'  => '</div>',
-        ) 
-    );
+        'before_widget' => '<section class="mtm-home-sidebar--widget widget %1$s %2$s"><div class="widget-inner">',
+        'after_widget'  => '</div></section>',
+        'before_title'  => '<div class="widget--title-wrap"><h3 class="mtm-home-sidebar--title widget-title">',
+        'after_title'   => '</h3></div>',
+    ));
 
-    register_sidebar( array(
-        'name'          => __( 'Modular Page', 'mtm' ),
+    register_sidebar(array(
+        'name'          => __('Modular Page', 'mtm'),
         'id'            => 'modular-page-sidebar',
         'class'         => 'mtm-modular-sidebar',
-        'before_title'  => '<h3 class="mtm-modular-sidebar--title widget-title">',
-        'after_title'   => '</h3>',
-        'before_widget' => '<div class="mtm-modular-sidebar--widget widget ' . slbd_count_widgets( "modular-page-sidebar" ) . '">',
-        'after_widget'  => '</div>',
-        ) 
-    );
+        'before_widget' => '<section class="mtm-modular-sidebar--widget widget %1$s %2$s ' . slbd_count_widgets( "modular-page-sidebar" ) . '"><div class="widget-inner">',
+        'after_widget'  => '</div></section>',
+        'before_title'  => '<div class="widget--title-wrap"><h3 class="mtm-modular-sidebar--title widget-title">',
+        'after_title'   => '</h3></div>',
+    ));
 
 }
 add_action( 'widgets_init', 'mtm_template_sidebars' );
