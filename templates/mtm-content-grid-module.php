@@ -1,8 +1,11 @@
 <?php 
-$url = _get_sub_field( 'mtm_list_item_link' );
-$image = _get_sub_field( 'mtm_list_item_image' ); ?>
+global $mtm_grid_row_class;
 
-<div class="mtm-grid--single ">
+$url = mtm_output_url_override_sub( 'mtm_list_item_link' );
+$image = _get_sub_field( 'mtm_list_item_image' ); 
+$file = _get_sub_field( 'mtm_list_item_file' ) ?>
+
+<div class="mtm-grid--single <?php echo $mtm_grid_row_class; ?>">
 	<div class="mtm-grid--single-content">
 
 		<?php if ( $image ) : 
@@ -25,5 +28,16 @@ $image = _get_sub_field( 'mtm_list_item_image' ); ?>
 			<?php if( $url ): ?></a><?php endif; ?>
 		</h4>
 		<p><?php the_sub_field( 'mtm_list_item_content' ); ?></p>
+		
+		<?php if( $file ):
+
+			$fileurl = $file['url'];
+			$filetitle = $file['title'];
+			$filetype = wp_check_filetype( $fileurl );?>
+
+			<a class="file-download file-<?php echo $filetype['ext']; ?>" href="<?php echo $fileurl; ?>"><?php echo __( 'Download: '. $filetitle, 'mtm' ) . ' (' . $filetype['ext'] .')'; ?></a>
+			
+		<?php endif; ?>
+
 	</div>
 </div>

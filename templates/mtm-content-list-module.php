@@ -1,6 +1,7 @@
 <?php 
 $image = _get_sub_field( 'mtm_list_item_image' );
-$url = _get_sub_field( 'mtm_list_item_link' );
+$url = mtm_output_url_override_sub( 'mtm_list_item_link' );
+$file = _get_sub_field( 'mtm_list_item_file' );
 $content_size = '-full'; ?>
 
 <article class="mtm-list--single">
@@ -28,5 +29,16 @@ $content_size = '-full'; ?>
 			<?php if( $url ): ?></a><?php endif; ?>
 		</h4>
 		<p><?php the_sub_field( 'mtm_list_item_content' ); ?></p>
+
+		<?php if( $file ):
+
+			$fileurl = $file['url'];
+			$filetitle = $file['title'];
+			$filetype = wp_check_filetype( $fileurl );?>
+
+			<a class="file-download file-<?php echo $filetype['ext']; ?>" href="<?php echo $fileurl; ?>"><?php echo __( 'Download: '. $filetitle, 'mtm' ) . ' (' . $filetype['ext'] .')'; ?></a>
+			
+		<?php endif; ?>
+
 	</section>
 </article>

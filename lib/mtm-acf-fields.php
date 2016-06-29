@@ -4,6 +4,7 @@
  * Un-inlcude this file and import the JSON file to make changes to the fields, then re-export field data
  */
 
+
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array (
@@ -987,7 +988,7 @@ acf_add_local_field_group(array (
 								'id' => '',
 							),
 							'return_format' => 'array',
-							'preview_size' => 'thumbnail',
+							'preview_size' => 'medium',
 							'library' => 'all',
 							'min_width' => '',
 							'min_height' => '',
@@ -1051,7 +1052,7 @@ acf_add_local_field_group(array (
 							'label' => 'Add Buttons',
 							'name' => 'mtm_home_button_repeater',
 							'type' => 'repeater',
-							'instructions' => '(Optional) Add call to action buttons',
+							'instructions' => '(Optional) Click "Add Buttion" to add call to action buttons',
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
@@ -1074,7 +1075,7 @@ acf_add_local_field_group(array (
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
-										'width' => 50,
+										'width' => 40,
 										'class' => '',
 										'id' => '',
 									),
@@ -1087,15 +1088,35 @@ acf_add_local_field_group(array (
 									'disabled' => 0,
 								),
 								array (
+									'key' => 'field_57730a1ac9370',
+									'label' => 'Button Content Link',
+									'name' => 'mtm_post_content_link',
+									'type' => 'page_link',
+									'instructions' => 'Link your button to other content on your site',
+									'required' => '',
+									'conditional_logic' => '',
+									'wrapper' => array (
+										'width' => 30,
+										'class' => '',
+										'id' => '',
+									),
+									'post_type' => array (
+									),
+									'taxonomy' => array (
+									),
+									'allow_null' => 0,
+									'multiple' => 0,
+								),
+								array (
 									'key' => 'field_56f57ffb501f8',
-									'label' => 'Button Link',
+									'label' => 'Button Custom Link',
 									'name' => 'mtm_home_button_link',
 									'type' => 'text',
-									'instructions' => '',
+									'instructions' => 'Link your button to a custom url or anchor tag (overrides Content Link)',
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
-										'width' => 50,
+										'width' => 30,
 										'class' => '',
 										'id' => '',
 									),
@@ -1124,7 +1145,7 @@ acf_add_local_field_group(array (
 							'label' => 'Add Featured Content Boxes',
 							'name' => 'mtm_home_featured_content_boxes',
 							'type' => 'repeater',
-							'instructions' => 'Set featured content boxes from a specific piece of content, the latest post, or manual input',
+							'instructions' => 'Click "Add Feature Box" to create a new box, then choose whether to display specific site content, the latest post from a term, or manual input',
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
@@ -1143,11 +1164,11 @@ acf_add_local_field_group(array (
 									'label' => 'Which Type Of Featured Content?',
 									'name' => 'mtm_home_featured_type',
 									'type' => 'radio',
-									'instructions' => 'Select the type of featured content you want this to be',
+									'instructions' => 'Select how you want to get content for this feature box',
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
-										'width' => 50,
+										'width' => 40,
 										'class' => '',
 										'id' => '',
 									),
@@ -1156,11 +1177,11 @@ acf_add_local_field_group(array (
 										'Show Latest Post' => 'Show Latest Post',
 										'Manual Entry' => 'Manual Entry',
 									),
+									'allow_null' => 0,
 									'other_choice' => 0,
 									'save_other_choice' => 0,
 									'default_value' => '',
 									'layout' => 'horizontal',
-									'allow_null' => 0,
 								),
 								array (
 									'key' => 'field_56f57a7baaafe',
@@ -1186,18 +1207,18 @@ acf_add_local_field_group(array (
 										),
 									),
 									'wrapper' => array (
-										'width' => 50,
+										'width' => 60,
 										'class' => '',
 										'id' => '',
 									),
 									'choices' => array (
 										'Post Title' => 'Post Title',
 									),
+									'allow_null' => 0,
 									'other_choice' => 1,
 									'save_other_choice' => 0,
 									'default_value' => 'Add Custom Title Here',
 									'layout' => 'vertical',
-									'allow_null' => 0,
 								),
 								array (
 									'key' => 'field_56f57ab7aab00',
@@ -1216,7 +1237,7 @@ acf_add_local_field_group(array (
 										),
 									),
 									'wrapper' => array (
-										'width' => 50,
+										'width' => 60,
 										'class' => '',
 										'id' => '',
 									),
@@ -1231,7 +1252,7 @@ acf_add_local_field_group(array (
 								array (
 									'key' => 'field_56f57aceaab01',
 									'label' => 'Specific Content',
-									'name' => 'specific_content',
+									'name' => '',
 									'type' => 'tab',
 									'instructions' => '',
 									'required' => 0,
@@ -1257,7 +1278,7 @@ acf_add_local_field_group(array (
 									'label' => 'Select Specific Content',
 									'name' => 'mtm_home_featured_select_single',
 									'type' => 'post_object',
-									'instructions' => '',
+									'instructions' => 'Select specific content to use as the source for your feature box',
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
@@ -1300,10 +1321,10 @@ acf_add_local_field_group(array (
 								),
 								array (
 									'key' => 'field_56f57b1faab04',
-									'label' => 'Select Post Taxonomy',
+									'label' => 'Select Post Taxonomy Term',
 									'name' => 'mtm_home_featured_archive_taxonomy',
 									'type' => 'taxonomy-chooser',
-									'instructions' => '',
+									'instructions' => 'Use the latest post from a specific term as the content for this feature box',
 									'required' => 0,
 									'conditional_logic' => array (
 										array (
@@ -1385,7 +1406,7 @@ acf_add_local_field_group(array (
 								),
 								array (
 									'key' => 'field_56f57ea0aab07',
-									'label' => 'Box Content',
+									'label' => 'Featured Content',
 									'name' => 'mtm_home_featured_content_manual',
 									'type' => 'wysiwyg',
 									'instructions' => '',
@@ -1426,7 +1447,7 @@ acf_add_local_field_group(array (
 										),
 									),
 									'wrapper' => array (
-										'width' => 50,
+										'width' => 40,
 										'class' => '',
 										'id' => '',
 									),
@@ -1446,7 +1467,7 @@ acf_add_local_field_group(array (
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
-										'width' => 50,
+										'width' => 60,
 										'class' => '',
 										'id' => '',
 									),
@@ -1514,7 +1535,7 @@ acf_add_local_field_group(array (
 							'label' => 'CTA Buttons',
 							'name' => 'mtm_cta_button_repeater',
 							'type' => 'repeater',
-							'instructions' => 'Add call to action buttons that will lead to other pages, other sections within a page, or elsewhere.',
+							'instructions' => 'Click "Add Button" to add call to action buttons that will lead to other pages, other sections within a page, or elsewhere.',
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
@@ -1525,8 +1546,8 @@ acf_add_local_field_group(array (
 							'collapsed' => '',
 							'min' => '',
 							'max' => '',
-							'button_label' => 'Add Button',
 							'layout' => 'table',
+							'button_label' => 'Add Button',
 							'sub_fields' => array (
 								array (
 									'key' => 'field_56f5904a5bc8b',
@@ -1537,7 +1558,7 @@ acf_add_local_field_group(array (
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
-										'width' => 50,
+										'width' => 40,
 										'class' => '',
 										'id' => '',
 									),
@@ -1550,15 +1571,35 @@ acf_add_local_field_group(array (
 									'disabled' => 0,
 								),
 								array (
+									'key' => 'field_57730910c936f',
+									'label' => 'CTA Content Link',
+									'name' => 'mtm_post_content_link',
+									'type' => 'page_link',
+									'instructions' => 'Link your button to other content on your site',
+									'required' => '',
+									'conditional_logic' => '',
+									'wrapper' => array (
+										'width' => 30,
+										'class' => '',
+										'id' => '',
+									),
+									'post_type' => array (
+									),
+									'taxonomy' => array (
+									),
+									'allow_null' => 0,
+									'multiple' => 0,
+								),
+								array (
 									'key' => 'field_56f590765bc8c',
 									'label' => 'CTA Button Link',
 									'name' => 'mtm_cta_button_link',
 									'type' => 'text',
-									'instructions' => 'URL destination of your button (such as another page within your site, an anchor tag on the same page, or somewhere else)',
+									'instructions' => 'Link your button to an anchor tag on the same page, or a custom url (overrides Content Link)',
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
-										'width' => 50,
+										'width' => 30,
 										'class' => '',
 										'id' => '',
 									),
@@ -1584,10 +1625,10 @@ acf_add_local_field_group(array (
 					'sub_fields' => array (
 						array (
 							'key' => 'field_56feb088a4a16',
-							'label' => 'Logo Area Title',
+							'label' => 'Logo/Graphic Area Title',
 							'name' => 'mtm_logo_title',
 							'type' => 'text',
-							'instructions' => 'Optional title for the logo showcase (leave blank for no title)',
+							'instructions' => 'Optional title for the logo/graphic area (leave blank for no title)',
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
@@ -1608,7 +1649,7 @@ acf_add_local_field_group(array (
 							'label' => 'Add Logo/Graphic',
 							'name' => 'mtm_logo_repeater',
 							'type' => 'repeater',
-							'instructions' => 'Add a logo showcase to your page (transparent PNG images preferred)',
+							'instructions' => 'Click "Add Logo" to add a logo/graphic showcase to your page (transparent PNG images preferred for logos)',
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
@@ -1619,12 +1660,12 @@ acf_add_local_field_group(array (
 							'collapsed' => 'field_56f594e1418f1',
 							'min' => '',
 							'max' => '',
-							'button_label' => 'Add Logo',
 							'layout' => 'table',
+							'button_label' => 'Add Logo',
 							'sub_fields' => array (
 								array (
 									'key' => 'field_56f594e1418f1',
-									'label' => 'Logo',
+									'label' => 'Logo/Graphic',
 									'name' => 'mtm_logo_image',
 									'type' => 'image',
 									'instructions' => '',
@@ -1647,15 +1688,35 @@ acf_add_local_field_group(array (
 									'mime_types' => '',
 								),
 								array (
+									'key' => 'field_5773089ac936e',
+									'label' => 'Content Link',
+									'name' => 'mtm_post_content_link',
+									'type' => 'page_link',
+									'instructions' => 'Link to specific content on your site',
+									'required' => '',
+									'conditional_logic' => '',
+									'wrapper' => array (
+										'width' => 30,
+										'class' => '',
+										'id' => '',
+									),
+									'post_type' => array (
+									),
+									'taxonomy' => array (
+									),
+									'allow_null' => 0,
+									'multiple' => 0,
+								),
+								array (
 									'key' => 'field_56f594fd418f2',
-									'label' => 'Link',
+									'label' => 'Custom Link',
 									'name' => 'mtm_logo_link',
 									'type' => 'text',
-									'instructions' => '',
+									'instructions' => 'Link to a custom url (overrides Content Link)',
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
-										'width' => 60,
+										'width' => 30,
 										'class' => '',
 										'id' => '',
 									),
@@ -1731,7 +1792,7 @@ acf_add_local_field_group(array (
 							'label' => 'List Title',
 							'name' => 'mtm_list_title',
 							'type' => 'text',
-							'instructions' => 'Optional title for list/grid	(leave blank for no title)',
+							'instructions' => 'Optional title for list area (leave blank for no title)',
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
@@ -1835,7 +1896,7 @@ acf_add_local_field_group(array (
 							'label' => 'Add List Item',
 							'name' => 'mtm_add_list_item',
 							'type' => 'repeater',
-							'instructions' => '',
+							'instructions' => 'Click "Add List Item" to create a new list row',
 							'required' => 0,
 							'conditional_logic' => array (
 								array (
@@ -1879,15 +1940,35 @@ acf_add_local_field_group(array (
 									'disabled' => 0,
 								),
 								array (
-									'key' => 'field_5728eaf86b3ca',
-									'label' => 'Link',
-									'name' => 'mtm_list_item_link',
-									'type' => 'url',
-									'instructions' => '',
+									'key' => 'field_5772ff2b7839e',
+									'label' => 'Content Link',
+									'name' => 'mtm_post_content_link',
+									'type' => 'page_link',
+									'instructions' => 'Link to specific content on your site',
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
-										'width' => 50,
+										'width' => 25,
+										'class' => '',
+										'id' => '',
+									),
+									'post_type' => array (
+									),
+									'taxonomy' => array (
+									),
+									'allow_null' => 0,
+									'multiple' => 0,
+								),
+								array (
+									'key' => 'field_5728eaf86b3ca',
+									'label' => 'Custom Link',
+									'name' => 'mtm_list_item_link',
+									'type' => 'url',
+									'instructions' => 'Link to a custom url (overrides Content Link)',
+									'required' => 0,
+									'conditional_logic' => 0,
+									'wrapper' => array (
+										'width' => 25,
 										'class' => '',
 										'id' => '',
 									),
@@ -1903,7 +1984,7 @@ acf_add_local_field_group(array (
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
-										'width' => 66,
+										'width' => 50,
 										'class' => '',
 										'id' => '',
 									),
@@ -1913,15 +1994,34 @@ acf_add_local_field_group(array (
 									'media_upload' => 1,
 								),
 								array (
+									'key' => 'field_57730099184bd',
+									'label' => 'File (optional)',
+									'name' => 'mtm_list_item_file',
+									'type' => 'file',
+									'instructions' => 'Include a file with this list item',
+									'required' => 1,
+									'conditional_logic' => 0,
+									'wrapper' => array (
+										'width' => 25,
+										'class' => '',
+										'id' => '',
+									),
+									'return_format' => 'array',
+									'library' => 'all',
+									'min_size' => '',
+									'max_size' => '',
+									'mime_types' => '',
+								),
+								array (
 									'key' => 'field_5728d6c7cf643',
-									'label' => 'Image',
+									'label' => 'Image (optional)',
 									'name' => 'mtm_list_item_image',
 									'type' => 'image',
-									'instructions' => '',
+									'instructions' => 'Include an image with this list item',
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
-										'width' => 33,
+										'width' => 25,
 										'class' => '',
 										'id' => '',
 									),
@@ -1953,7 +2053,7 @@ acf_add_local_field_group(array (
 							'label' => 'Grid Title',
 							'name' => 'mtm_list_title',
 							'type' => 'text',
-							'instructions' => 'Optional title for list/grid	(leave blank for no title)',
+							'instructions' => 'Optional title for grid area (leave blank for no title)',
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
@@ -2080,7 +2180,7 @@ acf_add_local_field_group(array (
 							'label' => 'Add Grid Item',
 							'name' => 'mtm_add_list_item',
 							'type' => 'repeater',
-							'instructions' => '',
+							'instructions' => 'Click "Add Grid Item" to create a new Grid block',
 							'required' => 0,
 							'conditional_logic' => array (
 								array (
@@ -2096,7 +2196,7 @@ acf_add_local_field_group(array (
 								'class' => '',
 								'id' => '',
 							),
-							'collapsed' => '',
+							'collapsed' => 'field_576a88e224ba9',
 							'min' => '',
 							'max' => '',
 							'layout' => 'block',
@@ -2124,15 +2224,35 @@ acf_add_local_field_group(array (
 									'disabled' => 0,
 								),
 								array (
+									'key' => 'field_5773000c184bb',
+									'label' => 'Content Link',
+									'name' => 'mtm_post_content_link',
+									'type' => 'page_link',
+									'instructions' => 'Link to specific content on your site',
+									'required' => '',
+									'conditional_logic' => '',
+									'wrapper' => array (
+										'width' => 25,
+										'class' => '',
+										'id' => '',
+									),
+									'post_type' => array (
+									),
+									'taxonomy' => array (
+									),
+									'allow_null' => 0,
+									'multiple' => 0,
+								),
+								array (
 									'key' => 'field_576a88e224baa',
-									'label' => 'Link',
+									'label' => 'Custom Link',
 									'name' => 'mtm_list_item_link',
 									'type' => 'url',
-									'instructions' => '',
+									'instructions' => 'Link to a custom url (overrides Content Link)',
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
-										'width' => 50,
+										'width' => 25,
 										'class' => '',
 										'id' => '',
 									),
@@ -2148,7 +2268,7 @@ acf_add_local_field_group(array (
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
-										'width' => 66,
+										'width' => 50,
 										'class' => '',
 										'id' => '',
 									),
@@ -2158,15 +2278,34 @@ acf_add_local_field_group(array (
 									'media_upload' => 1,
 								),
 								array (
+									'key' => 'field_57730067184bc',
+									'label' => 'File (optional)',
+									'name' => 'mtm_list_item_file',
+									'type' => 'file',
+									'instructions' => 'Include a file with this grid item',
+									'required' => '',
+									'conditional_logic' => '',
+									'wrapper' => array (
+										'width' => 25,
+										'class' => '',
+										'id' => '',
+									),
+									'return_format' => 'array',
+									'library' => 'all',
+									'min_size' => '',
+									'max_size' => '',
+									'mime_types' => '',
+								),
+								array (
 									'key' => 'field_576a88e224bac',
-									'label' => 'Image',
+									'label' => 'Image (optional)',
 									'name' => 'mtm_list_item_image',
 									'type' => 'image',
-									'instructions' => '',
+									'instructions' => 'Include an image with this grid item',
 									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
-										'width' => 33,
+										'width' => 25,
 										'class' => '',
 										'id' => '',
 									),

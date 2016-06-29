@@ -188,6 +188,7 @@ function mtm_count_classes( $count = 1 ) {
         return $item_classes;
 }
 
+// Output a per-row class based on how many admin picked
 function mtm_output_row_number( $num = 3, $field = 'mtm_grid_archive_per_row' ) {
      if( get_field( $field ) ) {
         
@@ -200,4 +201,22 @@ function mtm_output_row_number( $num = 3, $field = 'mtm_grid_archive_per_row' ) 
 
     return 'mtm-per-row-' . $num;
 }
-  
+
+// output either content url or custom url
+function mtm_output_url_override_sub( $field1 ='' , $field2 = 'mtm_post_content_link' ) {
+    
+    if ( _get_sub_field( $field1 ) ) {
+
+        $url = _get_sub_field( $field1 );
+
+    } elseif ( _get_sub_field( $field2 ) ) {
+
+        $url = _get_sub_field( $field2 );
+    
+    } else {
+
+        $url = '';
+    }
+
+    return $url;
+}

@@ -3,7 +3,7 @@
 	Plugin Name: ACF Page Components
 	Description: Reusable page building components for layouts or single scroll sites
 	Author: Marktime Media
-	Version: 1.1.4
+	Version: 1.2
 	Author URI: http://www.marktimemedia.com
  */
  
@@ -21,7 +21,7 @@ require_once( MTM_PLUGIN_DIR . 'lib/mtm-config.php' );
 require_once( MTM_PLUGIN_DIR . 'lib/mtm-helpers.php' );
 
 
-
+// Plugin Scripts
 function mtm_page_components_load_scripts() {
     wp_enqueue_style( 'mtm-style', plugins_url( 'mtm-style.css', __FILE__) );
     wp_enqueue_script( 'mtm-tabs', plugins_url( 'assets/js/mtm-tabs.js', __FILE__), array( 'jquery' ) );
@@ -30,7 +30,14 @@ function mtm_page_components_load_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'mtm_page_components_load_scripts' );
 
+// Admin Scripts
+function mtm_page_components_admin_scripts() {
+    wp_enqueue_style( 'mtm-admin', plugins_url( 'assets/scss/css/mtm-admin-style.css', __FILE__) );
+}
+
+add_action( 'acf/input/admin_enqueue_scripts', 'mtm_page_components_admin_scripts' );
 
 
+// Add Templates
 add_action( 'plugins_loaded', array( 'Mtm_Component_Templates', 'get_instance' ) );
 ?>

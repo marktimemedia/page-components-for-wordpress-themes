@@ -8,12 +8,8 @@ global $mtm_home_feature_count;
 		<?php
 		$image = _get_sub_field( 'mtm_home_featured_image_manual' );
 		$imageAlt = get_field( 'mtm_default_featured_image', 'option' );
-		$url = _get_sub_field( 'mtm_home_featured_content_link_manual' );
+		$url = mtm_output_url_override_sub( 'mtm_home_featured_content_link_manual', 'mtm_home_featured_content_link_custom' ); 
 
-		if ( _get_sub_field( 'mtm_home_featured_content_link_custom' ) ) {
-			$url = _get_sub_field( 'mtm_home_featured_content_link_custom' );
-		} 
-		
 		if ( $image ) : 
 
 			$thumb = $image[ 'sizes' ][ 'medium_large' ];
