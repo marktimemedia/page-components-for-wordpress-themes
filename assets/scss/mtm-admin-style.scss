@@ -18,6 +18,10 @@
 		.acf-field-wysiwyg, .acf-field-file, .acf-field-image {
 			min-height: 200px !important;
 		}
+
+		.acf-field-text, .acf-field-page-link {
+			min-height: 100px !important;
+		}
 	}
 
 	.acf-repeater.-row > table > tbody > tr > td, .acf-repeater.-block > table > tbody > tr > td {
