@@ -6,7 +6,29 @@ Works with most standard WordPress themes, including Roots/Sage based themes wit
 
 ### New Content Fields
 
-##### Page Components
+##### Modular Content (Flexible Fields)
+1. Single Column Content with heading
+2. Dual Column Content with heading
+3. Call to Action with heading, subheading, buttons
+4. Hero Image with text and call to action buttons
+5. Video/Embedded Media with text and call to action buttons
+6. Slider with text and links
+7. Feature Boxes (post content or manual)
+8. Logo Feature with image/link repeater
+9. Widget Area
+10. List/Grid (post content or manual)
+
+##### Landing Page Builder
+###### Standard Page
+1. Buttons – Add a row of call to action buttons
+2. Background Image – Add a full sized background image
+3. Feature Boxes – Custom feature boxes of manual or selected post content
+
+###### News Page
+1. Featured Story - manual or automatic
+2. Topics - archives for specific topics
+
+###### Page Components
 1. Standard Content (nothing added)
 2. List Archive – displays either a manually curated list of items, or a list of the most recent from a specific taxonomy
 3. Grid Archive – displays either a manually curated grid of items, or a grid of the most recent items from a specific taxonomy
@@ -14,27 +36,9 @@ Works with most standard WordPress themes, including Roots/Sage based themes wit
 5. Call to Action – displays a custom CTA button
 6. Extra Content – displays extra WYSIWYG editor content
 
-##### Landing Page Builder
-######Standard Page
-1. Buttons – Add a row of call to action buttons
-2. Background Image – Add a full sized background image
-3. Feature Boxes – Custom feature boxes of manual or selected post content
 
-######News Page
-1. Featured Story - manual or automatic
-2. Topics - archives for specific topics
+Both landing pages have option for Single Scroll Page – Build a long page out of multiple Page Component pages to create a unique site
 
-Both have option for Single Scroll Page – Build a long page out of multiple Page Component pages to create a unique site
-
-##### Modular Content (Flexible Fields)
-1. Single Column Content with heading
-2. Dual Column Content with heading
-3. Call to Action with heading, subheading, buttons
-4. Logo Feature with image/link repeater
-5. Hero Image/Video with text and call to action
-6. Feature Boxes (post content or manual)
-7. Widget Area
-8. List/Grid (post content or manual)
 
 ### Vague Description of How To Use
 1. Install and activate the plugin

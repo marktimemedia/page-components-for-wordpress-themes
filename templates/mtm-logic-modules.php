@@ -44,12 +44,30 @@ $j=1; ?>
 
 				</div>
 
-			<?php // Hero Image/Video
+			<?php // Hero Image
 			elseif( "mtm_module_hero_image" == get_row_layout() ) : ?>
 				
 				<div class="<?php echo get_row_layout(); ?>">
 
+					<?php mtm_get_template_part( 'mtm-content', 'hero-image' ); ?>
+
+				</div>
+
+			<?php // Video/Media
+			elseif( "mtm_module_hero_media" == get_row_layout() ) : ?>
+				
+				<div class="<?php echo get_row_layout(); ?>">
+
 					<?php mtm_get_template_part( 'mtm-module', 'hero-media' ); ?>
+
+				</div>
+
+			<?php // Slider
+			elseif( "mtm_module_slider" == get_row_layout() ) : ?>
+				
+				<div class="<?php echo get_row_layout(); ?>">
+
+					<?php mtm_get_template_part( 'mtm-module', 'slider' ); ?>
 
 				</div>
 

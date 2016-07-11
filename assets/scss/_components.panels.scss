@@ -88,12 +88,22 @@
 	.mtm-hero-image {
 		padding: 2em;
 		background-size:cover;
-		background-position: center;
+		background-position: center center;
 		text-align: center;
 	}
 
-		.mtm-hero-image-title, .mtm-hero-image-subtitle p {
+		.mtm-hero-image-title, .mtm-hero-image-subtitle p, .mtm-module--slider-title, .mtm-module--slider-subtitle p {
 			color: #fff;
+		}
+
+	.mtm-module--slider-slide {
+		background-size:cover;
+		background-position: center center;
+		text-align: center;
+	}
+		.mtm-module--slider-link {
+			display: block;
+			padding: 2em;
 		}
 
 	.mtm-logo-grid {
