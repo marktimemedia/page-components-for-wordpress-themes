@@ -99,7 +99,7 @@ $j=1; ?>
 
 				</div>
 
-			<?php // List
+			<?php // List Manual
 			elseif( "mtm_module_listgrid" == get_row_layout() ) : ?>
 				
 				<div class="<?php echo get_row_layout(); ?>">
@@ -108,8 +108,26 @@ $j=1; ?>
 
 				</div>
 
-			<?php // Grid
+			<?php // Grid Manual
 			elseif( "mtm_module_gridlist" == get_row_layout() ) : ?>
+				
+				<div class="<?php echo get_row_layout(); ?>">
+
+					<?php mtm_get_template_part( 'mtm-module', 'grid' ); ?>
+
+				</div>
+
+			<?php // List Posts
+			elseif( "mtm_module_listgrid_posts" == get_row_layout() ) : ?>
+				
+				<div class="<?php echo get_row_layout(); ?>">
+
+					<?php mtm_get_template_part( 'mtm-module', 'list' ); ?>
+
+				</div>
+
+			<?php // Grid Posts
+			elseif( "mtm_module_gridlist_posts" == get_row_layout() ) : ?>
 				
 				<div class="<?php echo get_row_layout(); ?>">
 

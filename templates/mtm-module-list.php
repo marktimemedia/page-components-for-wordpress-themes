@@ -11,7 +11,10 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 
 	<div class="mtm-module--list">
 
-		<?php $list_query = mtm_taxonomy_query_sub( 'list' );
+		<?php if( _get_sub_field( 'mtm_show_taxonomy_links' ) ) :
+			mtm_terms_from_taxonomy_links( get_sub_field( 'mtm_list_archive_taxonomy_links' ) ); // output taxonomy
+		endif;
+		$list_query = mtm_taxonomy_query_sub( 'list' );
 		$taxonomy = mtm_acf_taxonomy_sub_property( 'list', 'taxonomy' );
 
 		while( $list_query->have_posts() ) :
@@ -23,6 +26,57 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 		endwhile;
 		
 		wp_reset_postdata(); ?>
+
+	</div>
+
+<?php elseif( 'Pick From Post Type' == get_sub_field( 'mtm_list_archive_select' ) ) : // Post Type Source ?>
+
+	<div class="mtm-module--list">
+
+		<?php if( _get_sub_field( 'mtm_show_taxonomy_links' ) ) :
+			mtm_terms_from_taxonomy_links( get_sub_field( 'mtm_list_archive_taxonomy_links' ) ); // output taxonomy
+		endif;
+
+		$posttype = get_sub_field( 'mtm_list_archive_post_type' );
+		$list_post_query_number = get_sub_field( 'mtm_list_archive_taxonomy_number' );
+		$list_post_query = mtm_page_component_post_query( $posttype, $list_post_query_number );
+		
+
+		while( $list_post_query->have_posts() ) :
+	
+			$list_post_query->the_post();
+
+			mtm_get_template_part( 'mtm-content', 'list-view' );
+
+		endwhile;
+		
+		wp_reset_postdata(); ?>
+
+	</div>
+
+<?php elseif( 'Add Posts Manually' == get_sub_field( 'mtm_list_archive_select' ) ) : // Post Type Source ?>
+
+	<div class="mtm-module--list">
+
+		<?php if( _get_sub_field( 'mtm_show_taxonomy_links' ) ) :
+			mtm_terms_from_taxonomy_links( get_sub_field( 'mtm_list_archive_taxonomy_links' ) ); // output taxonomy
+		endif;
+		
+		$grid_posts = _get_sub_field( 'mtm_list_archive_manual_posts' );
+
+		if( $grid_posts ) :
+
+			foreach( $grid_posts as $post) : // variable must be called $post (IMPORTANT)
+		
+				setup_postdata( $post );
+
+				mtm_get_template_part( 'mtm-content', 'list-view' );
+
+			endforeach;
+		
+			wp_reset_postdata();
+
+		endif; ?>
 
 	</div>
 
