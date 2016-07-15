@@ -2197,7 +2197,7 @@ acf_add_local_field_group(array (
 									'name' => 'mtm_list_item_file',
 									'type' => 'file',
 									'instructions' => 'Include a file with this list item',
-									'required' => 1,
+									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array (
 										'width' => 25,
@@ -2296,7 +2296,7 @@ acf_add_local_field_group(array (
 							'name' => 'mtm_add_list_item',
 							'type' => 'repeater',
 							'instructions' => 'Click "Add Grid Item" to create a new Grid block',
-							'required' => 1,
+							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
 								'width' => '',
