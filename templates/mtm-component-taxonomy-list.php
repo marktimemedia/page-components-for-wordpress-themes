@@ -1,16 +1,17 @@
 <?php // Taxonomy List Component
 
 $list_query = mtm_taxonomy_query( 'list' );
-$taxonomy = mtm_acf_taxonomy_property( 'list', 'taxonomy' ); ?>
+$taxonomy = mtm_acf_taxonomy_property( 'list', 'taxonomy' ); 
+$terms = mtm_acf_taxonomy_property( 'list', 'slug' );?>
 
 <h2 class="h1"><?php the_title(); ?><?php edit_post_link( '(Edit)', ' • ' ); ?></h2>
 <div <?php post_class( 'mtm-component--main' ); ?>>
 	<?php mtm_get_template_part( 'mtm-content', 'component-page' ); ?>
 </div>
 
-<?php if( _get_field( 'mtm_show_taxonomy_links' ) ) {
+<?php if( _get_field( 'mtm_show_taxonomy_links' ) ) :
 	mtm_terms_from_taxonomy_links( $taxonomy ); // output taxonomy
-} ?>
+endif; ?>
 
 <?php if( $list_query->have_posts() ) : ?>
 
@@ -29,3 +30,9 @@ $taxonomy = mtm_acf_taxonomy_property( 'list', 'taxonomy' ); ?>
 	</div>
 
 <?php endif; // end list_query
+
+if( _get_field( 'mtm_show_view_all_link' ) ) : ?>
+
+	<a class="mtm-view-all-link" href="<?php echo get_site_url() . '/' . $taxonomy . '/'. $terms; ?>"><?php _e( 'View All', 'mtm' ); ?></a>
+
+<?php endif; ?>

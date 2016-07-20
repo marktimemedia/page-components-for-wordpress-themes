@@ -14,8 +14,10 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 		<?php if( _get_sub_field( 'mtm_show_taxonomy_links' ) ) :
 			mtm_terms_from_taxonomy_links( get_sub_field( 'mtm_list_archive_taxonomy_links' ) ); // output taxonomy
 		endif;
+		
 		$list_query = mtm_taxonomy_query_sub( 'list' );
 		$taxonomy = mtm_acf_taxonomy_sub_property( 'list', 'taxonomy' );
+		$terms = mtm_acf_taxonomy_sub_property( 'list', 'slug' );
 
 		while( $list_query->have_posts() ) :
 	
@@ -25,7 +27,13 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 
 		endwhile;
 		
-		wp_reset_postdata(); ?>
+		wp_reset_postdata(); 
+
+		if( _get_sub_field( 'mtm_show_view_all_link' ) ) : ?>
+
+			<a class="mtm-view-all-link" href="<?php echo get_site_url() . '/' . $taxonomy . '/'. $terms; ?>"><?php _e( 'View All', 'mtm' ); ?></a>
+
+		<?php endif; ?>
 
 	</div>
 
@@ -50,7 +58,25 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 
 		endwhile;
 		
-		wp_reset_postdata(); ?>
+		wp_reset_postdata(); 
+
+		if( _get_sub_field( 'mtm_show_view_all_link' ) ) :
+
+			if( 'post' == $posttype  ) : // Posts ?>
+
+				<a class="mtm-view-all-link" href="<?php echo get_permalink( get_option('page_for_posts' ) ); ?>"><?php _e( 'View All', 'mtm' ); ?></a>
+
+			<?php elseif( 'page' == $posttype || 'attachment' == $posttype || 'revision' == $posttype || 'nav_menu_item' == $posttype ) : // Unsupported archives 
+
+				// Nothing
+
+			else: // everything else ?>
+
+				<a class="mtm-view-all-link" href="<?php echo get_site_url() . '/' . $posttype ?>"><?php _e( 'View All', 'mtm' ); ?></a>
+
+			<?php endif;
+
+		endif; ?>
 
 	</div>
 
@@ -97,6 +123,8 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 	 <?php endif; // End List
 	
 endif; // End Pick from Source
+
+
 
 
 
