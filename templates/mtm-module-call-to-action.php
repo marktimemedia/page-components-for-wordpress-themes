@@ -1,3 +1,4 @@
+<section class="mtm-module--cta">
 <?php // Module: Call To Action
 
 if( get_sub_field( 'mtm_cta_headline' ) ) : ?>
@@ -34,5 +35,6 @@ if( get_sub_field( 'mtm_cta_button_repeater' ) ) :
 
 	<?php endif; // End ACF Repeater Field 
 
-endif; 
+endif; ?>
+</section>
 
