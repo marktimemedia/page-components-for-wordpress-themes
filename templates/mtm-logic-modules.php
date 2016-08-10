@@ -89,6 +89,14 @@ $j=1; ?>
 
 				</div>
 
+			<?php // Content + Callout
+			elseif( "mtm_module_content_callout" == get_row_layout() ) : ?>
+				
+				<div class="<?php echo get_row_layout(); ?>">
+
+					<?php mtm_get_template_part( 'mtm-module', 'text' ); ?>
+
+				</div>
 
 			<?php // Widgets
 			elseif( "mtm_module_widget_area" == get_row_layout() ) : ?>

@@ -17,6 +17,7 @@ Works with most standard WordPress themes, including Roots/Sage based themes wit
 8. Logo Feature with image/link repeater
 9. Widget Area
 10. List/Grid (post content or manual)
+11. Text plus callout
 
 ##### Landing Page Builder
 ###### Standard Page

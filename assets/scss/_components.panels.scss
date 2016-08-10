@@ -277,7 +277,20 @@
 
 	.mtm_module_dual_content_area {
 		.mtm-module--content-primary, .mtm-module--content-secondary {
-			@include pinkgridrow( $align: top, $rowitems: 2, $padtop: 0, $padside: 5% );
+			@include pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: 6, $padtop: 0, $padside: 5% );
+			@include pinkrow( $rowitems: 2, $before: 0, $after: 0 )
+		}
+	}
+
+	.mtm_module_content_callout {
+		.mtm-module--content-primary {
+			@include pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: 9, $padtop: 0, $padside: 5% );
+			@include pinkrow( $rowitems: 2, $before: 0, $after: 0 )
+		}
+
+		.mtm-module--content-secondary {
+			@include pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: 3, $padtop: 0, $padside: 5% );
+			@include pinkrow( $rowitems: 2, $before: 0, $after: 0 )
 		}
 	}
 	
