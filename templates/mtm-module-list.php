@@ -19,15 +19,22 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 		$taxonomy = mtm_acf_taxonomy_sub_property( 'list', 'taxonomy' );
 		$terms = mtm_acf_taxonomy_sub_property( 'list', 'slug' );
 
-		while( $list_query->have_posts() ) :
-	
-			$list_query->the_post();
+		if( $list_query->have_posts() ) : 
 
-			mtm_get_template_part( 'mtm-content', 'list-view' );
-
-		endwhile;
+			global $post;
+			$org_post = $post; // save this in case we are inside a nested query/post object
 		
-		wp_reset_postdata(); 
+			while( $list_query->have_posts() ) :
+		
+				$list_query->the_post();
+
+				mtm_get_template_part( 'mtm-content', 'list-view' );
+
+			endwhile;
+
+			$post = $org_post; // reset to original query
+		
+		endif;
 
 		if( _get_sub_field( 'mtm_show_view_all_link' ) ) : ?>
 
@@ -49,16 +56,22 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 		$list_post_query_number = get_sub_field( 'mtm_list_archive_taxonomy_number' );
 		$list_post_query = mtm_page_component_post_query( $posttype, $list_post_query_number );
 		
+		if( $list_post_query->have_posts() ) : 
 
-		while( $list_post_query->have_posts() ) :
-	
-			$list_post_query->the_post();
+			global $post;
+			$org_post = $post; // save this in case we are inside a nested query/post object
 
-			mtm_get_template_part( 'mtm-content', 'list-view' );
-
-		endwhile;
+			while( $list_post_query->have_posts() ) :
 		
-		wp_reset_postdata(); 
+				$list_post_query->the_post();
+
+				mtm_get_template_part( 'mtm-content', 'list-view' );
+
+			endwhile;
+
+			$post = $org_post; // reset to original query
+		
+		endif;
 
 		if( _get_sub_field( 'mtm_show_view_all_link' ) ) :
 
@@ -92,6 +105,9 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 
 		if( $grid_posts ) :
 
+			global $post;
+			$org_post = $post; // save this in case we are inside a nested query/post object
+
 			foreach( $grid_posts as $post) : // variable must be called $post (IMPORTANT)
 		
 				setup_postdata( $post );
@@ -100,7 +116,7 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 
 			endforeach;
 		
-			wp_reset_postdata();
+			$post = $org_post; // reset to original query
 
 		endif; ?>
 
