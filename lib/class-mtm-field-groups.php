@@ -72,7 +72,7 @@ class Mtm_Field_Groups extends Mtm_Field_Definitions {
 		if( is_null( $location ) ) { $location = self::$arr_location; }
 		if( is_null( $key ) ) { $key = self::$str_key; }
 		
-		return array(
+		return apply_filters( 'mtm_content_modules_filter', array(
 			'key' => $key,
 			'title' => 'Content Modules',
 			'fields' => array(
@@ -93,8 +93,8 @@ class Mtm_Field_Groups extends Mtm_Field_Definitions {
 					'button_label' => 'Add Content Area',
 					'min' => '',
 					'max' => '',
-					'layouts' => array(
-						$this->mtm_module_single_content_area,
+					'layouts' => apply_filters( 'mtm_content_modules_layouts_filter', array(
+						'mtm_module_single_content_area' => $this->mtm_module_single_content_area,
 						$this->mtm_module_dual_content_area,
 						$this->mtm_module_content_callout,
 						$this->mtm_module_hero_image,
@@ -108,7 +108,7 @@ class Mtm_Field_Groups extends Mtm_Field_Definitions {
 						$this->mtm_module_gridlist,
 						$this->mtm_module_listgrid_posts,
 						$this->mtm_module_gridlist_posts,
-					),
+					)),
 				),
 			),
 			'location' => array( $location ),
@@ -122,6 +122,6 @@ class Mtm_Field_Groups extends Mtm_Field_Definitions {
 			),
 			'active' => 1,
 			'description' => '',
-		);
+		));
 	}
 } // END class 

@@ -9,7 +9,7 @@ class Mtm_Field_Definitions {
 
 	// Single Content Area
 	public function mtm_module_single_content_area( $label = 'Single Content Area' ) {
-		return array(
+		return apply_filters( 'mtm_module_single_content_area', array(
 			'key' => '56f57790d388f',
 			'name' => 'mtm_module_single_content_area',
 			'label' => $label,
@@ -57,13 +57,13 @@ class Mtm_Field_Definitions {
 			),
 			'min' => '',
 			'max' => '',
-		);
+		));
 	}
 
 
 	// Dual Content Area
 	public static function mtm_module_dual_content_area( $label = 'Dual Content Area' ) {
-		return array(
+		return apply_filters( 'mtm_module_dual_content_area_filter', array(
 			'key' => '56f579364c61e',
 			'name' => 'mtm_module_dual_content_area',
 			'label' => $label,
@@ -129,12 +129,12 @@ class Mtm_Field_Definitions {
 			),
 			'min' => '',
 			'max' => '',
-		);
+		));
 	}
 
 	// Content + Callout
 	public static function mtm_module_content_callout( $label = 'Content + Callout' ) {
-		return array(
+		return apply_filters( 'mtm_module_content_callout_filter', array(
 			'key' => '57a203ad1549d',
 			'name' => 'mtm_module_content_callout',
 			'label' => $label,
@@ -200,12 +200,12 @@ class Mtm_Field_Definitions {
 			),
 			'min' => '',
 			'max' => '',
-		);
+		));
 	}
 
 	// Hero Image
 	public static function mtm_module_hero_image( $label = 'Hero Image' ) {
-		return array(
+		return apply_filters( 'mtm_module_hero_image_filter', array(
 			'key' => '56f57f3e501f2',
 			'name' => 'mtm_module_hero_image',
 			'label' => $label,
@@ -391,12 +391,12 @@ class Mtm_Field_Definitions {
 			),
 			'min' => '',
 			'max' => '',
-		);
+		));
 	}
 
 	// Video/Media
 	public static function mtm_module_hero_media( $label = 'Video/Media' ) {
-		return array(
+		return apply_filters( 'mtm_module_hero_media_filter', array(
 			'key' => '57813bcb6a7a1',
 			'name' => 'mtm_module_hero_media',
 			'label' => $label,
@@ -612,12 +612,12 @@ class Mtm_Field_Definitions {
 			),
 			'min' => '',
 			'max' => '',
-		);
+		));
 	}
 
 	// Slider
 	public static function mtm_module_slider( $label = 'Slider' ) {
-		return array(
+		return apply_filters( 'mtm_module_slider_filter', array(
 			'key' => '57815762d2d5e',
 			'name' => 'mtm_module_slider',
 			'label' => $label,
@@ -751,12 +751,12 @@ class Mtm_Field_Definitions {
 			),
 			'min' => '',
 			'max' => '',
-		);
+		));
 	}
 
 	// Feature Boxes
 	public static function mtm_module_feature_boxes( $label = 'Feature Boxes' ) {
-		return array(
+		return apply_filters( 'mtm_module_feature_boxes_filter', array(
 			'key' => '56f579d6aaafb',
 			'name' => 'mtm_module_feature_boxes',
 			'label' => $label,
@@ -1127,12 +1127,12 @@ class Mtm_Field_Definitions {
 			),
 			'min' => '',
 			'max' => '',
-		);
+		));
 	}
 
 	// Call To Action
 	public static function mtm_module_call_to_action( $label = 'Call To Action' ) {
-		return array(
+		return apply_filters( 'mtm_module_call_to_action_filter', array(
 			'key' => '56f58e7c5bc87',
 			'name' => 'mtm_module_call_to_action',
 			'label' => $label,
@@ -1263,12 +1263,12 @@ class Mtm_Field_Definitions {
 			),
 			'min' => '',
 			'max' => '',
-		);
+		));
 	}
 
 	// Logo/Graphic Showcase
 	public static function mtm_module_logo_showcase( $label = 'Logo/Graphic Showcase' ) {
-		return array(
+		return apply_filters( 'mtm_module_logo_showcase_filter', array(
 			'key' => '56f59482418ef',
 			'name' => 'mtm_module_logo_showcase',
 			'label' => $label,
@@ -1384,12 +1384,12 @@ class Mtm_Field_Definitions {
 			),
 			'min' => '',
 			'max' => '',
-		);
+		));
 	}
 
 	// Widget Area
 	public static function mtm_module_widget_area( $label = 'Widget Area' ) {
-		return array(
+		return apply_filters( 'mtm_module_widget_area_filter', array(
 			'key' => '570bd7f0a52c7',
 			'name' => 'mtm_module_widget_area',
 			'label' => $label,
@@ -1435,12 +1435,12 @@ class Mtm_Field_Definitions {
 			),
 			'min' => '',
 			'max' => '',
-		);
+		));
 	}
 
 	// Manual List
 	public static function mtm_module_listgrid( $label = 'Manual List' ) {
-		return array(
+		return apply_filters( 'mtm_module_listgrid_filter', array(
 			'key' => '5728d653cf63f',
 			'name' => 'mtm_module_listgrid',
 			'label' => $label,
@@ -1609,12 +1609,12 @@ class Mtm_Field_Definitions {
 			),
 			'min' => '',
 			'max' => '',
-		);
+		));
 	}
 
 	// Manual Grid
 	public static function mtm_module_gridlist( $label = 'Manual Grid' ) {
-		return array(
+		return apply_filters( 'mtm_module_gridlist_filter', array(
 			'key' => '576a88e224ba2',
 			'name' => 'mtm_module_gridlist',
 			'label' => $label,
@@ -1806,12 +1806,12 @@ class Mtm_Field_Definitions {
 			),
 			'min' => '',
 			'max' => '',
-		);
+		));
 	}
 
 	// Post List
 	public static function mtm_module_listgrid_posts( $label = 'Post List' ) {
-		return array(
+		return apply_filters( 'mtm_module_listgrid_posts_filter', array(
 			'key' => '5783de4c38883',
 			'name' => 'mtm_module_listgrid_posts',
 			'label' => $label,
@@ -2051,12 +2051,12 @@ class Mtm_Field_Definitions {
 			),
 			'min' => '',
 			'max' => '',
-		);
+		));
 	}
 
 	// Post Grid
 	public static function mtm_module_gridlist_posts( $label = 'Post Grid' ) {
-		return array(
+		return apply_filters( 'mtm_module_gridlist_posts', array(
 			'key' => '5783de5e38890',
 			'name' => 'mtm_module_gridlist_posts',
 			'label' => $label,
@@ -2319,12 +2319,12 @@ class Mtm_Field_Definitions {
 			),
 			'min' => '',
 			'max' => '',
-		);
+		));
 	}
 
 	// Show Page Title?
 	public static function mtm_module_show_page_title( $label = 'Show Page Title?' ) {
-		return array(
+		return apply_filters( 'mtm_module_show_page_title_filter', array(
 			'key' => 'field_570c0e236b517',
 			'label' => $label,
 			'name' => 'mtm_module_show_page_title',
@@ -2339,7 +2339,7 @@ class Mtm_Field_Definitions {
 			),
 			'message' => 'Yes, show the page title at the top of the page (unchecking this will hide the page title)',
 			'default_value' => 0,
-		);
+		));
 	}
 
 } // END class 

@@ -1,7 +1,20 @@
 <?php 
 /**
  * Registers all ACF Fields
- * Un-inlcude this file and import the JSON file to make changes to the fields, then re-export field data
+ * 
+ * To filter the layouts directly:
+ * 
+ * function my_mtm_layouts_filter( $array ){
+ *
+ *		// Add new fields to the end of the array
+ *		array_push( $array, array( 'my_key' => my_array_function() ) );
+ *		
+ *		// Remove existing fields from the array
+ *		unset( $array['field_key'] );
+ *
+ *		return $array;
+ *	}
+ *	add_filter( 'mtm_content_modules_layouts_filter', 'my_mtm_layouts_filter' );
  */
 
 
