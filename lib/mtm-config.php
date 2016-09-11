@@ -31,7 +31,7 @@ function mtm_load_wrap_footer() {
 	}
 }
 
-// Register News Page Sidebar
+// Register Sidebars
 function mtm_template_sidebars() {
 
     register_sidebar(array(
@@ -56,5 +56,3 @@ function mtm_template_sidebars() {
 
 }
 add_action( 'widgets_init', 'mtm_template_sidebars' );
-
-

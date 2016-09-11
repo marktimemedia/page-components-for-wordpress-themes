@@ -8,7 +8,7 @@
 class Mtm_Field_Definitions {
 
 	// Single Content Area
-	public static function mtm_module_single_content_area( $label = 'Single Content Area' ) {
+	public function mtm_module_single_content_area( $label = 'Single Content Area' ) {
 		return array(
 			'key' => '56f57790d388f',
 			'name' => 'mtm_module_single_content_area',
@@ -59,6 +59,7 @@ class Mtm_Field_Definitions {
 			'max' => '',
 		);
 	}
+
 
 	// Dual Content Area
 	public static function mtm_module_dual_content_area( $label = 'Dual Content Area' ) {
@@ -761,6 +762,27 @@ class Mtm_Field_Definitions {
 			'label' => $label,
 			'display' => 'block',
 			'sub_fields' => array(
+				array(
+					'key' => 'field_570bd9354d780',
+					'label' => 'Feature Box Title',
+					'name' => 'mtm_text_area_title',
+					'type' => 'text',
+					'instructions' => 'Optional title for feature boxes (leave blank for no title)',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
 				array(
 					'key' => 'field_56f579f9aaafc',
 					'label' => 'Add Featured Content Boxes',

@@ -7,69 +7,10 @@
 
 if( function_exists('acf_add_local_field_group') ):
 
-	$mtm_fields = new Mtm_Field_Definitions;
-	
-	/** Modules **/
+	$mtm_field_groups = new Mtm_Field_Groups();
 
-	acf_add_local_field_group( array(
-		'key' => 'group_56f5752dccdbf',
-		'title' => 'Content Modules',
-		'fields' => array(
-			$mtm_fields->mtm_module_show_page_title(),
-			array(
-				'key' => 'field_56f5778adcb85',
-				'label' => 'Add Content Modules',
-				'name' => 'mtm_content_modules',
-				'type' => 'flexible_content',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'button_label' => 'Add Content Area',
-				'min' => '',
-				'max' => '',
-				'layouts' => array(
-					$mtm_fields->mtm_module_single_content_area(),
-					$mtm_fields->mtm_module_dual_content_area(),
-					$mtm_fields->mtm_module_content_callout(),
-					$mtm_fields->mtm_module_hero_image(),
-					$mtm_fields->mtm_module_hero_media(),
-					$mtm_fields->mtm_module_slider(),
-					$mtm_fields->mtm_module_feature_boxes(),
-					$mtm_fields->mtm_module_call_to_action(),
-					$mtm_fields->mtm_module_logo_showcase(),
-					$mtm_fields->mtm_module_widget_area(),
-					$mtm_fields->mtm_module_listgrid(),
-					$mtm_fields->mtm_module_gridlist(),
-					$mtm_fields->mtm_module_listgrid_posts(),
-					$mtm_fields->mtm_module_gridlist_posts(),
-				),
-			),
-		),
-		'location' => array(
-			array(
-				array(
-					'param' => 'component',
-					'operator' => '==',
-					'value' => '../templates/template-modules.php',
-				),
-			),
-		),
-		'menu_order' => 0,
-		'position' => 'normal',
-		'style' => 'seamless',
-		'label_placement' => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen' => array(
-			0 => 'the_content',
-		),
-		'active' => 1,
-		'description' => '',
-	));
+	acf_add_local_field_group( $mtm_field_groups->mtm_content_modules() );
+
 
 
 /** Components **/

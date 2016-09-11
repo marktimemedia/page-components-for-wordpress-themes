@@ -1,4 +1,4 @@
-<?php // Home Buttons (ACF Repeater Field)
+<?php // Featured Content Boxes Logic
 
 while( have_rows( 'mtm_home_featured_content_boxes' ) ): the_row(); // Loop through each item 
 

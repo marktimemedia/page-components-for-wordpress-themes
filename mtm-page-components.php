@@ -3,13 +3,14 @@
 	Plugin Name: ACF Page Components
 	Description: Reusable page building components for layouts or single scroll sites
 	Author: Marktime Media
-	Version: 1.7
+	Version: 1.8
 	Author URI: http://www.marktimemedia.com
  */
  
 define( 'MTM_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-field-definitions.php' ); 
+require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-field-groups.php' ); 
 require_once( MTM_PLUGIN_DIR . 'lib/mtm-acf-fields.php' ); 
 require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-component-template.php' );
 require_once( MTM_PLUGIN_DIR . 'lib/class-gamajo-template-loader.php' );
