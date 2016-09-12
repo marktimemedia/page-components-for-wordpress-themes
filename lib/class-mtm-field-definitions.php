@@ -9,7 +9,7 @@ class Mtm_Field_Definitions {
 
 	// Single Content Area
 	public function mtm_module_single_content_area( $label = 'Single Content Area' ) {
-		return apply_filters( 'mtm_module_single_content_area', array(
+		return apply_filters( 'mtm_module_single_content_area_filter', array(
 			'key' => '56f57790d388f',
 			'name' => 'mtm_module_single_content_area',
 			'label' => $label,
@@ -763,7 +763,7 @@ class Mtm_Field_Definitions {
 			'display' => 'block',
 			'sub_fields' => array(
 				array(
-					'key' => 'field_570bd9354d780',
+					'key' => 'field_570bd9354d799',
 					'label' => 'Feature Box Title',
 					'name' => 'mtm_text_area_title',
 					'type' => 'text',

@@ -3,7 +3,7 @@
 	Plugin Name: ACF Page Components
 	Description: Reusable page building components for layouts or single scroll sites
 	Author: Marktime Media
-	Version: 1.8
+	Version: 1.8.1
 	Author URI: http://www.marktimemedia.com
  */
  

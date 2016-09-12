@@ -17,14 +17,30 @@
  *	add_filter( 'mtm_content_modules_layouts_filter', 'my_mtm_layouts_filter' );
  */
 
+class Mtm_Acf_Add_Local_Field_Groups extends Mtm_Field_Groups {
+	
+	public function __construct() {
+		add_action( 'after_setup_theme', array( $this, 'mtm_add_field_groups' ), 2 );
+	}
+
+	public function mtm_add_field_groups() {
+
+		if( function_exists( 'acf_add_local_field_group' ) ) {
+
+			acf_add_local_field_group( $this->mtm_content_modules() );
+		}	
+	}
+
+} // END class
+
+new Mtm_Acf_Add_Local_Field_Groups();
+
 
 if( function_exists('acf_add_local_field_group') ):
 
-	$mtm_field_groups = new Mtm_Field_Groups();
+	// $mtm_field_groups = new Mtm_Field_Groups();
 
-	acf_add_local_field_group( $mtm_field_groups->mtm_content_modules() );
-
-
+	// acf_add_local_field_group( $mtm_field_groups->mtm_content_modules() );
 
 /** Components **/
 

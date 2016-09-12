@@ -7,22 +7,6 @@
  **/
 class Mtm_Field_Groups extends Mtm_Field_Definitions {
 
-	public $mtm_module_show_page_title;
-	public $mtm_module_single_content_area;
-	public $mtm_module_dual_content_area;
-	public $mtm_module_content_callout;
-	public $mtm_module_hero_image;
-	public $mtm_module_hero_media;
-	public $mtm_module_slider;
-	public $mtm_module_feature_boxes;
-	public $mtm_module_call_to_action;
-	public $mtm_module_logo_showcase;
-	public $mtm_module_widget_area;
-	public $mtm_module_listgrid;
-	public $mtm_module_gridlist;
-	public $mtm_module_listgrid_posts;
-	public $mtm_module_gridlist_posts;
-
 	/**
 	* Label for Modular Boxes
 	*/
@@ -46,21 +30,8 @@ class Mtm_Field_Groups extends Mtm_Field_Definitions {
 
 
 	public function __construct() {
-		$this->mtm_module_show_page_title = $this->mtm_module_show_page_title();
-		$this->mtm_module_single_content_area = $this->mtm_module_single_content_area();
-		$this->mtm_module_dual_content_area = $this->mtm_module_dual_content_area();
-		$this->mtm_module_content_callout = $this->mtm_module_content_callout();
-		$this->mtm_module_hero_image = $this->mtm_module_hero_image();
-		$this->mtm_module_hero_media = $this->mtm_module_hero_media();
-		$this->mtm_module_slider = $this->mtm_module_slider();
-		$this->mtm_module_feature_boxes = $this->mtm_module_feature_boxes();
-		$this->mtm_module_call_to_action = $this->mtm_module_call_to_action();
-		$this->mtm_module_logo_showcase = $this->mtm_module_logo_showcase();
-		$this->mtm_module_widget_area = $this->mtm_module_widget_area();
-		$this->mtm_module_listgrid = $this->mtm_module_listgrid();
-		$this->mtm_module_gridlist = $this->mtm_module_gridlist();
-		$this->mtm_module_listgrid_posts = $this->mtm_module_listgrid_posts();
-		$this->mtm_module_gridlist_posts = $this->mtm_module_gridlist_posts();
+
+		add_action( 'init', array( $this, 'mtm_content_modules' ) );
 	}
 
 	/**
@@ -76,7 +47,7 @@ class Mtm_Field_Groups extends Mtm_Field_Definitions {
 			'key' => $key,
 			'title' => 'Content Modules',
 			'fields' => array(
-				$this->mtm_module_show_page_title,
+				$this->mtm_module_show_page_title(),
 				array(
 					'key' => 'field_56f5778adcb85',
 					'label' => $label,
@@ -94,20 +65,20 @@ class Mtm_Field_Groups extends Mtm_Field_Definitions {
 					'min' => '',
 					'max' => '',
 					'layouts' => apply_filters( 'mtm_content_modules_layouts_filter', array(
-						'mtm_module_single_content_area' => $this->mtm_module_single_content_area,
-						'mtm_module_dual_content_area' => $this->mtm_module_dual_content_area,
-						'mtm_module_content_callout' => $this->mtm_module_content_callout,
-						'mtm_module_hero_image' => $this->mtm_module_hero_image,
-						'mtm_module_hero_media' => $this->mtm_module_hero_media,
-						'mtm_module_slider' => $this->mtm_module_slider,
-						'mtm_module_feature_boxes' => $this->mtm_module_feature_boxes,
-						'mtm_module_call_to_action' => $this->mtm_module_call_to_action,
-						'mtm_module_logo_showcase' => $this->mtm_module_logo_showcase,
-						'mtm_module_widget_area' => $this->mtm_module_widget_area,
-						'mtm_module_listgrid' => $this->mtm_module_listgrid,
-						'mtm_module_gridlist' => $this->mtm_module_gridlist,
-						'mtm_module_listgrid_posts' => $this->mtm_module_listgrid_posts,
-						'mtm_module_gridlist_posts' => $this->mtm_module_gridlist_posts,
+						'mtm_module_single_content_area' => $this->mtm_module_single_content_area(),
+						'mtm_module_dual_content_area' => $this->mtm_module_dual_content_area(),
+						'mtm_module_content_callout' => $this->mtm_module_content_callout(),
+						'mtm_module_hero_image' => $this->mtm_module_hero_image(),
+						'mtm_module_hero_media' => $this->mtm_module_hero_media(),
+						'mtm_module_slider' => $this->mtm_module_slider(),
+						'mtm_module_feature_boxes' => $this->mtm_module_feature_boxes(),
+						'mtm_module_call_to_action' => $this->mtm_module_call_to_action(),
+						'mtm_module_logo_showcase' => $this->mtm_module_logo_showcase(),
+						'mtm_module_widget_area' => $this->mtm_module_widget_area(),
+						'mtm_module_listgrid' => $this->mtm_module_listgrid(),
+						'mtm_module_gridlist' => $this->mtm_module_gridlist(),
+						'mtm_module_listgrid_posts' => $this->mtm_module_listgrid_posts(),
+						'mtm_module_gridlist_posts' => $this->mtm_module_gridlist_posts(),
 					)),
 				),
 			),
@@ -125,3 +96,5 @@ class Mtm_Field_Groups extends Mtm_Field_Definitions {
 		));
 	}
 } // END class 
+
+new Mtm_Field_Groups();
