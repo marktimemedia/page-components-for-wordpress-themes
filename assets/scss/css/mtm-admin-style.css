@@ -17,3 +17,6 @@
 .acf-flexible-content .layout .acf-fc-layout-handle {
   font-size: 1.2em;
   font-weight: bold; }
+
+ul.acf-bl.list {
+  height: 350px !important; }

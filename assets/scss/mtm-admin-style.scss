@@ -1,5 +1,4 @@
-.acf-field {
-
+.acf-fields {
 }
 
 	.acf-repeater.-row, .acf-repeater.-block, [data-layout="mtm_module_hero_image"], [data-layout="mtm_module_call_to_action"] {
@@ -31,4 +30,8 @@
 	.acf-flexible-content .layout .acf-fc-layout-handle {
 		font-size: 1.2em;
 		font-weight: bold;
+	}
+
+	ul.acf-bl.list {
+	    height: 300px !important;
 	}

@@ -4,7 +4,7 @@ $headline = get_the_title();
 
 if( "Custom Headline" == get_sub_field( 'mtm_hero_select_title' ) ) {
 	$headline = get_sub_field( 'mtm_hero_headline' );
-} 
+}
 ?>
 
 <section class="mtm-module--hero mtm-hero-video">

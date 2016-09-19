@@ -1944,7 +1944,9 @@ class Mtm_Field_Definitions {
 						1 => 'post_type',
 						2 => 'taxonomy',
 					),
-					'elements' => '',
+					'elements' => array (
+						0 => 'featured_image',
+					),
 					'min' => '',
 					'max' => '',
 					'return_format' => 'object',
@@ -2212,7 +2214,9 @@ class Mtm_Field_Definitions {
 						1 => 'post_type',
 						2 => 'taxonomy',
 					),
-					'elements' => '',
+					'elements' => array (
+						0 => 'featured_image',
+					),
 					'min' => '',
 					'max' => '',
 					'return_format' => 'object',
