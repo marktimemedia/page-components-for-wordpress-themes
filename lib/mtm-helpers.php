@@ -79,7 +79,7 @@ function mtm_taxonomy_query( $archivetype, $display = 3 ) {
 }
 
 // Taxonomy Query for Sub Field
-function mtm_taxonomy_query_sub( $archivetype, $display = 3, $order = 'ASC', $orderby = 'date' ) {
+function mtm_taxonomy_query_sub( $archivetype, $display = 3, $order = 'DESC', $orderby = 'date' ) {
     $taxonomy = mtm_acf_taxonomy_sub_property( $archivetype, 'taxonomy' );
     $terms = mtm_acf_taxonomy_sub_property( $archivetype, 'name' );
 
