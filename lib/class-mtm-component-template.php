@@ -119,20 +119,17 @@ if ( ! class_exists( 'Mtm_Component_Templates' ) )  {
 
             /**
              * Checks if the template is assigned to the page
+             * Needs to also check if it is search, or it might return wrong template for search
              */
             public function mtm_view_project_template( $template ) {
 
                     global $post;
 
-                    if (!isset($this->templates[get_post_meta( 
-    					$post->ID, '_wp_page_template', true 
-    				)] ) ) {
-    					
-                            return $template;
-    						
+                    if ( !isset( $this->templates[ get_post_meta( $post->ID, '_wp_page_template', true ) ] ) || is_search() ) {		
+                        return $template;		
                     } 
 
-                    $file = plugin_dir_path(__FILE__). get_post_meta( 
+                    $file = plugin_dir_path( __FILE__ ). get_post_meta( 
     					$post->ID, '_wp_page_template', true 
     				);
 

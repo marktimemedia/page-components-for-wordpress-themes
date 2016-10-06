@@ -2041,8 +2041,23 @@ class Mtm_Field_Definitions {
 					'type' => 'true_false',
 					'instructions' => '',
 					'required' => '',
-					'conditional_logic' => '',
-					'wrapper' => array (
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_5783de4c38885',
+								'operator' => '==',
+								'value' => 'Pick From Taxonomy',
+							),
+						),
+						array(
+							array(
+								'field' => 'field_5783de4c38885',
+								'operator' => '==',
+								'value' => 'Pick From Post Type',
+							),
+						),
+					),
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -2058,7 +2073,7 @@ class Mtm_Field_Definitions {
 
 	// Post Grid
 	public static function mtm_module_gridlist_posts( $label = 'Post Grid' ) {
-		return apply_filters( 'mtm_module_gridlist_posts', array(
+		return apply_filters( 'mtm_module_gridlist_posts_filter', array(
 			'key' => '5783de5e38890',
 			'name' => 'mtm_module_gridlist_posts',
 			'label' => $label,
@@ -2311,7 +2326,22 @@ class Mtm_Field_Definitions {
 					'type' => 'true_false',
 					'instructions' => '',
 					'required' => '',
-					'conditional_logic' => '',
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_5783de5e38892',
+								'operator' => '==',
+								'value' => 'Pick From Taxonomy',
+							),
+						),
+						array(
+							array(
+								'field' => 'field_5783de5e38892',
+								'operator' => '==',
+								'value' => 'Pick From Post Type',
+							),
+						),
+					),
 					'wrapper' => array(
 						'width' => '',
 						'class' => '',

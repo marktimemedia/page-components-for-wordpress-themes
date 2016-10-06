@@ -3,8 +3,10 @@
 	Plugin Name: ACF Page Components
 	Description: Reusable page building components for layouts or single scroll sites
 	Author: Marktime Media
-	Version: 1.8.3
+	Version: 1.8.5
 	Author URI: http://www.marktimemedia.com
+	GitHub Plugin URI: marktimemedia/page-components-for-wordpress-themes
+	GitHub Plugin URI: https://github.com/marktimemedia/page-components-for-wordpress-themes
  */
  
 define( 'MTM_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
@@ -19,8 +21,8 @@ require_once( MTM_PLUGIN_DIR . 'lib/class-tgm-plugin-activation.php' );
 require_once( MTM_PLUGIN_DIR . 'lib/mtm-acf-check-functions.php' );
 require_once( MTM_PLUGIN_DIR . 'lib/mtm-acf-plugin-templates.php' );
 require_once( MTM_PLUGIN_DIR . 'lib/mtm-acf-plugin-requirements.php' );
-require_once( MTM_PLUGIN_DIR . 'lib/mtm-config.php' );
 require_once( MTM_PLUGIN_DIR . 'lib/mtm-helpers.php' );
+require_once( MTM_PLUGIN_DIR . 'lib/mtm-config.php' );
 
 
 // Plugin Scripts
