@@ -3,7 +3,7 @@
 // From https://css-tricks.com/snippets/jquery/smooth-scrolling/
 // Modified to work with mobile menu
 
-  $('a[href*="#"]:not([href="#"])').on('click', function() {
+  $('nav a[href*="#"]:not([href="#"])').on('click', function() {
 
     if( $('html').hasClass('open-the-menu') ) {
 
