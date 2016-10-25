@@ -13,7 +13,7 @@ $view = _get_field( 'mtm_show_view_all_link' );?>
 	mtm_terms_from_taxonomy_links( $taxonomy ); // output taxonomy links
 endif; ?>
 
-<?php if( $list_posts ) {=: ?>
+<?php if( $list_posts ) : ?>
 	
 	<div class="mtm-component--content mtm-list--wrapper">
 	
@@ -23,7 +23,7 @@ endif; ?>
 
 			mtm_get_template_part( 'mtm-content', 'list-view' ); 
 
-		foreach; // end foreach ?>
+		endforeach; // end foreach ?>
 
 	</div>
 
