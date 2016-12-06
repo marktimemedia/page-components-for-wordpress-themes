@@ -12,6 +12,8 @@ define( 'MTM_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-field-definitions.php' ); 
 require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-field-groups.php' ); 
+require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-field-component-definitions.php' ); 
+require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-field-component-groups.php' ); 
 require_once( MTM_PLUGIN_DIR . 'lib/mtm-acf-fields.php' ); 
 require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-component-template.php' );
 require_once( MTM_PLUGIN_DIR . 'lib/class-gamajo-template-loader.php' );
