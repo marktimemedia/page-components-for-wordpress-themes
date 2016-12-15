@@ -1,6 +1,6 @@
 <?php
 /**
- * Contains the default values for all field groups
+ * Contains the default values for all modular field groups
  *
  * @package Mtm_Field_Definitions
  * @author Marktime Media

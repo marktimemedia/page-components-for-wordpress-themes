@@ -9,7 +9,9 @@
  * @version   1.0
  */
 
-// Make the Component Template from the plugin available to use
+/**
+* Make the Component Template from the plugin available to use
+*/
 if ( ! class_exists( 'Mtm_Component_Templates' ) )  {
     
     class Mtm_Component_Templates {

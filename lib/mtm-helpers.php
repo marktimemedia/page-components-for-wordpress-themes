@@ -1,6 +1,8 @@
 <?php
 
-// Get Template Part function used within this plugin & templates
+/**
+* Get Template Part function used within this plugin & templates
+*/
 function mtm_get_template_part( $slug, $name = null ) {
 
     $templates = new Mtm_Template_Loader;
@@ -8,7 +10,9 @@ function mtm_get_template_part( $slug, $name = null ) {
     $templates->get_template_part( $slug, $name );
 }
 
-// Post Type Query
+/** 
+* Post Type Query
+*/
 function mtm_page_component_post_query( $posttype = 'post', $perpage = 3, $orderby = 'date', $order = 'DESC', $notin = 'sticky_posts' ) {
     return new WP_Query( array(
         'post_type'         => array( $posttype ),
@@ -20,7 +24,9 @@ function mtm_page_component_post_query( $posttype = 'post', $perpage = 3, $order
     );
 }
 
-// Post Type Query Paged
+/**
+* Post Type Query Paged
+*/
 function mtm_page_component_post_query_paged( $posttype = 'post', $perpage = 3, $orderby = 'date', $order = 'DESC', $notin = 'sticky_posts' ) {
     return new WP_Query( array(
         'post_type'         => array( $posttype ),
@@ -34,7 +40,9 @@ function mtm_page_component_post_query_paged( $posttype = 'post', $perpage = 3, 
 }
 
 
-// Taxonomy Query
+/** 
+* Taxonomy Query
+*/
 function mtm_page_component_taxonomy_query( $taxonomy, $terms, $perpage = 3, $orderby = 'date', $order = 'DESC' ) {
     return new WP_Query( array(
         'posts_per_page'    => $perpage,
@@ -51,21 +59,27 @@ function mtm_page_component_taxonomy_query( $taxonomy, $terms, $perpage = 3, $or
     );
 }
 
-// get taxonomy properties from Tax Term ID Field (when term is selected)
+/**
+* get taxonomy properties from Tax Term ID Field (when term is selected)
+*/
 function mtm_acf_taxonomy_property( $archivetype, $property ){
     $taxid = get_field( 'mtm_' . $archivetype . '_archive_taxonomy' );
     $taxterm = get_term( $taxid );
     return $taxterm->$property;
 }
 
-// get taxonomy properties from Tax ID Sub-Field (when term is selected)
+/**
+* get taxonomy properties from Tax ID Sub-Field (when term is selected)
+*/
 function mtm_acf_taxonomy_sub_property( $archivetype, $property ){
     $taxid = get_sub_field( 'mtm_' . $archivetype . '_archive_taxonomy' );
     $taxterm = get_term( $taxid );
     return $taxterm->$property;
 }
 
-// Taxonomy Query for Archive Field
+/**
+* Taxonomy Query for Archive Field
+*/
 function mtm_taxonomy_query( $archivetype, $display = 3 ) {
 
     $taxonomy = mtm_acf_taxonomy_property( $archivetype, 'taxonomy' );
@@ -78,7 +92,9 @@ function mtm_taxonomy_query( $archivetype, $display = 3 ) {
     return mtm_page_component_taxonomy_query( $taxonomy, $terms, $display );
 }
 
-// Taxonomy Query for Sub Field
+/**
+* Taxonomy Query for Sub Field
+*/
 function mtm_taxonomy_query_sub( $archivetype, $display = 3, $order = 'DESC', $orderby = 'date' ) {
     $taxonomy = mtm_acf_taxonomy_sub_property( $archivetype, 'taxonomy' );
     $terms = mtm_acf_taxonomy_sub_property( $archivetype, 'name' );
@@ -90,7 +106,9 @@ function mtm_taxonomy_query_sub( $archivetype, $display = 3, $order = 'DESC', $o
     return mtm_page_component_taxonomy_query( $taxonomy, $terms, $display, $orderby, $order );
 }
 
-// Term Links From Defined Taxonomy
+/**
+* Term Links From Defined Taxonomy
+*/
 function mtm_terms_from_taxonomy_links( $tax = '' ){
 
     $terms = get_terms( $tax );
@@ -113,7 +131,9 @@ function mtm_terms_from_taxonomy_links( $tax = '' ){
     }
 }
 
-// Get Property from ACF Image Object
+/**
+* Get Property from ACF Image Object
+*/
 function mtm_acf_image_property( $field = '', $property = '' ) {
 
     if( _get_field( $field ) ) {
@@ -123,7 +143,9 @@ function mtm_acf_image_property( $field = '', $property = '' ) {
     }
 }
 
-// Get Property from ACF Sub Image Object
+/**
+* Get Property from ACF Sub Image Object
+*/
 function mtm_acf_sub_image_property( $field = '', $property = '' ) {
 
     if( get_sub_field( $field ) ) {
@@ -136,7 +158,7 @@ function mtm_acf_sub_image_property( $field = '', $property = '' ) {
 /**
  * Count number of widgets in a sidebar
  * Used to add classes to widget areas so widgets can be displayed one, two, three or four per row
- * From https://gist.github.com/slobodan/6156076
+ * @see https://gist.github.com/slobodan/6156076
  */
 function slbd_count_widgets( $sidebar_id ) {
     // If loading from front page, consult $_wp_sidebars_widgets rather than options
@@ -165,6 +187,9 @@ function slbd_count_widgets( $sidebar_id ) {
     endif;
 }
 
+/**
+* Add count class
+*/
 function mtm_count_classes( $count = 1 ) {
     $item_count = $count;
     $item_classes = '';
@@ -188,7 +213,9 @@ function mtm_count_classes( $count = 1 ) {
         return $item_classes;
 }
 
-// Output a per-row class based on how many admin picked
+/**
+* Output a per-row class based on how many admin picked
+*/
 function mtm_output_row_number( $num = 3, $field = 'mtm_grid_archive_per_row' ) {
      if( get_field( $field ) ) {
         
@@ -202,7 +229,9 @@ function mtm_output_row_number( $num = 3, $field = 'mtm_grid_archive_per_row' ) 
     return 'mtm-per-row-' . $num;
 }
 
-// output either content url or custom url
+/**
+* output either content url or custom url
+*/
 function mtm_output_url_override_sub( $field1 ='' , $field2 = 'mtm_post_content_link' ) {
     
     if ( _get_sub_field( $field1 ) ) {

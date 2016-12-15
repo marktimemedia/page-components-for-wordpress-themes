@@ -4,7 +4,9 @@
  *
  */
 
-// Make page components compatible with non Roots/Sage based themes by calling header and footer
+/**
+* Make page components compatible with non Roots/Sage based themes by calling header and footer
+*/
 function mtm_load_wrap() {
 	if ( class_exists( 'SageWrapping' ) || class_exists( 'Spring_Wrapping' ) ) {
 		return false;
@@ -14,7 +16,9 @@ function mtm_load_wrap() {
 }
 add_action( 'after_setup_theme', 'mtm_load_wrap' );
 
-
+/**
+* Load header on standard themes 
+*/
 function mtm_load_wrap_header() {
 
 	if ( mtm_load_wrap() ) {
@@ -22,7 +26,9 @@ function mtm_load_wrap_header() {
 		echo '<main id="main" class="site-main" role="main">';
 	}
 }
-
+/**
+* Load footer on standard themes 
+*/
 function mtm_load_wrap_footer() {
 
 	if ( mtm_load_wrap() ) {
@@ -31,7 +37,10 @@ function mtm_load_wrap_footer() {
 	}
 }
 
-// Register Sidebars
+/**
+* Register Sidebars
+* TODO: make filterable so they're only registered if we use them
+*/
 function mtm_template_sidebars() {
 
     register_sidebar(array(

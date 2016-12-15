@@ -66,6 +66,11 @@ new Mtm_Acf_Add_Local_Field_Component_Groups();
 // Todo
 
 
+/**
+* Original ACF field registration
+* To be refactored as seen above
+*/
+
 if( function_exists('acf_add_local_field_group') ):
 
 	// $mtm_field_groups = new Mtm_Field_Groups();

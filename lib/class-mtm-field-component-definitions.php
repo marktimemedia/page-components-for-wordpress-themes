@@ -1,8 +1,8 @@
 <?php 
 /**
- * Defining fields for modular content
+ * Defining fields for component page content
  *
- * @package Mtm_Field_Definitions
+ * @package Mtm_Field_Component_Definitions
  * @author Marktime Media
  **/
 class Mtm_Field_Component_Definitions {

@@ -1,7 +1,7 @@
 <?php
 /**
  * Return a custom field stored by the Advanced Custom Fields plugin
- * From http://seanbutze.com/safely-using-advanced-custom-fields-via-wrapper-functions/
+ * @see http://seanbutze.com/safely-using-advanced-custom-fields-via-wrapper-functions/
  * 
  * @global $post
  * @param str $key The key to look for

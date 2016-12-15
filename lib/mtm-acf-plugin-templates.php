@@ -1,7 +1,9 @@
 <?php
 
-// Add ability to display using plugin templates
-// From http://www.advancedcustomfields.com/resources/custom-location-rules/
+/**
+* Add ability to display using plugin templates
+* @see http://www.advancedcustomfields.com/resources/custom-location-rules/
+*/
 
 add_filter('acf/location/rule_types', 'acf_location_rules_types');
 function acf_location_rules_types( $choices )
