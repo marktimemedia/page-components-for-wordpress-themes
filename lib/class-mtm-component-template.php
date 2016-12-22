@@ -6,7 +6,7 @@
  * @author    WPExplorer, Tom McFarlin
  * @link      http://www.wpexplorer.com/wordpress-page-templates-plugin/
  * @license   GPL-2.0+
- * @version   1.0
+ * @version   1.1.0
  */
 
 /**
@@ -102,7 +102,7 @@ if ( ! class_exists( 'Mtm_Component_Templates' ) )  {
              *
              */
             public function mtm_add_new_template( $posts_templates ) {
-                $posts_templates = array_merge( $posts_templates, $this->templates );
+                $posts_templates = array_merge( $posts_templates, apply_filters( 'mtm_filter_templates', $this->templates ) );
                 return $posts_templates;
             }
 
