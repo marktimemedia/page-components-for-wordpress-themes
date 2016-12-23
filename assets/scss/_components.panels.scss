@@ -10,19 +10,43 @@
 }
 
 .mtm-per-row-3 {
-	@include pinkmagic( $rowitems: 3, $padside: 4%  );
+	@include pinkmagic( $rowitems: 3, $padside: 4% );
 }
 
 .mtm-per-row-4 {
-	@include pinkmagic( $rowitems: 4, $padside: 4%  );
+	@include pinkmagic( $rowitems: 4, $padside: 4% );
 }
 
 .mtm-per-row-5 {
-	@include pinkmagic( $rowitems: 5, $padside: 4%  );
+	@include pinkmagic( $rowitems: 5, $padside: 4% );
 }
 
 .mtm-per-row-6 {
-	@include pinkmagic( $rowitems: 6, $padside: 4%  );
+	@include pinkmagic( $rowitems: 6, $padside: 4% );
+}
+
+.mtm-per-row-7 {
+	@include pinkmagic( $rowitems: 7, $padside: 3% );
+}
+
+.mtm-per-row-8 {
+	@include pinkmagic( $rowitems: 8, $padside: 3% );
+}
+
+.mtm-per-row-9 {
+	@include pinkmagic( $rowitems: 9, $padside: 3% );
+}
+
+.mtm-per-row-10 {
+	@include pinkmagic( $rowitems: 10, $padside: 2% );
+}
+
+.mtm-per-row-11 {
+	@include pinkmagic( $rowitems: 11, $padside: 2% );
+}
+
+.mtm-per-row-12 {
+	@include pinkmagic( $rowitems: 12, $padside: 2% );
 }
 
 .mtm-component {
