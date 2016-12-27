@@ -242,32 +242,32 @@
   padding: 1em 0; }
   @media only screen and (min-width: 30em) and (max-width: 45em) {
     .mtm-per-row-10 {
-      width: 51%;
-      padding-right: 2%; }
+      width: 51.5%;
+      padding-right: 3%; }
       .mtm-per-row-10:nth-of-type(2n+2) {
         padding-right: 0;
-        width: 49%; } }
+        width: 48.5%; } }
   @media only screen and (min-width: 45em) and (max-width: 61em) {
     .mtm-per-row-10 {
-      width: 34%;
-      padding-right: 2%; }
+      width: 34.3333333333%;
+      padding-right: 3%; }
       .mtm-per-row-10:nth-of-type(3n+3) {
         padding-right: 0;
-        width: 32%; } }
+        width: 31.3333333333%; } }
   @media only screen and (min-width: 61em) and (max-width: 75em) {
     .mtm-per-row-10 {
-      width: 20.4%;
-      padding-right: 2%; }
+      width: 20.6%;
+      padding-right: 3%; }
       .mtm-per-row-10:nth-of-type(5n+5) {
         padding-right: 0;
-        width: 18.4%; } }
+        width: 17.6%; } }
   @media only screen and (min-width: 75em) {
     .mtm-per-row-10 {
-      width: 10.2%;
-      padding-right: 2%; }
+      width: 10.3%;
+      padding-right: 3%; }
       .mtm-per-row-10:nth-of-type(10n+10) {
         padding-right: 0;
-        width: 8.2%; } }
+        width: 7.3%; } }
 
 .mtm-per-row-11 {
   display: inline-block;
@@ -277,32 +277,32 @@
   padding: 1em 0; }
   @media only screen and (min-width: 30em) and (max-width: 45em) {
     .mtm-per-row-11 {
-      width: 51%;
-      padding-right: 2%; }
+      width: 51.5%;
+      padding-right: 3%; }
       .mtm-per-row-11:nth-of-type(2n+2) {
         padding-right: 0;
-        width: 49%; } }
+        width: 48.5%; } }
   @media only screen and (min-width: 45em) and (max-width: 61em) {
     .mtm-per-row-11 {
-      width: 34%;
-      padding-right: 2%; }
+      width: 34.3333333333%;
+      padding-right: 3%; }
       .mtm-per-row-11:nth-of-type(3n+3) {
         padding-right: 0;
-        width: 32%; } }
+        width: 31.3333333333%; } }
   @media only screen and (min-width: 61em) and (max-width: 75em) {
     .mtm-per-row-11 {
-      width: 17%;
-      padding-right: 2%; }
+      width: 17.1666666667%;
+      padding-right: 3%; }
       .mtm-per-row-11:nth-of-type(6n+6) {
         padding-right: 0;
-        width: 15%; } }
+        width: 14.1666666667%; } }
   @media only screen and (min-width: 75em) {
     .mtm-per-row-11 {
-      width: 9.2727272727%;
-      padding-right: 2%; }
+      width: 9.3636363636%;
+      padding-right: 3%; }
       .mtm-per-row-11:nth-of-type(11n+11) {
         padding-right: 0;
-        width: 7.2727272727%; } }
+        width: 6.3636363636%; } }
 
 .mtm-per-row-12 {
   display: inline-block;
@@ -312,32 +312,32 @@
   padding: 1em 0; }
   @media only screen and (min-width: 30em) and (max-width: 45em) {
     .mtm-per-row-12 {
-      width: 51%;
-      padding-right: 2%; }
+      width: 51.5%;
+      padding-right: 3%; }
       .mtm-per-row-12:nth-of-type(2n+2) {
         padding-right: 0;
-        width: 49%; } }
+        width: 48.5%; } }
   @media only screen and (min-width: 45em) and (max-width: 61em) {
     .mtm-per-row-12 {
-      width: 34%;
-      padding-right: 2%; }
+      width: 34.3333333333%;
+      padding-right: 3%; }
       .mtm-per-row-12:nth-of-type(3n+3) {
         padding-right: 0;
-        width: 32%; } }
+        width: 31.3333333333%; } }
   @media only screen and (min-width: 61em) and (max-width: 75em) {
     .mtm-per-row-12 {
-      width: 17%;
-      padding-right: 2%; }
+      width: 17.1666666667%;
+      padding-right: 3%; }
       .mtm-per-row-12:nth-of-type(6n+6) {
         padding-right: 0;
-        width: 15%; } }
+        width: 14.1666666667%; } }
   @media only screen and (min-width: 75em) {
     .mtm-per-row-12 {
-      width: 8.5%;
-      padding-right: 2%; }
+      width: 8.5833333333%;
+      padding-right: 3%; }
       .mtm-per-row-12:nth-of-type(12n+12) {
         padding-right: 0;
-        width: 6.5%; } }
+        width: 5.5833333333%; } }
 
 .mtm-component {
   border-bottom: 1px solid #eee;
@@ -400,7 +400,8 @@
   padding: 2em; }
 
 .mtm-logo-grid {
-  vertical-align: middle; }
+  vertical-align: middle;
+  text-align: center; }
 
 .mtm_module_call_to_action {
   padding: 1em;
@@ -646,3 +647,5 @@
       padding-left: 0; }
     .mtm-home-featured--story:nth-of-type(2n+2) {
       padding-right: 0; } }
+
+/*# sourceMappingURL=mtm-style.css.map */

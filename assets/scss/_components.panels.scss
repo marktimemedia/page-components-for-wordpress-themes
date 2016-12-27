@@ -38,15 +38,15 @@
 }
 
 .mtm-per-row-10 {
-	@include pinkmagic( $rowitems: 10, $padside: 2% );
+	@include pinkmagic( $rowitems: 10, $padside: 3% );
 }
 
 .mtm-per-row-11 {
-	@include pinkmagic( $rowitems: 11, $padside: 2% );
+	@include pinkmagic( $rowitems: 11, $padside: 3% );
 }
 
 .mtm-per-row-12 {
-	@include pinkmagic( $rowitems: 12, $padside: 2% );
+	@include pinkmagic( $rowitems: 12, $padside: 3% );
 }
 
 .mtm-component {
@@ -132,6 +132,7 @@
 
 	.mtm-logo-grid {
 		vertical-align: middle;
+		text-align: center;
 	}
 
 	.mtm_module_call_to_action {
