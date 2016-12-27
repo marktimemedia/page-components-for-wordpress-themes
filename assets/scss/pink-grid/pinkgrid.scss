@@ -2,26 +2,27 @@
 	box-sizing: border-box; // All Pink Mixins need this in order to work :)
 }
 
-// 	PINK GRID
-// 	Sass Width Percentage Generator
-//
-//	$align:			Vertical-align property 											Defaults to Top
-// 	$totalcols: 	Number of columns in your grid ( ex: 12 ) 							Defaults to $defaultcols
-//	$colspan: 		Number of columns your item spans ( ex: 3 / 12 ) 					Defaults to $defaultcols (100% width)
-//	$padside:		Percentage padding left/right of each item.							Defaults to $defaultpad
-//	$padtop:		Percentage padding above/below around each item. 					Defaults to 0
-
+/** 
+*	PINK GRID
+*	Sass Width Percentage Generator
+*
+*	$align:			Vertical-align property 											Defaults to Top
+* 	$totalcols: 	Number of columns in your grid ( ex: 12 ) 							Defaults to $defaultcols
+*	$colspan: 		Number of columns your item spans ( ex: 3 / 12 ) 					Defaults to $defaultcols (100% width)
+*	$padside:		Percentage padding left/right of each item.							Defaults to $defaultpad
+*	$padtop:		Percentage padding above/below around each item. 					Defaults to 0
+*/
 
 $defaultcols: 12 !default; 
 $defaultpad: 2% !default;
 $defaultmargin: -.275em !default; // Cancels out margin px issue with display:inline-block, may need to adjust based on body font;
 
-@mixin pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: $defaultcols, $padtop: 0, $padside: $defaultpad ) {
+@mixin pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: $defaultcols, $padtop: 0, $padside: $defaultpad, $margin: $defaultmargin ) {
 
 	$itemwidth: ( 100% / $totalcols * $colspan );
 
 	display:		inline-block;
-	margin-right: 	$defaultmargin; // Cancels out margin px issue with display:inline-block, may need to adjust based on body font;
+	margin-right: 	$margin; // Cancels out margin px issue with display:inline-block, may need to adjust based on body font;
 	vertical-align: $align;
 	width: 			$itemwidth;
 	padding: 		$padtop $padside;
@@ -33,14 +34,15 @@ $defaultmargin: -.275em !default; // Cancels out margin px issue with display:in
 		
 }
 
-// 	PINK ROW
-// 	Sass Row Item Generator
-//	Built in conjunction with Pink Grid
-//
-//	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
-//	$before:		Alternating row layouts: elements before this row 		Defaults to 0
-//	$after:			Alternating row layouts: elements after this row 		Defaults to 0
-
+/**
+*	PINK ROW
+*	Sass Row Item Generator
+*	Built in conjunction with Pink Grid
+*
+*	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
+*	$before:		Alternating row layouts: elements before this row 		Defaults to 0
+*	$after:			Alternating row layouts: elements after this row 		Defaults to 0
+*/
 
 @mixin pinkrow( $rowitems: 1, $before: 0, $after: 0 ) {
 
@@ -65,19 +67,20 @@ $defaultmargin: -.275em !default; // Cancels out margin px issue with display:in
 	}
 }
 
-// PINK GRID ROW
-// Generate evenly sized and evenly spaced row items
-// Like Magic Grid but without the automatic media queries
-//
-//	$align:			Vertical-align property 								Defaults to Top
-//	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
-//	$before:		Alternating row layouts: elements before this row 		Defaults to 0
-//	$after:			Alternating row layouts: elements after this row 		Defaults to 0
-//	$padside:		Percentage padding left/right of each item.				Defaults to $defaultpad
-//	$padtop:		Percentage padding above/below around each item. 		Defaults to 0
+/**
+*	PINK GRID ROW
+*	Generate evenly sized and evenly spaced row items
+*	Like Magic Grid but without the automatic media queries
+*
+*	$align:			Vertical-align property 								Defaults to Top
+*	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
+*	$before:		Alternating row layouts: elements before this row 		Defaults to 0
+*	$after:			Alternating row layouts: elements after this row 		Defaults to 0
+*	$padside:		Percentage padding left/right of each item.				Defaults to $defaultpad
+*	$padtop:		Percentage padding above/below around each item. 		Defaults to 0
+*/
 
-
-@mixin pinkgridrow( $align: top, $padtop: 0, $padside: $defaultpad, $rowitems: 1, $before: 0, $after: 0 ) {
+@mixin pinkgridrow( $align: top, $padtop: 0, $padside: $defaultpad, $rowitems: 1, $before: 0, $after: 0, $margin: $defaultmargin ) {
 
 	$itemwidth: ( ( 100% + $padside ) / $rowitems );
 	$lastwidth: ( $itemwidth - $padside );
@@ -85,7 +88,7 @@ $defaultmargin: -.275em !default; // Cancels out margin px issue with display:in
 	$rowend: $rowitems + $before;	
 
 	display:		inline-block;
-	margin-right: 	$defaultmargin; // Cancels out margin px issue with display:inline-block, may need to adjust based on body font;
+	margin-right: 	$margin; // Cancels out margin px issue with display:inline-block, may need to adjust based on body font;
 	vertical-align: $align;
 	padding: 		$padtop 0;
 
@@ -106,17 +109,18 @@ $defaultmargin: -.275em !default; // Cancels out margin px issue with display:in
 }
 
 
-// 	PINK MAGIC ROW
-// 	Complete responsive grid solution for equally sized items per row. 
-//	Includes a space to define your media query breakpoints (based on min-width)
-//
-//	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
-//	$padside:		Padding to the left/right of each item 					Defaults to $magicside
-//	$padtop:		Padding above/below around each item. 					Defaults to $magictop
-// 	$align 			Vertical-align property 								Defaults to Top
-//	$before:		Alternating row layouts: elements before this row 		Defaults to 0
-//	$after:			Alternating row layouts: elements after this row 		Defaults to 0
-
+/**
+* 	PINK MAGIC ROW
+* 	Complete responsive grid solution for equally sized items per row. 
+*	Includes a space to define your media query breakpoints (based on min-width)
+*
+*	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
+*	$padside:		Padding to the left/right of each item 					Defaults to $magicside
+*	$padtop:		Padding above/below around each item. 					Defaults to $magictop
+* 	$align 			Vertical-align property 								Defaults to Top
+*	$before:		Alternating row layouts: elements before this row 		Defaults to 0
+*	$after:			Alternating row layouts: elements after this row 		Defaults to 0
+*/
 
 $magicrow: 		4 !default; 		// Global default number of items per row
 $magictop: 		1em !default;		// Global default of top padding
@@ -130,7 +134,7 @@ $lg-bp:			61em !default;		// Set your large breakpoint
 $xl-bp:			75em !default;		// Set your x-large breakpoint
 
 
-@mixin pinkmagic( $rowitems: $magicrow, $padtop: $magictop, $padside: $magicside, $align: $magicalign, $before: 0, $after: 0 ) {
+@mixin pinkmagic( $rowitems: $magicrow, $padtop: $magictop, $padside: $magicside, $align: $magicalign, $before: 0, $after: 0, $margin: $defaultmargin ) {
 
 	$itemwidth: ( ( 100% + $padside ) / $rowitems ); 	// width of items at maximum row size
 	$lastwidth: ( $itemwidth - $padside ); 				// width of last item in row
@@ -139,7 +143,7 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 
 	display:		inline-block;
 	vertical-align:	$align;
-	margin-right: 	$defaultmargin; // Cancels out margin px issue with display:inline-block, may need to adjust based on body font;
+	margin-right: 	$margin; // Cancels out margin px issue with display:inline-block, may need to adjust based on body font;
 	width:			100%;
 	padding:		$padtop 0;	
 
@@ -477,6 +481,7 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 
 				&:nth-of-type( #{$rowtotal}n+#{$rowend} ){
 					padding-right:0;
+					width: $lastwidth;
 				}
 			}
 		} // end $xl-bp

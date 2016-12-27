@@ -3,6 +3,49 @@
 * {
   box-sizing: border-box; }
 
+/** 
+*	PINK GRID
+*	Sass Width Percentage Generator
+*
+*	$align:			Vertical-align property 											Defaults to Top
+* 	$totalcols: 	Number of columns in your grid ( ex: 12 ) 							Defaults to $defaultcols
+*	$colspan: 		Number of columns your item spans ( ex: 3 / 12 ) 					Defaults to $defaultcols (100% width)
+*	$padside:		Percentage padding left/right of each item.							Defaults to $defaultpad
+*	$padtop:		Percentage padding above/below around each item. 					Defaults to 0
+*/
+/**
+*	PINK ROW
+*	Sass Row Item Generator
+*	Built in conjunction with Pink Grid
+*
+*	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
+*	$before:		Alternating row layouts: elements before this row 		Defaults to 0
+*	$after:			Alternating row layouts: elements after this row 		Defaults to 0
+*/
+/**
+*	PINK GRID ROW
+*	Generate evenly sized and evenly spaced row items
+*	Like Magic Grid but without the automatic media queries
+*
+*	$align:			Vertical-align property 								Defaults to Top
+*	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
+*	$before:		Alternating row layouts: elements before this row 		Defaults to 0
+*	$after:			Alternating row layouts: elements after this row 		Defaults to 0
+*	$padside:		Percentage padding left/right of each item.				Defaults to $defaultpad
+*	$padtop:		Percentage padding above/below around each item. 		Defaults to 0
+*/
+/**
+* 	PINK MAGIC ROW
+* 	Complete responsive grid solution for equally sized items per row. 
+*	Includes a space to define your media query breakpoints (based on min-width)
+*
+*	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
+*	$padside:		Padding to the left/right of each item 					Defaults to $magicside
+*	$padtop:		Padding above/below around each item. 					Defaults to $magictop
+* 	$align 			Vertical-align property 								Defaults to Top
+*	$before:		Alternating row layouts: elements before this row 		Defaults to 0
+*	$after:			Alternating row layouts: elements after this row 		Defaults to 0
+*/
 /* 06. COMPONENTS */
 /* Some General Resets */
 *, *:before, *:after {
@@ -223,7 +266,8 @@
       width: 10.2%;
       padding-right: 2%; }
       .mtm-per-row-10:nth-of-type(10n+10) {
-        padding-right: 0; } }
+        padding-right: 0;
+        width: 8.2%; } }
 
 .mtm-per-row-11 {
   display: inline-block;
@@ -257,7 +301,8 @@
       width: 9.2727272727%;
       padding-right: 2%; }
       .mtm-per-row-11:nth-of-type(11n+11) {
-        padding-right: 0; } }
+        padding-right: 0;
+        width: 7.2727272727%; } }
 
 .mtm-per-row-12 {
   display: inline-block;
@@ -291,7 +336,8 @@
       width: 8.5%;
       padding-right: 2%; }
       .mtm-per-row-12:nth-of-type(12n+12) {
-        padding-right: 0; } }
+        padding-right: 0;
+        width: 6.5%; } }
 
 .mtm-component {
   border-bottom: 1px solid #eee;
