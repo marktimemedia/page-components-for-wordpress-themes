@@ -102,7 +102,8 @@ if ( ! class_exists( 'Mtm_Component_Templates' ) )  {
              *
              */
             public function mtm_add_new_template( $posts_templates ) {
-                $posts_templates = array_merge( $posts_templates, apply_filters( 'mtm_filter_templates', $this->templates ) );
+                $new_templates = apply_filters( 'mtm_filter_templates', $this->templates );
+                $posts_templates = array_merge( $posts_templates, $new_templates );
                 return $posts_templates;
             }
 
@@ -129,7 +130,8 @@ if ( ! class_exists( 'Mtm_Component_Templates' ) )  {
 
                     // Now add our template to the list of templates by merging our templates
                     // with the existing templates array from the cache.
-                    $templates = array_merge( $templates, apply_filters( 'mtm_filter_templates', $this->templates ) );
+                    $new_templates = apply_filters( 'mtm_filter_templates', $this->templates );
+                    $templates = array_merge( $templates, $new_templates );
 
                     // Add the modified cache to allow WordPress to pick it up for listing
                     // available templates

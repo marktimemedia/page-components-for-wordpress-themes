@@ -1,6 +1,7 @@
 <?php
 /*
 Template Name: Modular Content Page
+Template Post Type: post, page
 */
 
 mtm_load_wrap_header(); ?>
