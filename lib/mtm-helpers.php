@@ -83,7 +83,7 @@ function mtm_acf_taxonomy_sub_property( $archivetype, $property ){
 function mtm_taxonomy_query( $archivetype, $display = 3 ) {
 
     $taxonomy = mtm_acf_taxonomy_property( $archivetype, 'taxonomy' );
-    $terms = mtm_acf_taxonomy_property( $archivetype, 'name' );
+    $terms = mtm_acf_taxonomy_property( $archivetype, 'slug' );
     
     if( get_field( 'mtm_' . $archivetype . '_archive_taxonomy_number' ) ) {
         $display = get_field( 'mtm_' . $archivetype . '_archive_taxonomy_number' );
@@ -97,7 +97,7 @@ function mtm_taxonomy_query( $archivetype, $display = 3 ) {
 */
 function mtm_taxonomy_query_sub( $archivetype, $display = 3, $order = 'DESC', $orderby = 'date' ) {
     $taxonomy = mtm_acf_taxonomy_sub_property( $archivetype, 'taxonomy' );
-    $terms = mtm_acf_taxonomy_sub_property( $archivetype, 'name' );
+    $terms = mtm_acf_taxonomy_sub_property( $archivetype, 'slug' );
 
     if( get_sub_field( 'mtm_' . $archivetype . '_archive_taxonomy_number' ) ) {
         $display = get_sub_field( 'mtm_' . $archivetype . '_archive_taxonomy_number' );

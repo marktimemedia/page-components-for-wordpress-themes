@@ -40,6 +40,7 @@ function mtm_load_wrap_footer() {
 /**
 * Register Sidebars
 * TODO: make filterable so they're only registered if we use them
+* Or not, because you can use unregister_sidebar
 */
 function mtm_template_sidebars() {
 

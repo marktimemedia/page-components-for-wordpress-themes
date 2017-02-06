@@ -1,15 +1,11 @@
 <article class="mtm-list--single">
 
-	<?php 
-	//$content_size = '-full';
+	<?php //$content_size = has_post_thumbnail() ? '' : '-full'; ?>
 
-	//if ( has_post_thumbnail() ) : 
-	//$content_size = ''; ?>
-
+	<?php //if( has_post_thumbnail() ) : ?>
 		<section class="mtm-list--image">
 			<?php the_mtm_post_thumbnail( 'medium_large', 'mtm-list--image-single' ); ?>
 		</section>
-
 	<?php //endif; ?>
 
 	<section class="mtm-list--post-content<?php //echo $content_size; ?>">
@@ -17,4 +13,5 @@
 		<p class="post--byline"><?php the_time( 'F j, Y' ); ?></p>
 		<p><?php the_excerpt(); ?></p>
 	</section>
+
 </article>
