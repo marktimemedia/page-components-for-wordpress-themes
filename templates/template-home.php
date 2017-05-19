@@ -17,6 +17,13 @@ if( !post_password_required( $post )):
 		mtm_get_template_part( 'mtm-logic', 'single-scroll' );
 	}
 
-endif;
+else: ?>
+	<section id="<?php echo $post->post_name; ?>">
+
+		<?php echo get_the_password_form(); ?>
+		
+	</section>
+
+<?php endif;
 
 mtm_load_wrap_footer();
