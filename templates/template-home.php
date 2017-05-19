@@ -5,13 +5,18 @@ Template Name: Home Page Builder
 
 mtm_load_wrap_header();
 
-// Standard Homepage
-mtm_get_template_part( 'mtm-layout', 'home-standard' );
+// HIDES ACF FIELDS for use with WP password protect feature
+if( !post_password_required( $post )):
 
-// Single Scroll
-if( _get_field( 'mtm_enable_single_scroll_page' ) ) {
+	// Standard Homepage
+	mtm_get_template_part( 'mtm-layout', 'home-standard' );
 
-	mtm_get_template_part( 'mtm-logic', 'single-scroll' );
-}
+	// Single Scroll
+	if( _get_field( 'mtm_enable_single_scroll_page' ) ) {
+
+		mtm_get_template_part( 'mtm-logic', 'single-scroll' );
+	}
+
+endif;
 
 mtm_load_wrap_footer();

@@ -1,6 +1,6 @@
 #ACF Page Components For WordPress
 
-Page builder plugin for WordPress that adds custom page templates to your theme for displaying custom content types and building single-scroll multipages. **Requires [Advanced Custom Fields Pro](http://advancedcustomfields.com/pro) and [ACF Term and Taxonomy Chooser](https://github.com/marktimemedia/acf-term-and-taxonomy-chooser)**.
+Page builder plugin for WordPress that adds custom page templates to your theme for displaying custom content types and building single-scroll multipages. **Requires [Advanced Custom Fields Pro](http://advancedcustomfields.com/pro), [ACF Term and Taxonomy Chooser](https://github.com/marktimemedia/acf-term-and-taxonomy-chooser), [ACF Post Type Selector](https://github.com/TimPerry/acf-post-type-selector) and [ACF Widget Area Field](https://wordpress.org/plugins/advanced-custom-fields-widget-area-field/)**. Recommended for use with [ACF Options Page](https://github.com/marktimemedia/acf-theme-settings) and [Pink Spring Theme](https://github.com/marktimemedia/pink-spring)
 
 Works with most standard WordPress themes, including Roots/Sage based themes with no theme wrapper.
 
@@ -9,15 +9,18 @@ Works with most standard WordPress themes, including Roots/Sage based themes wit
 ##### Modular Content (Flexible Fields)
 1. Single Column Content with heading
 2. Dual Column Content with heading
-3. Call to Action with heading, subheading, buttons
+3. Content with Callout and heading
 4. Hero Image with text and call to action buttons
 5. Video/Embedded Media with text and call to action buttons
 6. Slider with text and links
-7. Feature Boxes (post content or manual)
+7. Feature Boxes (post content, latest post, or manual)
+8. Call to Action with heading, subheading, buttons
 8. Logo Feature with image/link repeater
 9. Widget Area
-10. List/Grid (post content or manual)
-11. Text plus callout
+10. Post List
+11. Post Grid
+12. Manual List
+13. Manual Grid
 
 ##### Landing Page Builder
 ###### Standard Page
