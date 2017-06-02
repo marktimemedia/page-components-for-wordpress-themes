@@ -12,12 +12,12 @@ if( !post_password_required( $post )):
 	mtm_get_template_part( 'mtm-layout', 'home-standard' );
 
 	// Single Scroll
-	if( _get_field( 'mtm_enable_single_scroll_page' ) ) {
+	if( _get_field( 'mtm_enable_single_scroll_page' ) ) :
 
 		mtm_get_template_part( 'mtm-logic', 'single-scroll' );
-	}
+	endif;
 
-else: ?>
+else : ?>
 	<section id="<?php echo $post->post_name; ?>">
 
 		<?php echo get_the_password_form(); ?>
