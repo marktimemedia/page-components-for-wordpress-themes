@@ -36,11 +36,21 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 		
 		endif;
 
-		if( _get_sub_field( 'mtm_show_view_all_link' ) ) : ?>
+		if( _get_sub_field( 'mtm_show_view_all_link' ) ) : 
 
-			<a class="mtm-view-all-link" href="<?php echo get_site_url() . '/' . $taxonomy . '/'. $terms; ?>"><?php _e( 'View All', 'mtm' ); ?></a>
+			$viewtext = _get_sub_field( 'mtm_view_all_link_text' ) ? _get_sub_field( 'mtm_view_all_link_text' ) : 'View All';
 
-		<?php endif; ?>
+			if( _get_sub_field( 'mtm_view_all_link_text' ) ): ?>
+
+				<a class="mtm-view-all-link" href="<?php echo get_site_url() . '/' . $taxonomy . '/'. $terms; ?>"><?php _e( _get_sub_field( 'mtm_view_all_link_text' ), 'mtm' ); ?></a>
+
+			<?php else: ?>
+
+				<a class="mtm-view-all-link" href="<?php echo get_site_url() . '/' . $taxonomy . '/'. $terms; ?>"><?php _e( $viewtext, 'mtm' ); ?></a>
+
+			<?php endif;
+
+		endif;?>
 
 	</div>
 
@@ -75,9 +85,11 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 
 		if( _get_sub_field( 'mtm_show_view_all_link' ) ) :
 
+			$viewtext = _get_sub_field( 'mtm_view_all_link_text' ) ? _get_sub_field( 'mtm_view_all_link_text' ) : 'View All';
+
 			if( 'post' == $posttype  ) : // Posts ?>
 
-				<a class="mtm-view-all-link" href="<?php echo get_permalink( get_option('page_for_posts' ) ); ?>"><?php _e( 'View All', 'mtm' ); ?></a>
+				<a class="mtm-view-all-link" href="<?php echo get_permalink( get_option('page_for_posts' ) ); ?>"><?php _e( $viewtext, 'mtm' ); ?></a>
 
 			<?php elseif( 'page' == $posttype || 'attachment' == $posttype || 'revision' == $posttype || 'nav_menu_item' == $posttype ) : // Unsupported archives 
 
@@ -85,7 +97,7 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 
 			else: // everything else ?>
 
-				<a class="mtm-view-all-link" href="<?php echo get_site_url() . '/' . $posttype ?>"><?php _e( 'View All', 'mtm' ); ?></a>
+				<a class="mtm-view-all-link" href="<?php echo get_site_url() . '/' . $posttype ?>"><?php _e( $viewtext, 'mtm' ); ?></a>
 
 			<?php endif;
 
