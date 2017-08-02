@@ -2,6 +2,7 @@
 
 global $mtm_grid_row_class;
 $mtm_grid_row_class = mtm_output_row_number();
+$orderbyvar = get_sub_field( 'mtm_randomize' ) ? get_sub_field( 'mtm_randomize' ) : 'date';
 
 if( get_sub_field( 'mtm_list_title' ) ): ?>
 
@@ -18,7 +19,7 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 			mtm_terms_from_taxonomy_links( get_sub_field( 'mtm_list_archive_taxonomy_links' ) ); // output taxonomy
 		endif;
 
-		$list_query = mtm_taxonomy_query_sub( 'list' );
+		$list_query = mtm_taxonomy_query_sub( 'list', 3, $orderbyvar );
 		$taxonomy = mtm_acf_taxonomy_sub_property( 'list', 'taxonomy' );
 		$terms = mtm_acf_taxonomy_sub_property( 'list', 'slug' );
 
@@ -59,7 +60,7 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 
 		$posttype = get_sub_field( 'mtm_list_archive_post_type' );
 		$list_post_query_number = get_sub_field( 'mtm_list_archive_taxonomy_number' );
-		$list_post_query = mtm_page_component_post_query( $posttype, $list_post_query_number );
+		$list_post_query = mtm_page_component_post_query( $posttype, $list_post_query_number, $orderbyvar );
 
 		if( $list_post_query->have_posts() ) :
 

@@ -1879,7 +1879,7 @@ class Mtm_Field_Definitions {
 						),
 					),
 					'wrapper' => array(
-						'width' => '',
+						'width' => 70,
 						'class' => '',
 						'id' => '',
 					),
@@ -1908,11 +1908,40 @@ class Mtm_Field_Definitions {
 						),
 					),
 					'wrapper' => array(
-						'width' => '',
+						'width' => 70,
 						'class' => '',
 						'id' => '',
 					),
 					'select_type' => 0,
+				),
+				array(
+					'key' => 'field_5783e5dabcde03495',
+					'label' => 'Randomize Posts?',
+					'name' => 'mtm_randomize',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => '',
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_5783de4c38885',
+								'operator' => '==',
+								'value' => 'Pick From Post Type',
+							),
+							array(
+								'field' => 'field_5783de4c38885',
+								'operator' => '==',
+								'value' => 'Pick From Taxonomy',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => 30,
+						'class' => '',
+						'id' => '',
+					),
+					'message' => '',
+					'default_value' => 0,
 				),
 				array(
 					'key' => 'field_5783e66e808c7',
@@ -2193,7 +2222,7 @@ class Mtm_Field_Definitions {
 						),
 					),
 					'wrapper' => array(
-						'width' => '',
+						'width' => 70,
 						'class' => '',
 						'id' => '',
 					),
@@ -2222,11 +2251,40 @@ class Mtm_Field_Definitions {
 						),
 					),
 					'wrapper' => array(
-						'width' => '',
+						'width' => 70,
 						'class' => '',
 						'id' => '',
 					),
 					'select_type' => 0,
+				),
+				array(
+					'key' => 'field_5783e5dzyxwv03495',
+					'label' => 'Randomize Posts?',
+					'name' => 'mtm_randomize',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => '',
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_5783de5e38892',
+								'operator' => '==',
+								'value' => 'Pick From Post Type',
+							),
+							array(
+								'field' => 'field_5783de5e38892',
+								'operator' => '==',
+								'value' => 'Pick From Taxonomy',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => 30,
+						'class' => '',
+						'id' => '',
+					),
+					'message' => '',
+					'default_value' => 0,
 				),
 				array(
 					'key' => 'field_5783dee83889e',
