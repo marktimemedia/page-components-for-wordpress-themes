@@ -1928,6 +1928,8 @@ class Mtm_Field_Definitions {
 								'operator' => '==',
 								'value' => 'Pick From Post Type',
 							),
+						),
+						array(
 							array(
 								'field' => 'field_5783de4c38885',
 								'operator' => '==',
@@ -2269,12 +2271,14 @@ class Mtm_Field_Definitions {
 							array(
 								'field' => 'field_5783de5e38892',
 								'operator' => '==',
-								'value' => 'Pick From Post Type',
+								'value' => 'Pick From Taxonomy',
 							),
+						),
+						array(
 							array(
 								'field' => 'field_5783de5e38892',
 								'operator' => '==',
-								'value' => 'Pick From Taxonomy',
+								'value' => 'Pick From Post Type',
 							),
 						),
 					),
