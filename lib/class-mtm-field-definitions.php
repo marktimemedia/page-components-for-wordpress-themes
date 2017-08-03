@@ -979,7 +979,7 @@ class Mtm_Field_Definitions {
 								),
 							),
 							'wrapper' => array(
-								'width' => '',
+								'width' => 70,
 								'class' => '',
 								'id' => '',
 							),
@@ -990,6 +990,30 @@ class Mtm_Field_Definitions {
 							'ui' => 0,
 							'ajax' => 0,
 							'multiple' => 0,
+						),
+						array(
+							'key' => 'field_5783e5lmnop03495',
+							'label' => 'Random Post?',
+							'name' => 'mtm_randomize',
+							'type' => 'true_false',
+							'instructions' => 'Will show random rather than latest post',
+							'required' => '',
+							'conditional_logic' => array(
+								array(
+									array(
+										'field' => 'field_56f57a25aaafd',
+										'operator' => '==',
+										'value' => 'Show Latest Post',
+									),
+								),
+							),
+							'wrapper' => array(
+								'width' => 30,
+								'class' => '',
+								'id' => '',
+							),
+							'message' => '',
+							'default_value' => 0,
 						),
 						array(
 							'key' => 'field_56f57e5eaab05',

@@ -1,7 +1,7 @@
 <?php // List (ACF Repeater Field)
 
 $orderbyvar = get_sub_field( 'mtm_randomize' ) ? 'rand' : 'date';
-$ordervar = 'DESC';
+$ordervar = 'DESC'; // in case we want to populate this dynamically later
 
 if( get_sub_field( 'mtm_list_title' ) ): ?>
 

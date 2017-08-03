@@ -3,7 +3,7 @@
 global $mtm_grid_row_class;
 $mtm_grid_row_class = mtm_output_row_number();
 $orderbyvar = get_sub_field( 'mtm_randomize' ) ? 'rand' : 'date';
-$ordervar = 'DESC';
+$ordervar = 'DESC'; // in case we want to populate this dynamically later
 
 if( get_sub_field( 'mtm_list_title' ) ): ?>
 

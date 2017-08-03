@@ -1,4 +1,6 @@
 <?php // Featured Content Boxes Logic
+$orderbyvar = get_sub_field( 'mtm_randomize' ) ? 'rand' : 'date';
+$ordervar = 'DESC'; // in case we want to populate this dynamically later
 
 while( have_rows( 'mtm_home_featured_content_boxes' ) ): the_row(); // Loop through each item 
 
@@ -19,7 +21,7 @@ while( have_rows( 'mtm_home_featured_content_boxes' ) ): the_row(); // Loop thro
 	// Show Latest Post
 	} elseif( "Show Latest Post" == _get_sub_field( 'mtm_home_featured_type' ) ) {
 
-		$home_tax_query = mtm_taxonomy_query_sub( 'home_featured', 1 );
+		$home_tax_query = mtm_taxonomy_query_sub( 'home_featured', 1, $ordervar, $orderbyvar );
 
 		while( $home_tax_query->have_posts() ) {
 			$home_tax_query->the_post();
