@@ -80,7 +80,7 @@ function mtm_acf_taxonomy_sub_property( $archivetype, $property ){
 /**
 * Taxonomy Query for Archive Field
 */
-function mtm_taxonomy_query( $archivetype, $display = 3 ) {
+function mtm_taxonomy_query( $archivetype, $display = 3, $orderby = 'date', $order = 'DESC' ) {
 
     $taxonomy = mtm_acf_taxonomy_property( $archivetype, 'taxonomy' );
     $terms = mtm_acf_taxonomy_property( $archivetype, 'slug' );

@@ -1,11 +1,13 @@
 <?php // Featured News Story Logic
 
+$orderbyvar = _get_field( 'mtm_randomize_feature' ) ? 'rand' : 'date';
+
 // Latest Post
 if( "Latest Post" == _get_field( 'mtm_home_select_featured_story_source' ) ) {
 	
 	$posttype = get_field( 'mtm_home_select_featured_story_type' );
 	
-	$news_post_query = mtm_page_component_post_query( $posttype, 1 );
+	$news_post_query = mtm_page_component_post_query( $posttype, 1, $orderbyvar );
 
 	while( $news_post_query->have_posts() ) {
 		$news_post_query->the_post();
@@ -16,7 +18,7 @@ if( "Latest Post" == _get_field( 'mtm_home_select_featured_story_source' ) ) {
 // Latest Taxonomy Post
 } elseif( "Latest Post From Taxonomy" == _get_field( 'mtm_home_select_featured_story_source' ) ) {
 
-	$news_tax_query = mtm_taxonomy_query( 'home_featured_story', 1 );
+	$news_tax_query = mtm_taxonomy_query( 'home_featured_story', 1, $orderbyvar );
 
 	while( $news_tax_query->have_posts() ) {
 		$news_tax_query->the_post();
