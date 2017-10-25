@@ -1,4 +1,4 @@
-<?php 
+<?php // Manual Grid
 global $mtm_grid_row_class;
 
 $url = mtm_output_url_override_sub( 'mtm_list_item_link' );

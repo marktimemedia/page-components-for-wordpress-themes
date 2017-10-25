@@ -99,6 +99,7 @@
 .mtm-module {
 	padding-bottom: 1em;
 	padding-top: 1em;
+	overflow: auto; // to account for floats inside the modules
 }
 	
 		.mtm-module--hero-title {

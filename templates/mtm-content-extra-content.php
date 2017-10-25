@@ -2,7 +2,7 @@
 
 	<div class="mtm-component--content mtm-extra-content">
 	
-		<?php the_field('mtm_extra_content_area'); ?>	
+		<?php the_field( 'mtm_extra_content_area' ); ?>	
 
 	</div>		
 

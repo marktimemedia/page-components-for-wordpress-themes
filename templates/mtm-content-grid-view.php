@@ -1,4 +1,4 @@
-<?php 
+<?php // Grid View
 global $mtm_grid_row_class; 
 ?>
 
