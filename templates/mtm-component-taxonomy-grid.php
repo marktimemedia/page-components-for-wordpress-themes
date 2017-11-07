@@ -4,7 +4,7 @@ global $mtm_grid_row_class;
 
 $grid_query = mtm_taxonomy_query( 'grid' );
 $taxonomy = mtm_acf_taxonomy_property( 'grid', 'taxonomy' ); 
-$terms = mtm_acf_taxonomy_property( 'grid', 'slug' );
+$terms = mtm_acf_taxonomy_path( 'grid' );
 $view = _get_field( 'mtm_show_view_all_link' );
 $mtm_grid_row_class = mtm_output_row_number();
 $mtm_grid_module_class = 1 ;

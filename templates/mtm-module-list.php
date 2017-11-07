@@ -20,7 +20,7 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 		
 		$list_query = mtm_taxonomy_query_sub( 'list', 3, $ordervar, $orderbyvar );
 		$taxonomy = mtm_acf_taxonomy_sub_property( 'list', 'taxonomy' );
-		$terms = mtm_acf_taxonomy_sub_property( 'list', 'slug' );
+		$terms = mtm_acf_taxonomy_sub_path( 'list' );
 
 		if( $list_query->have_posts() ) : 
 

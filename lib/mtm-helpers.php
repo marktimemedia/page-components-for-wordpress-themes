@@ -69,12 +69,36 @@ function mtm_acf_taxonomy_property( $archivetype, $property ){
 }
 
 /**
+* return the slug/path to a taxonomy, as used in a URL, including parents
+* @todo it doesn't work if there's a custom rewrite such as in Settings -> Permalinks
+* @todo it only works for one level deep (parent) not grandparent, etc
+*/
+function mtm_acf_taxonomy_path( $archivetype ){
+    $taxid = get_field( 'mtm_' . $archivetype . '_archive_taxonomy' );
+    $taxterm = get_term( $taxid );
+    $parent = $taxterm->parent ? get_term( $taxterm->parent ) : false;
+    $path = $parent ? $parent->slug . '/' . $taxterm->slug : $taxterm->slug;
+}
+
+/**
 * get taxonomy properties from Tax ID Sub-Field (when term is selected)
 */
 function mtm_acf_taxonomy_sub_property( $archivetype, $property ){
     $taxid = get_sub_field( 'mtm_' . $archivetype . '_archive_taxonomy' );
     $taxterm = get_term( $taxid );
     return $taxterm->$property;
+}
+
+/**
+* return the slug/path to a taxonomy, as used in a URL, including parents
+* @todo it doesn't work if there's a custom rewrite such as in Settings -> Permalinks
+* @todo it only works for one level deep (parent) not grandparent, etc
+*/
+function mtm_acf_taxonomy_sub_path( $archivetype ){
+    $taxid = get_sub_field( 'mtm_' . $archivetype . '_archive_taxonomy' );
+    $taxterm = get_term( $taxid );
+    $parent = $taxterm->parent ? get_term( $taxterm->parent ) : false;
+    $path = $parent ? $parent->slug . '/' . $taxterm->slug : $taxterm->slug;
 }
 
 /**

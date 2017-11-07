@@ -143,6 +143,15 @@ $j=1; ?>
 
 				</div>
 
+			<?php // Tabs
+			elseif( "mtm_module_tabs" == get_row_layout() ) : ?>
+				
+				<div class="<?php echo get_row_layout(); ?>">
+
+					<?php mtm_get_template_part( 'mtm-module', 'tabs' ); ?>
+
+				</div>
+
 			<?php endif; ?>
 
 		</section>

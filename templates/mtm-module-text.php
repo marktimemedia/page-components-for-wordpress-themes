@@ -1,4 +1,5 @@
 <?php // Module: Text Single & Dual
+$image = get_sub_field( 'mtm_callout_background_image' ); 
 
 if( get_sub_field( 'mtm_text_area_title' ) ) : ?>
 
@@ -14,10 +15,22 @@ if( get_sub_field( 'mtm_module_text_area' ) ) : ?>
 
 <?php endif;
 
-if( get_sub_field( 'mtm_module_text_area_2' ) ) : ?>
+if( get_sub_field( 'mtm_module_text_area_2' ) ) : 
+	
+	if( $image ) : ?>
+		<div class="mtm-module--content-secondary">
+			<div class="mtm-module--content-secondary-image" style="background-image:url('<?php echo $image['sizes']['large']; ?>')">
+				<span class="mtm-module--content-secondary-wrapper">
+					<?php the_sub_field( 'mtm_module_text_area_2' ) ?>
+				</span>
+			</div>
+		</div>
 
-	<div class="mtm-module--content-secondary">
-			<?php the_sub_field( 'mtm_module_text_area_2' ) ?>
-	</div>
+	<?php else : ?>
 
-<?php endif; ?>
+		<div class="mtm-module--content-secondary">
+				<?php the_sub_field( 'mtm_module_text_area_2' ) ?>
+		</div>
+
+	<?php endif;
+endif; ?>

@@ -34,9 +34,3 @@ endif; ?>
 	<?php wp_reset_postdata();
 
 endif; // end grid_posts
-
-if( $view ) : // View All Link ?>
-
-	<a class="mtm-view-all-link" href="<?php echo get_site_url() . '/' . $taxonomy . '/'. $terms; ?>"><?php _e( 'View All', 'mtm' ); ?></a>
-
-<?php endif; ?>

@@ -2,7 +2,7 @@
 
 $list_query = mtm_taxonomy_query( 'list' );
 $taxonomy = mtm_acf_taxonomy_property( 'list', 'taxonomy' ); 
-$terms = mtm_acf_taxonomy_property( 'list', 'slug' );
+$terms = mtm_acf_taxonomy_path( 'list' );
 $view = _get_field( 'mtm_show_view_all_link' ); ?>
 
 <h2 class="h1"><?php the_title(); ?><?php edit_post_link( '(Edit)', ' • ' ); ?></h2>

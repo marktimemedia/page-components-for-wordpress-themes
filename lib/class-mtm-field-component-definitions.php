@@ -338,7 +338,7 @@ class Mtm_Field_Component_Definitions {
 			'min' => '',
 			'max' => '',
 			'layout' => 'table',
-			'button_label' => 'Add Row',
+			'button_label' => 'Add New Tabs',
 			'sub_fields' => array(
 				array(
 					'key' => 'field_565cd5e07dc41',

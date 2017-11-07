@@ -141,6 +141,16 @@
 		background: #f2f2f2;
 	}
 
+	.mtm-module--content-secondary-image {
+		padding: 1em;
+
+		.mtm-module--content-secondary-wrapper {
+			background-color: rgba(0,0,0,.5);
+			color: #fff;
+			padding: 1em;
+		}
+	}
+
 
 
 /* Home Rules */
@@ -310,12 +320,12 @@
 
 	.mtm_module_content_callout {
 		.mtm-module--content-primary {
-			@include pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: 9, $padtop: 0, $padside: 5% );
+			@include pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: 8, $padtop: 0, $padside: 5% );
 			@include pinkrow( $rowitems: 2, $before: 0, $after: 0 )
 		}
 
 		.mtm-module--content-secondary {
-			@include pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: 3, $padtop: 0, $padside: 5% );
+			@include pinkgrid( $align: top, $totalcols: $defaultcols, $colspan: 4, $padtop: 0, $padside: 5% );
 			@include pinkrow( $rowitems: 2, $before: 0, $after: 0 )
 		}
 	}

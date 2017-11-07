@@ -1,9 +1,9 @@
 <?php //Tabs 
-$rows = get_field( 'mtm_tab_repeater' );
+$rows = get_sub_field( 'mtm_tab_repeater' );
 
 if( $rows ) : ?>
 
-	<div class="mtm-component--content mtm-tabs--wrapper">
+	<div class="mtm-tabs--wrapper mtm-module--tabs">
 
 		<ul class="mtm-tabs--title-container">
 
