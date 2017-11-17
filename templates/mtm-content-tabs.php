@@ -17,9 +17,12 @@ if( $rows ) : ?>
 
 		<?php $j = 1; ?>
 
-		<?php foreach( $rows as $row ) : ?>
-			<div class="mtm-tabs--content current" id="tab-<?php echo $j++ ?>"><?php echo $row[ 'mtm_tab_content' ]; // sub field value goes here ?></div>
-		<?php endforeach; ?>
+
+			<?php foreach( $rows as $row ) : ?>
+				<div class="mtm-tabs--title mtm-tabs--title-accordion current" data-tab="tab-<?php echo $j; ?>"><?php echo $row[ 'mtm_tab_title' ]; // sub field value goes here ?></div>
+				<div class="mtm-tabs--content current" id="tab-<?php echo $j++; ?>"><?php echo $row[ 'mtm_tab_content' ]; // sub field value goes here ?></div>
+			<?php endforeach; ?>
+
 	
 	</div>		
 
