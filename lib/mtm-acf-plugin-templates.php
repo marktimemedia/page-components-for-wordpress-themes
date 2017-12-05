@@ -41,12 +41,11 @@ function acf_location_rules_match_component( $match, $rule, $options )
 {
     // bail early if not a post
 		if( !$options['post_id'] ) return false;
-		
-		
+
 		// vars
 		$templates = array();
 		$post_type = get_post_type( $options['post_id'] );
-		$page_template = $options['page_template'];
+		$page_template = (isset($options['page_template']) ? $options['page_template'] : null);
 		
 		
 		// get templates (WP 4.7)

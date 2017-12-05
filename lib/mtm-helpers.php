@@ -77,7 +77,7 @@ function mtm_acf_taxonomy_path( $archivetype ){
     $taxid = get_field( 'mtm_' . $archivetype . '_archive_taxonomy' );
     $taxterm = get_term( $taxid );
     $parent = $taxterm->parent ? get_term( $taxterm->parent ) : false;
-    $path = $parent ? $parent->slug . '/' . $taxterm->slug : $taxterm->slug;
+    return $path = $parent ? $parent->slug . '/' . $taxterm->slug : $taxterm->slug;
 }
 
 /**
@@ -98,7 +98,7 @@ function mtm_acf_taxonomy_sub_path( $archivetype ){
     $taxid = get_sub_field( 'mtm_' . $archivetype . '_archive_taxonomy' );
     $taxterm = get_term( $taxid );
     $parent = $taxterm->parent ? get_term( $taxterm->parent ) : false;
-    $path = $parent ? $parent->slug . '/' . $taxterm->slug : $taxterm->slug;
+    return $path = $parent ? $parent->slug . '/' . $taxterm->slug : $taxterm->slug;
 }
 
 /**

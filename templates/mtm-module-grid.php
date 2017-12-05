@@ -24,6 +24,10 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 		$taxonomy = mtm_acf_taxonomy_sub_property( 'list', 'taxonomy' );
 		$terms = mtm_acf_taxonomy_sub_path( 'list' );
 
+		echo '<pre>';
+		print_r( $taxonomy );
+		echo '</pre>';
+
 		if( $list_query->have_posts() ) :
 
 			global $post;
