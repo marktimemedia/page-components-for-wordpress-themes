@@ -20,7 +20,7 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 		
 		$list_query = mtm_taxonomy_query_sub( 'list', 3, $ordervar, $orderbyvar );
 		$taxonomy = mtm_acf_taxonomy_sub_property( 'list', 'taxonomy' );
-		$terms = mtm_acf_taxonomy_sub_path( 'list' );
+		$term = mtm_acf_taxonomy_sub_property( 'list', 'slug' );
 
 		if( $list_query->have_posts() ) : 
 
@@ -45,11 +45,11 @@ if( 'Pick From Taxonomy' == get_sub_field( 'mtm_list_archive_select' ) ) : // Ta
 
 			if( _get_sub_field( 'mtm_view_all_link_text' ) ): ?>
 
-				<a class="mtm-view-all-link" href="<?php echo get_site_url() . '/' . $taxonomy . '/'. $terms; ?>"><?php _e( _get_sub_field( 'mtm_view_all_link_text' ), 'mtm' ); ?></a>
+				<a class="mtm-view-all-link" href="<?php echo get_term_link( $term, $taxonomy ); ?>"><?php _e( _get_sub_field( 'mtm_view_all_link_text' ), 'mtm' ); ?></a>
 
 			<?php else: ?>
 
-				<a class="mtm-view-all-link" href="<?php echo get_site_url() . '/' . $taxonomy . '/'. $terms; ?>"><?php _e( $viewtext, 'mtm' ); ?></a>
+				<a class="mtm-view-all-link" href="<?php echo get_term_link( $term, $taxonomy ); ?>"><?php _e( $viewtext, 'mtm' ); ?></a>
 
 			<?php endif;
 
