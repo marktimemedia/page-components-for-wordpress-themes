@@ -31,13 +31,9 @@ $file = _get_sub_field( 'mtm_list_item_file' ) ?>
 		
 		<?php if( $file ):
 
-			$fileurl = $file['url'];
-			$filetitle = $file['title'];
-			$filetype = wp_check_filetype( $fileurl );?>
+			mtm_output_file_link( $file );
 
-			<a class="file-download file-<?php echo $filetype['ext']; ?>" href="<?php echo $fileurl; ?>"><?php echo __( 'Download: '. $filetitle, 'mtm' ) . ' (' . $filetype['ext'] .')'; ?></a>
-			
-		<?php endif; ?>
+		endif;?>
 
 	</div>
 </div>
