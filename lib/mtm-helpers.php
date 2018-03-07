@@ -293,13 +293,13 @@ add_filter( 'the_password_form', 'mtm_password_form' );
 /*
 * Output file from custom field
 */
-function mtm_output_file_link( $file_field = '', $label_field = '', $prefix = 'fal fa-file fa-file') {
+function mtm_output_file_link( $file_field = '', $label_field = '', $prefix = 'fal fa-file fa-file', $showsize = true ) {
     $file = $file_field;
     $text = $label_field ? : 'Download: ' . $file['title'];
     $mime = wp_check_filetype( $file[ 'filename' ] )['ext'] ? '-' . wp_check_filetype( $file[ 'filename' ] )['ext'] : '';
     $file_type = $prefix . $mime;
     $path_info = pathinfo( $file[ 'url' ] );
-    $filesize = wp_prepare_attachment_for_js( $file['id'] );
+    $filesize = $showsize ? wp_prepare_attachment_for_js( $file['id'] )['filesizeHumanReadable'] . ' ' : '';
 
-    echo '<span class="file-downloads"><i class="' . $file_type . '"></i> <a href="' . esc_url( $file['url'] ) . '">' . esc_html( $text ) . ' (' . esc_html($filesize['filesizeHumanReadable']) . ' ' . esc_html( $path_info['extension'] ) . ') ' . '</a></span>';
+    echo '<span class="file-downloads"><i class="' . $file_type . '"></i> <a href="' . esc_url( $file['url'] ) . '">' . esc_html( $text ) . ' (' . esc_html($filesize) . esc_html( $path_info['extension'] ) . ') ' . '</a></span>';
 }
