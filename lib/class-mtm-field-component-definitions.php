@@ -10,7 +10,9 @@ class Mtm_Field_Component_Definitions {
 	/**
 	* Unique Key of Parent
 	*/
-	public static $str_key_parent = 'field_565cb6189bf5c';
+	public static $str_key_parent = 'field_565cb6189bf5c'; // for archives
+	public static $str_key_parent2 = 'field_565e2f81c08ca'; // for conditional single scroll
+	public static $str_key_parent3 = 'field_568314207680d'; // for conditional feature boxes
 
 	/**
 	* Unique Key of Archive Child
@@ -860,6 +862,858 @@ class Mtm_Field_Component_Definitions {
 			'tabs' => 'all',
 			'toolbar' => 'full',
 			'media_upload' => 1,
+		));
+	}
+
+	/*
+	* Landing Page Choices
+	*/
+
+	// single scroll page toggle
+	public function mtm_enable_single_scroll_page( $label = 'Enable Single Scroll Page?', $key = null ){
+		if( is_null( $key ) ) { $key = self::$str_key_parent2; }
+
+		return apply_filters( 'mtm_enable_single_scroll_page_filter', array(
+			'key' => $key,
+			'label' => $label,
+			'name' => 'mtm_enable_single_scroll_page',
+			'type' => 'true_false',
+			'instructions' => 'This will enable you to build a long, "single scroll" style page using other pages on your site',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Yes, I would like to show other page content (as a single-scroll page) underneath the main page content',
+			'default_value' => 0,
+		));
+	}
+
+	// feature box toggle
+	public function mtm_enable_featured_content( $label = 'Enable Featured Content Boxes?', $key = null ){
+		if( is_null( $key ) ) { $key = self::$str_key_parent3; }
+
+		return apply_filters( 'mtm_enable_featured_content_filter', array(
+			'key' => $key,
+			'label' => $label,
+			'name' => 'mtm_enable_featured_content',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => 50,
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Yes, show Featured Content Boxes on the page',
+			'default_value' => 0,
+		));
+	}
+
+	// page options tab
+	public function mtm_page_options_tab( $label = 'Page Options', $key = 'field_56bcbd4fab425' ){
+		return apply_filters( 'mtm_page_options_tab_filter', array(
+			'key' => $key,
+			'label' => $label,
+			'name' => '',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'top',
+			'endpoint' => 0,
+		));
+	}
+
+	// single scroll tab with conditional logic
+	public function mtm_single_scroll_options_tab( $label = 'Single Scroll Options', $key = 'field_56bcbdcb85f77', $parent = null ){
+
+		if( is_null( $parent ) ) { $parent = self::$str_key_parent2; }
+
+		return apply_filters( 'mtm_single_scroll_options_tab_filter', array(
+			'key' => $key,
+			'label' => $label,
+			'name' => '',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $parent,
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'top',
+			'endpoint' => 0,
+		));
+	}
+
+	// single scroll page select
+	public function mtm_single_scroll_page_select( $label = 'Select Pages', $key = 'field_565e2fa2c08cb', $parent = null ){
+
+		if( is_null( $parent ) ) { $parent = self::$str_key_parent2; }
+
+		return apply_filters( 'mtm_single_scroll_page_select_filter', array(
+			'key' => $key,
+			'label' => $label,
+			'name' => 'mtm_select_pages',
+			'type' => 'relationship',
+			'instructions' => 'Select and re-order other pages, which will display in sections below the main content on this page. To make sure special features are enabled, make sure your selected pages are using the Page Components template.',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $parent,
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'post_type' => array(
+				0 => 'page',
+			),
+			'taxonomy' => array(
+			),
+			'filters' => array(
+				0 => 'search',
+				1 => 'post_type',
+				2 => 'taxonomy',
+			),
+			'elements' => array(
+				0 => 'featured_image',
+			),
+			'min' => '',
+			'max' => '',
+			'return_format' => 'object',
+		));
+	}
+
+	public function mtm_home_buttons_repeater( $label = 'Add Buttons', $key = 'field_565cdb25b1d30' ) {
+		return apply_filters('mtm_home_buttons_repeater_filter', array(
+			'key' => $key,
+			'label' => $label,
+			'name' => 'mtm_home_button_repeater',
+			'type' => 'repeater',
+			'instructions' => '(Optional) Add call to action buttons to the main page area',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'collapsed' => '',
+			'min' => '',
+			'max' => '',
+			'layout' => 'table',
+			'button_label' => 'Add Button',
+			'sub_fields' => array(
+				array(
+					'key' => 'field_565cdb44b1d31',
+					'label' => 'Button Label',
+					'name' => 'mtm_home_button_label',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => 50,
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+				array(
+					'key' => 'field_565cdb53b1d32',
+					'label' => 'Button Link',
+					'name' => 'mtm_home_button_link',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => 50,
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+			),
+		));
+	}
+
+	public function mtm_home_feature_boxes_per_row( $label = 'Number of feature boxes per row', $key = 'field_576c1c0c9ba43', $parent = null ) {
+		
+		if( is_null( $parent ) ) { $parent = self::$str_key_parent3; }
+
+		return apply_filters('mtm_home_feature_boxes_per_row_filter', array(
+			'key' => $key,
+			'label' => $label,
+			'name' => 'mtm_grid_archive_per_row',
+			'type' => 'number',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $parent,
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => 50,
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 3,
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'min' => 1,
+			'max' => 6,
+			'step' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		));
+	}
+
+
+	public function mtm_home_feature_boxes( $label = 'Add Featured Content Boxes', $key = 'field_56830bcd85f0e', $parent = null ){
+
+		if( is_null( $parent ) ) { $parent = self::$str_key_parent3; }
+
+		return apply_filters( 'mtm_home_feature_boxes_filter', array(
+			'key' => $key,
+			'label' => $label,
+			'name' => 'mtm_home_featured_content_boxes',
+			'type' => 'repeater',
+			'instructions' => '(Optional) Add featured content boxes to the page',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $parent,
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'collapsed' => 'field_56830c0e85f0f',
+			'min' => '',
+			'max' => '',
+			'layout' => 'block',
+			'button_label' => 'Add Flexible Content Box',
+			'sub_fields' => array(
+				array(
+					'key' => 'field_56830c0e85f0f',
+					'label' => 'Which Type Of Featured Content?',
+					'name' => 'mtm_home_featured_type',
+					'type' => 'radio',
+					'instructions' => 'Select the type of featured content you want this to be',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => 50,
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						'Specific Content' => 'Specific Content',
+						'Show Latest Post' => 'Show Latest Post',
+						'Manual Entry' => 'Manual Entry',
+					),
+					'other_choice' => 0,
+					'save_other_choice' => 0,
+					'default_value' => '',
+					'layout' => 'horizontal',
+					'allow_null' => 0,
+				),
+				array(
+					'key' => 'field_56830ef012152',
+					'label' => 'Content Box Title',
+					'name' => 'mtm_home_featured_box_title',
+					'type' => 'radio',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_56830c0e85f0f',
+								'operator' => '==',
+								'value' => 'Show Latest Post',
+							),
+						),
+						array(
+							array(
+								'field' => 'field_56830c0e85f0f',
+								'operator' => '==',
+								'value' => 'Specific Content',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => 50,
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						'Post Title' => 'Post Title',
+					),
+					'other_choice' => 1,
+					'save_other_choice' => 0,
+					'default_value' => 'Add Custom Title Here',
+					'layout' => 'vertical',
+					'allow_null' => 0,
+				),
+				array(
+					'key' => 'field_568311abdbeb9',
+					'label' => 'Content Box Title',
+					'name' => 'mtm_home_featured_box_manual_title',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_56830c0e85f0f',
+								'operator' => '==',
+								'value' => 'Manual Entry',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => 50,
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+				array(
+					'key' => 'field_56830cc085f10',
+					'label' => 'Specific Content',
+					'name' => '',
+					'type' => 'tab',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_56830c0e85f0f',
+								'operator' => '==',
+								'value' => 'Specific Content',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'placement' => 'top',
+					'endpoint' => 0,
+				),
+				array(
+					'key' => 'field_5683104bf206d',
+					'label' => 'Select Specific Content',
+					'name' => 'mtm_home_featured_select_single',
+					'type' => 'post_object',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'post_type' => array(
+					),
+					'taxonomy' => array(
+					),
+					'allow_null' => 0,
+					'multiple' => 0,
+					'return_format' => 'object',
+					'ui' => 1,
+				),
+				array(
+					'key' => 'field_56830cfe85f11',
+					'label' => 'Show Latest Post',
+					'name' => '',
+					'type' => 'tab',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_56830c0e85f0f',
+								'operator' => '==',
+								'value' => 'Show Latest Post',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'placement' => 'top',
+					'endpoint' => 0,
+				),
+				array(
+					'key' => 'field_56830e9a12151',
+					'label' => 'Select Post Taxonomy',
+					'name' => 'mtm_home_featured_archive_taxonomy',
+					'type' => 'taxonomy-chooser',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_56830c0e85f0f',
+								'operator' => '==',
+								'value' => 'Show Latest Post',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'tax_type' => 0,
+					'choices' => '',
+					'type_value' => 1,
+					'allow_null' => 0,
+					'ui' => 0,
+					'ajax' => 0,
+					'multiple' => 0,
+				),
+				array(
+					'key' => 'field_56830d0d85f12',
+					'label' => 'Manual Content Entry',
+					'name' => 'manual_content_entry',
+					'type' => 'tab',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_56830c0e85f0f',
+								'operator' => '==',
+								'value' => 'Manual Entry',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'placement' => 'top',
+					'endpoint' => 0,
+				),
+				array(
+					'key' => 'field_568311f6dbeba',
+					'label' => 'Featured Image',
+					'name' => 'mtm_home_featured_image_manual',
+					'type' => 'image',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_56830c0e85f0f',
+								'operator' => '==',
+								'value' => 'Manual Entry',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => 40,
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+					'preview_size' => 'medium',
+					'library' => 'all',
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
+				array(
+					'key' => 'field_5683123edbebb',
+					'label' => 'Box Content',
+					'name' => 'mtm_home_featured_content_manual',
+					'type' => 'wysiwyg',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_56830c0e85f0f',
+								'operator' => '==',
+								'value' => 'Manual Entry',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => 60,
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'tabs' => 'all',
+					'toolbar' => 'basic',
+					'media_upload' => 0,
+				),
+				array(
+					'key' => 'field_5683127cdbebc',
+					'label' => 'Content Link',
+					'name' => 'mtm_home_featured_content_link_manual',
+					'type' => 'page_link',
+					'instructions' => 'Link to a custom page or post on your site',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_56830c0e85f0f',
+								'operator' => '==',
+								'value' => 'Manual Entry',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => 50,
+						'class' => '',
+						'id' => '',
+					),
+					'post_type' => array(
+					),
+					'taxonomy' => array(
+					),
+					'allow_null' => 0,
+					'multiple' => 0,
+				),
+				array(
+					'key' => 'field_56a7cbed3e0cd',
+					'label' => 'Custom Link',
+					'name' => 'mtm_home_featured_content_link_custom',
+					'type' => 'text',
+					'instructions' => 'If you don\'t wish to link to a page or post on your site, type your custom link here. Overrides content link.',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => 50,
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+			),
+		));
+	}
+
+	// news page title
+	public function mtm_news_show_page_title( $label = 'Show Page Title?', $key = 'field_5769732b36198' ) {
+		return apply_filters('mtm_news_show_page_title_filter', array(
+			'key' => $key,
+			'label' => $label,
+			'name' => 'mtm_news_show_page_title',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Yes, I\'d like to show the page title at the top of the page (leaving unchecked will hide the page title)',
+			'default_value' => 0,
+		));
+	}
+
+	// news page widget area
+	public function mtm_enable_news_widgets( $label = 'Enable Widget Area?', $key = 'field_57697520880c4' ) {
+		return apply_filters( 'mtm_enable_news_widgets_filter', array(
+			'key' => $key,
+			'label' => $label,
+			'name' => 'mtm_enable_news_widgets',
+			'type' => 'true_false',
+			'instructions' => 'Create a "news page" widget area and display those widgets on your news page',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+		));
+	}
+
+	// news page all featured story fields
+	public function mtm_featured_story_multifield( $label = 'Select Featured Story Source', $key = 'field_5769732b361c8' ){
+		return apply_filters( 'mtm_featured_story_multifield_filter', array(
+			'key' => $key,
+			'label' => $label,
+			'name' => 'mtm_home_select_featured_story_source',
+			'type' => 'select',
+			'instructions' => 'Select the source for your featured story, which will display at the top of the page',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'Latest Post' => 'Latest Post',
+				'Latest Post From Taxonomy' => 'Latest Post From Taxonomy',
+				'Specific Post' => 'Specific Post',
+				'No Featured Story' => 'No Featured Story',
+			),
+			'default_value' => array(
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'ajax' => 0,
+			'placeholder' => '',
+			'disabled' => 0,
+			'readonly' => 0,
+		),
+		array(
+			'key' => 'field_5769732b361e3',
+			'label' => 'Which Post Type?',
+			'name' => 'mtm_home_select_featured_story_type',
+			'type' => 'post_type_selector',
+			'instructions' => 'Choose which post type will be the source for your featured story.',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $key,
+						'operator' => '==',
+						'value' => 'Latest Post',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'fields[mtm_home_select_featured_story_type' => array(
+				'select_type' => 1,
+			),
+			'select_type' => 0,
+		),
+		array(
+			'key' => 'field_5769732b36208',
+			'label' => 'Featured Story Topic',
+			'name' => 'mtm_home_featured_story_archive_taxonomy',
+			'type' => 'taxonomy-chooser',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $key,
+						'operator' => '==',
+						'value' => 'Latest Post From Taxonomy',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'tax_type' => 0,
+			'choices' => '',
+			'type_value' => 1,
+			'allow_null' => 0,
+			'ui' => 0,
+			'ajax' => 0,
+			'multiple' => 0,
+		),
+		array(
+			'key' => 'field_5769732b3623a',
+			'label' => 'Featured Story Specific Post',
+			'name' => 'mtm_home_featured_story_select_single',
+			'type' => 'post_object',
+			'instructions' => 'Select which post will be featured on the landing page. This will remain until you change it.',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $key,
+						'operator' => '==',
+						'value' => 'Specific Post',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'post_type' => array(
+			),
+			'taxonomy' => array(
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'return_format' => 'object',
+			'ui' => 1,
+		));
+	}
+
+	public function mtm_topic_multifield( $label = 'Add Topic Sections', $key = 'field_5769732b36256' ){
+		return apply_filters( 'mtm_topic_sections_filter', array(
+			'key' => $key,
+			'label' => $label,
+			'name' => 'mtm_home_topic_sections',
+			'type' => 'repeater',
+			'instructions' => 'Optional: Add and reorder topic sections which will display on the page, below your featured story',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'collapsed' => '',
+			'min' => '',
+			'max' => '',
+			'layout' => 'table',
+			'button_label' => 'Add Topic',
+			'sub_fields' => array(
+				array(
+					'key' => 'field_5769732b97c99',
+					'label' => 'Topics',
+					'name' => 'mtm_home_topic_archive_taxonomy',
+					'type' => 'taxonomy-chooser',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'tax_type' => 0,
+					'choices' => '',
+					'type_value' => 1,
+					'allow_null' => 0,
+					'ui' => 0,
+					'ajax' => 0,
+					'multiple' => 0,
+				),
+			),
+		),
+		array(
+			'key' => 'field_5769732b3627b',
+			'label' => 'How Many Stories Per Topic?',
+			'name' => 'mtm_home_stories_per_topic',
+			'type' => 'number',
+			'instructions' => 'How many stories to list in each topic, including the main story?',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => 50,
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 4,
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'min' => '',
+			'max' => '',
+			'step' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
+		array(
+			'key' => 'field_576c1c328d7d3',
+			'label' => 'Number of items per row',
+			'name' => 'mtm_grid_archive_per_row',
+			'type' => 'number',
+			'instructions' => 'How many topic sections would you like to display in each row?',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => 50,
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 3,
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'min' => 1,
+			'max' => 6,
+			'step' => '',
+			'readonly' => 0,
+			'disabled' => 0,
 		));
 	}
 

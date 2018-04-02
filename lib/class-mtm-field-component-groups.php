@@ -11,6 +11,7 @@ class Mtm_Field_Component_Groups extends Mtm_Field_Component_Definitions {
 	* Label for Groups
 	*/
 	public static $str_label = 'Components';
+	public static $str_label2 = 'Additional Page Options';
 
 	/**
 	* Array of Locations
@@ -23,19 +24,39 @@ class Mtm_Field_Component_Groups extends Mtm_Field_Component_Definitions {
 		),
 	);
 
+	public static $arr_location2 = array(
+		array(
+			'param' => 'component',
+			'operator' => '==',
+			'value' => '../templates/template-home.php',
+		),
+	);
+
+	public static $arr_location3 = array(
+		array(
+			'param' => 'component',
+			'operator' => '==',
+			'value' => '../templates/template-news.php',
+		),
+	);
+
 	/**
 	* Unique Key
 	*/
 	public static $str_key = 'group_565cb5e35a2af';
+	public static $str_key2 = 'group_565cdb18b4c4c';
+	public static $str_key3 = 'group_5769732b2454d';
 
 
 	public function __construct() {
 
 		add_action( 'init', array( $this, 'mtm_field_components' ) );
+		add_action( 'init', array( $this, 'mtm_field_group_landing_page' ) );
+		add_action( 'init', array( $this, 'mtm_field_group_news_page' ) );
 	}
 
 	/**
-	* Register field group with ACF
+	* Component Fields for Pages
 	*/
 	public function mtm_field_components( $label = null, array $location = null, $key = null ) {
 
@@ -67,6 +88,76 @@ class Mtm_Field_Component_Groups extends Mtm_Field_Component_Definitions {
 				'mtm_cta_button_repeater' => $this->mtm_cta_button_repeater(),
 				'mtm_extra_content_container' => $this->mtm_extra_content_container(),
 				'mtm_extra_content_area' => $this->mtm_extra_content_area(),
+				)
+			),
+			'location' => array( $location ),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => 1,
+			'description' => '',
+		));
+	}
+
+	/**
+	* Standard Home/Landing Page Fields
+	*/
+	public function mtm_field_group_landing_page( $label = null, array $location = null, $key = null ) {
+
+		if( is_null( $label ) ) { $label = self::$str_label2; }
+		if( is_null( $location ) ) { $location = self::$arr_location2; }
+		if( is_null( $key ) ) { $key = self::$str_key2; }
+
+		return apply_filters( 'mtm_field_group_landing_page_filter', array(
+			'key' => $key,
+			'title' => $label,
+			'fields' => apply_filters( 'mtm_field_group_landing_page_fields_filter', array(
+					'mtm_enable_single_scroll_page' => $this->mtm_enable_single_scroll_page(),
+					'mtm_page_options_tab' => $this->mtm_page_options_tab(),
+					'mtm_home_buttons_repeater' => $this->mtm_home_buttons_repeater(),
+					'mtm_enable_featured_content' => $this->mtm_enable_featured_content(),
+					'mtm_feature_boxes_per_row' => $this->mtm_home_feature_boxes_per_row(),
+					'mtm_home_feature_boxes' => $this->mtm_home_feature_boxes(),
+					'mtm_single_scroll_options_tab' => $this->mtm_single_scroll_options_tab(),
+					'mtm_single_scroll_page_select' => $this->mtm_single_scroll_page_select(),
+				)
+			),
+			'location' => array( $location ),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => 1,
+			'description' => '',
+		));
+	}
+
+	/**
+	* News Page Fields
+	*/
+	public function mtm_field_group_news_page( $label = null, array $location = null, $key = null ) {
+
+		if( is_null( $label ) ) { $label = self::$str_label2; }
+		if( is_null( $location ) ) { $location = self::$arr_location3; }
+		if( is_null( $key ) ) { $key = self::$str_key3; }
+
+		return apply_filters( 'mtm_field_group_news_page_filter', array(
+			'key' => $key,
+			'title' => $label,
+			'fields' => apply_filters( 'mtm_field_group_news_page_fields_filter', array(
+					'mtm_enable_single_scroll_page' => $this->mtm_enable_single_scroll_page(),
+					'mtm_page_options_tab' => $this->mtm_page_options_tab(),
+					'mtm_news_show_page_title' => $this->mtm_news_show_page_title(),
+					'mtm_enable_news_widgets' => $this->mtm_enable_news_widgets(),
+					'mtm_featured_story_multifield' => $this->mtm_featured_story_multifield(),
+					'mtm_topic_multifield' => $this->mtm_topic_multifield(),
+					'mtm_single_scroll_options_tab' => $this->mtm_single_scroll_options_tab(),
+					'mtm_single_scroll_page_select' => $this->mtm_single_scroll_page_select(),
 				)
 			),
 			'location' => array( $location ),
