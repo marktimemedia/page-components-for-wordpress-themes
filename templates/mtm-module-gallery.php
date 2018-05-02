@@ -1,0 +1,18 @@
+<?php // Module: Gallery
+$images = get_sub_field('mtm_module_gallery_images');
+$size = 'medium'; // (thumbnail, medium, large, full or custom size)
+
+if( $images ): ?>
+    <ul class="mtm-module--gallery">
+        <?php foreach( $images as $image ): ?>
+            <a href="<?php echo $image['url']; ?>">
+            	<li class="mtm-module--gallery-image" >
+	            	<figure style="background-image:url(<?php echo $image['sizes'][$size]; ?>)"></figure>
+		            <?php if($image['caption']): ?>
+		            	<p class="mtm-module--gallery-caption"><?php echo $image['caption']; ?></p>
+		            <?php endif; ?>
+	            </li> 
+	        </a>      
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>

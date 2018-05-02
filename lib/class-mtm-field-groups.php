@@ -80,6 +80,7 @@ class Mtm_Field_Groups extends Mtm_Field_Definitions {
 						'mtm_module_listgrid_posts' => $this->mtm_module_listgrid_posts(),
 						'mtm_module_gridlist_posts' => $this->mtm_module_gridlist_posts(),
 						'mtm_module_tabs' => $this->mtm_module_tabs(),
+						'mtm_module_gallery' => $this->mtm_module_gallery(),
 					), $location ),
 				),
 			),

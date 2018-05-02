@@ -2597,6 +2597,44 @@ class Mtm_Field_Definitions {
 		));
 	}
 
+	public function mtm_module_gallery( $label = 'Gallery' ) {
+		return apply_filters( 'mtm_module_gallery_filter', array(
+			'key' => '5ae78714d3fad',
+			'name' => 'mtm_module_gallery',
+			'label' => 'Gallery',
+			'display' => 'block',
+			'sub_fields' => array(
+				array(
+					'key' => 'field_5ae7871ca2605',
+					'label' => 'Gallery Images',
+					'name' => 'mtm_module_gallery_images',
+					'type' => 'gallery',
+					'instructions' => 'Add images to output a WordPress gallery',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'min' => '',
+					'max' => '',
+					'insert' => 'append',
+					'library' => 'all',
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
+			),
+			'min' => '',
+			'max' => '',
+		));
+	}
+
 	// Show Page Title?
 	public static function mtm_module_show_page_title( $label = 'Show Page Title?' ) {
 		return apply_filters( 'mtm_module_show_page_title_filter', array(
