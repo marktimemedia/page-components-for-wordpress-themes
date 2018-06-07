@@ -21,6 +21,8 @@ Works with most standard WordPress themes, including Roots/Sage based themes wit
 11. Post Grid
 12. Manual List
 13. Manual Grid
+14. Tabs
+15. Gallery (using WordPress Gallery)
 
 ##### Landing Page Builder
 ###### Standard Page
