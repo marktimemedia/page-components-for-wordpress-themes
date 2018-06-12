@@ -88,6 +88,8 @@ class Mtm_Field_Component_Groups extends Mtm_Field_Component_Definitions {
 				'mtm_cta_button_repeater' => $this->mtm_cta_button_repeater(),
 				'mtm_extra_content_container' => $this->mtm_extra_content_container(),
 				'mtm_extra_content_area' => $this->mtm_extra_content_area(),
+				'mtm_contributors_container' => $this->mtm_contributors_container(),
+				'mtm_contributors' => $this->mtm_contributors(),
 				)
 			),
 			'location' => array( $location ),

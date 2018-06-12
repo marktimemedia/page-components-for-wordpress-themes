@@ -34,6 +34,7 @@ class Mtm_Field_Component_Definitions {
 		'Tabs' => 'Tabs',
 		'Call To Action' => 'Call To Action',
 		'Extra Content' => 'Extra Content',
+		'Contributors'	=> 'Contributors'
 	);
 
 	/**
@@ -1714,6 +1715,68 @@ class Mtm_Field_Component_Definitions {
 			'step' => '',
 			'readonly' => 0,
 			'disabled' => 0,
+		));
+	}
+
+	// contributors tab
+	public function mtm_contributors_container( $label = 'Contributors', $value = 'Contributors', $key = null ){
+		
+		if( is_null( $key ) ) { $key = self::$str_key_parent; } 
+
+		return apply_filters( 'mtm_contributors_container_filter', array(
+			'key' => 'field_5b1feb59bc284',
+			'label' => $label,
+			'name' => '',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $key,
+						'operator' => '==',
+						'value' => $value,
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'top',
+			'endpoint' => 0,
+		));
+	}
+
+	public function mtm_contributors( $label = 'Add Contributors', $value = 'Contributors', $key = null ){
+		
+		if( is_null( $key ) ) { $key = self::$str_key_parent; } 
+
+		return apply_filters( 'mtm_contributors_filter', array(
+			'key' => 'field_5b1feb74bc285',
+			'label' => 'Select Contributors',
+			'name' => 'mtm_user_picker',
+			'type' => 'user',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $key,
+						'operator' => '==',
+						'value' => $value,
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'role' => '',
+			'allow_null' => 0,
+			'multiple' => 1,
 		));
 	}
 

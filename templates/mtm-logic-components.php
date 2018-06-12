@@ -44,6 +44,11 @@ if( "List Archive" == _get_field( 'mtm_select_component' ) ) {
 	
 	mtm_get_template_part( 'mtm-component', 'extra-content' );
 
+// Contributors
+} elseif( "Contributors" == _get_field( 'mtm_select_component' ) ) {
+	
+	mtm_get_template_part( 'mtm-component', 'contributors' );
+
 // Standard Content or None Selected
 } else {
 

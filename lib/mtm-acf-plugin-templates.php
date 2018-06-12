@@ -40,7 +40,7 @@ add_filter('acf/location/rule_match/component', 'acf_location_rules_match_compon
 function acf_location_rules_match_component( $match, $rule, $options )
 {
     // bail early if not a post
-		if( !$options['post_id'] ) return false;
+		if( !isset( $options['post_id'] ) || !$options['post_id'] ) return false;
 
 		// vars
 		$templates = array();
