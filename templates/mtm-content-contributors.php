@@ -8,7 +8,7 @@ if( $users = get_field( 'mtm_user_picker' ) ) : ?>
 		
 		<?php foreach( $users as $user ) : ?>
 			<div class="mtm-user-picker--user <?php echo $mtm_grid_row_class; ?>">
-				<figure><?php echo get_avatar( $user['ID'], 512 ); // outputs complete image tag ?></figure>
+				<a href="<?php echo esc_url( get_author_posts_url( $user['ID'] ) ); ?>"><figure><?php echo get_avatar( $user['ID'], 512 ); // outputs complete image tag ?></figure></a>
 				<h4><a href="<?php echo esc_url( get_author_posts_url( $user['ID'] ) ); ?>"><?php echo esc_html( $user['display_name'] ); ?></a></h4>
 				<p><?php echo esc_html( $user['user_description'] ); ?></p>
 			</div>

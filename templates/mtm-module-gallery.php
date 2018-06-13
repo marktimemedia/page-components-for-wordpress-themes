@@ -2,6 +2,12 @@
 $images = get_sub_field('mtm_module_gallery_images');
 $size = 'medium'; // (thumbnail, medium, large, full or custom size)
 
+if( get_sub_field( 'mtm_list_title' ) ): ?>
+
+	<h2 class="mtm-module-title"><?php the_sub_field( 'mtm_list_title' ); ?></h2>
+
+<?php endif;
+
 if( $images ): ?>
     <ul class="mtm-module--gallery">
         <?php foreach( $images as $image ): ?>

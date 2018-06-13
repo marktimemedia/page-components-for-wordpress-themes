@@ -2605,6 +2605,27 @@ class Mtm_Field_Definitions {
 			'display' => 'block',
 			'sub_fields' => array(
 				array(
+					'key' => 'field_5783de5e9843784ff',
+					'label' => 'Gallery Title',
+					'name' => 'mtm_list_title',
+					'type' => 'text',
+					'instructions' => 'Optional title for gallery (leave blank for no title)',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => 70,
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+				array(
 					'key' => 'field_5ae7871ca2605',
 					'label' => 'Gallery Images',
 					'name' => 'mtm_module_gallery_images',

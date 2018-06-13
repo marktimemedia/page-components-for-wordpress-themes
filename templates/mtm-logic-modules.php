@@ -164,7 +164,8 @@ $j=1; ?>
 				</div>
 
 			<?php // Gallery
-			elseif( "mtm_module_gallery" == get_row_layout() ) : ?>
+			elseif( "mtm_module_gallery" == get_row_layout() ) : 
+			$anchor = get_sub_field( 'mtm_list_title' ) ? sanitize_title_with_dashes( get_sub_field( 'mtm_list_title' ) ) : '' ; // title to anchor tag ?>
 				
 				<div class="<?php echo get_row_layout(); ?>">
 
