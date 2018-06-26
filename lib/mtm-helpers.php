@@ -303,3 +303,16 @@ function mtm_output_file_link( $file_field = '', $label_field = '', $prefix = 'f
 
     echo '<span class="file-downloads"><i class="' . $file_type . '"></i> <a href="' . esc_url( $file['url'] ) . '">' . esc_html( $text ) . ' (' . esc_html($filesize) . esc_html( $path_info['extension'] ) . ') ' . '</a></span>';
 }
+
+/**
+* Check if user has any posts in any post type
+* $post_types must be an array
+*/
+
+function mtm_check_all_user_posts( $userid = '', $post_types = array('post') ) {
+    $count = 0;
+    foreach( $post_types as $type ) {
+        $count+= count_user_posts( $userid, $type );
+    }
+    return $count;
+}

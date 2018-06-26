@@ -486,7 +486,7 @@
 /* List Rules */
 .mtm-list--single {
   margin: 1em 0;
-  border-bottom: 1px solid #eee; }
+  border-bottom: 1px solid rgba(150, 150, 150, 0.3); }
 
 .mtm-list--image {
   width: 100%; }
