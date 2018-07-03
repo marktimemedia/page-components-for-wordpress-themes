@@ -1510,8 +1510,8 @@ class Mtm_Field_Component_Definitions {
 	}
 
 	// news page all featured story fields
-	public function mtm_featured_story_multifield( $label = 'Select Featured Story Source', $key = 'field_5769732b361c8' ){
-		return apply_filters( 'mtm_featured_story_multifield_filter', array(
+	public function mtm_featured_story_source( $label = 'Select Featured Story Source', $key = 'field_5769732b361c8' ){
+		return apply_filters( 'mtm_featured_story_source_filter', array(
 			'key' => $key,
 			'label' => $label,
 			'name' => 'mtm_home_select_featured_story_source',
@@ -1539,10 +1539,13 @@ class Mtm_Field_Component_Definitions {
 			'placeholder' => '',
 			'disabled' => 0,
 			'readonly' => 0,
-		),
-		array(
+		));
+	}
+
+	public function mtm_featured_story_type( $label = 'Which Post Type?', $key = 'field_5769732b361c8' ){
+		return apply_filters( 'mtm_featured_story_type_filter', array(
 			'key' => 'field_5769732b361e3',
-			'label' => 'Which Post Type?',
+			'label' => $label,
 			'name' => 'mtm_home_select_featured_story_type',
 			'type' => 'post_type_selector',
 			'instructions' => 'Choose which post type will be the source for your featured story.',
@@ -1565,10 +1568,13 @@ class Mtm_Field_Component_Definitions {
 				'select_type' => 1,
 			),
 			'select_type' => 0,
-		),
-		array(
+		));
+	}
+
+	public function mtm_featured_story_archive_taxonomy( $label = 'Featured Story Topic', $key = 'field_5769732b361c8' ){
+		return apply_filters( 'mtm_featured_story_archive_taxonomy_filter', array(
 			'key' => 'field_5769732b36208',
-			'label' => 'Featured Story Topic',
+			'label' => $label,
 			'name' => 'mtm_home_featured_story_archive_taxonomy',
 			'type' => 'taxonomy-chooser',
 			'instructions' => '',
@@ -1594,10 +1600,13 @@ class Mtm_Field_Component_Definitions {
 			'ui' => 0,
 			'ajax' => 0,
 			'multiple' => 0,
-		),
-		array(
+		));
+	}
+
+	public function mtm_featured_story_select_single( $label = 'Featured Story Specific Post', $key = 'field_5769732b361c8' ){
+	return apply_filters( 'mtm_featured_story_select_single_filter', array(
 			'key' => 'field_5769732b3623a',
-			'label' => 'Featured Story Specific Post',
+			'label' => $label,
 			'name' => 'mtm_home_featured_story_select_single',
 			'type' => 'post_object',
 			'instructions' => 'Select which post will be featured on the landing page. This will remain until you change it.',
@@ -1627,7 +1636,7 @@ class Mtm_Field_Component_Definitions {
 		));
 	}
 
-	public function mtm_topic_multifield( $label = 'Add Topic Sections', $key = 'field_5769732b36256' ){
+	public function mtm_topic_sections( $label = 'Add Topic Sections', $key = 'field_5769732b36256' ){
 		return apply_filters( 'mtm_topic_sections_filter', array(
 			'key' => $key,
 			'label' => $label,
@@ -1669,10 +1678,13 @@ class Mtm_Field_Component_Definitions {
 					'multiple' => 0,
 				),
 			),
-		),
-		array(
+		));
+	}
+
+	public function mtm_stories_per_topic( $label = 'How Many Stories Per Topic?', $key = 'field_5769732b36256' ){
+		return apply_filters( 'mtm_stories_per_topic_filter', array(
 			'key' => 'field_5769732b3627b',
-			'label' => 'How Many Stories Per Topic?',
+			'label' => $label,
 			'name' => 'mtm_home_stories_per_topic',
 			'type' => 'number',
 			'instructions' => 'How many stories to list in each topic, including the main story?',
@@ -1692,10 +1704,13 @@ class Mtm_Field_Component_Definitions {
 			'step' => '',
 			'readonly' => 0,
 			'disabled' => 0,
-		),
-		array(
+		));
+	}
+	
+	public function mtm_topic_grid_archive_per_row( $label = 'Number of items per row', $key = 'field_5769732b36256' ){
+		return apply_filters( 'mtm_topic_grid_archive_per_row_filter', array(
 			'key' => 'field_576c1c328d7d3',
-			'label' => 'Number of items per row',
+			'label' => $label,
 			'name' => 'mtm_grid_archive_per_row',
 			'type' => 'number',
 			'instructions' => 'How many topic sections would you like to display in each row?',
