@@ -27,14 +27,14 @@ function mtm_page_component_post_query( $posttype = 'post', $perpage = 3, $order
 /**
 * Post Type Query Paged
 */
-function mtm_page_component_post_query_paged( $posttype = 'post', $perpage = 3, $orderby = 'date', $order = 'DESC', $notin = 'sticky_posts' ) {
+function mtm_page_component_post_query_paged( $posttype = 'post', $perpage = 3, $orderby = 'date', $order = 'DESC', $notin = 'sticky_posts', $paged = 1 ) {
     return new WP_Query( array(
         'post_type'         => array( $posttype ),
         'posts_per_page'    => $perpage,
         'orderby'           => $orderby,
         'order'             => $order,
         'post__not_in'      => get_option( $notin ),
-        'paged'             => get_query_var( 'paged' ),
+        'paged'             => $paged,
         )
     );
 }
@@ -55,6 +55,26 @@ function mtm_page_component_taxonomy_query( $taxonomy, $terms, $perpage = 3, $or
                 'terms'     => $terms,
                 ),
             ),
+        )
+    );
+}
+
+/** 
+* Taxonomy Query Paged
+*/
+function mtm_page_component_taxonomy_query_paged( $taxonomy, $terms, $perpage = 3, $orderby = 'date', $order = 'DESC', $paged = 1 ) {
+    return new WP_Query( array(
+        'posts_per_page'    => $perpage,
+        'orderby'           => $orderby,
+        'order'             => $order,
+        'tax_query'         => array(
+            array(
+                'taxonomy'  => $taxonomy,
+                'field'     => 'slug',
+                'terms'     => $terms,
+                ),
+            ),
+        'paged'             => $paged,
         )
     );
 }
@@ -128,6 +148,20 @@ function mtm_taxonomy_query_sub( $archivetype, $display = 3, $order = 'DESC', $o
     }
 
     return mtm_page_component_taxonomy_query( $taxonomy, $terms, $display, $orderby, $order );
+}
+
+/**
+* Taxonomy Query for Sub Field
+*/
+function mtm_taxonomy_query_sub_paged( $archivetype, $display = 3, $order = 'DESC', $orderby = 'date', $paged) {
+    $taxonomy = mtm_acf_taxonomy_sub_property( $archivetype, 'taxonomy' );
+    $terms = mtm_acf_taxonomy_sub_property( $archivetype, 'slug' );
+
+    if( get_sub_field( 'mtm_' . $archivetype . '_archive_taxonomy_number' ) ) {
+        $display = get_sub_field( 'mtm_' . $archivetype . '_archive_taxonomy_number' );
+    }
+
+    return mtm_page_component_taxonomy_query_paged( $taxonomy, $terms, $display, $orderby, $order, $paged );
 }
 
 /**
