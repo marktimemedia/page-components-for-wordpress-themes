@@ -38,11 +38,30 @@ function mtm_load_wrap_footer() {
 }
 
 /**
-* Register Sidebars
-* TODO: make filterable so they're only registered if we use them
-* Or not, because you can use unregister_sidebar
+* Add options page for this plugin to be able to enqueue our own stuff
+*
 */
-function mtm_template_sidebars() {
+add_action('acf/init', 'mtm_plugin_options_page');
+
+function mtm_plugin_options_page() {
+    
+    if( function_exists('acf_add_options_sub_page') ) {
+        
+        $option_page = acf_add_options_sub_page(array(
+            'page_title'    => __('Page Components Plugin Settings', 'mtm'),
+            'menu_title'    => __('Page Components', 'mym'),
+            'menu_slug'     => 'page-components-settings',
+            'parent_slug'   =>  'options-general.php'
+        ));
+        
+    }
+    
+}
+
+/**
+* Register Sidebars
+*/
+function mtm_template_sidebar_news() {
 
     register_sidebar(array(
         'name'          => __('News Page', 'mtm'),
@@ -53,6 +72,10 @@ function mtm_template_sidebars() {
         'before_title'  => '<div class="widget--title-wrap"><h3 class="mtm-home-sidebar--title widget-title">',
         'after_title'   => '</h3></div>',
     ));
+
+}
+
+function mtm_template_sidebar_modular() {
 
     register_sidebar(array(
         'name'          => __('Modular Page', 'mtm'),
@@ -65,4 +88,12 @@ function mtm_template_sidebars() {
     ));
 
 }
-add_action( 'widgets_init', 'mtm_template_sidebars' );
+
+if( get_field( 'mtm_register_sidebars', 'option' ) ) {
+    if( in_array( 'news-page', get_field( 'mtm_register_sidebars', 'option' ) ) or 'news-page' == get_field( 'mtm_register_sidebars', 'option' ) ) {
+        add_action( 'widgets_init', 'mtm_template_sidebar_news' );
+    }
+    if( in_array( 'modular', get_field( 'mtm_register_sidebars', 'option' ) ) or 'modular' == get_field( 'mtm_register_sidebars', 'option' ) ) {
+        add_action( 'widgets_init', 'mtm_template_sidebar_modular' );
+    }
+}

@@ -61,13 +61,6 @@ class Mtm_Acf_Add_Local_Field_Component_Groups extends Mtm_Field_Component_Group
 new Mtm_Acf_Add_Local_Field_Component_Groups();
 
 
-
-/**
-* Landing Page Fields
-*/
-// Todo
-
-
 /**
 * Original ACF field registration
 * To be refactored as seen above
@@ -128,5 +121,78 @@ acf_add_local_field_group(array (
 	'active' => 1,
 	'description' => '',
 ));
+
+acf_add_local_field_group(array(
+	'key' => 'group_5b3f7572ce4f5',
+	'title' => 'Page Components Settings',
+	'fields' => array(
+		array(
+			'key' => 'field_5b3f7580fae80',
+			'label' => 'Include Stylesheets?',
+			'name' => 'mtm_enqueue_stylesheets',
+			'type' => 'true_false',
+			'instructions' => 'Defaults to checked. If unchecked, you will need to include your own stylesheets in your theme.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Enqueue the stylesheets from this plugin?',
+			'default_value' => 1,
+			'ui' => 0,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+		),
+		array(
+			'key' => 'field_5b3f75d1fae81',
+			'label' => 'Include Widget Areas?',
+			'name' => 'mtm_register_sidebars',
+			'type' => 'checkbox',
+			'instructions' => 'Choose whether to include custom sidebars that can be used in templates.
+(This can be overridden by unregistering sidebars programmatically in the theme)',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'news-page' => 'News Page Widget Area',
+				'modular' => 'Modular Page Widget Area',
+			),
+			'allow_custom' => 0,
+			'save_custom' => 0,
+			'default_value' => array(
+				0 => 'news-page',
+				1 => 'modular',
+			),
+			'layout' => 'vertical',
+			'toggle' => 0,
+			'return_format' => 'value',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'options_page',
+				'operator' => '==',
+				'value' => 'page-components-settings',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+));
+
+
 
 endif;
