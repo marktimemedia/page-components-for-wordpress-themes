@@ -244,6 +244,36 @@ class Mtm_Field_Component_Definitions {
 		));
 	}
 
+	public function mtm_show_view_all_link_2( $label = 'Show View All Link?', $value1 = 'Pick From Taxonomy', $key1 = null ){
+
+		if( is_null( $key1 ) ) { $key1 = self::$str_key_child2; }
+
+		return apply_filters( 'mtm_show_view_all_link_filter', array(
+			'key' => 'field_578f8ed1ae54c_2',
+			'label' => $label,
+			'name' => 'mtm_show_view_all_link',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $key1,
+						'operator' => '==',
+						'value' => $value1,
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Yes, add a "View All" link to the bottom of this content',
+			'default_value' => 0,
+		));
+	}
+
 	public function mtm_list_archive_manual( $label = 'Manual List Selection', $value1 = 'List Archive', $value2 = 'Pick Manually', $key1 = null, $key2 = null ){
 		
 		if( is_null( $key1 ) ) { $key1 = self::$str_key_parent; }

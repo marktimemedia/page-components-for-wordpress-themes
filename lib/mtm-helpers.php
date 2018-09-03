@@ -275,13 +275,14 @@ function mtm_count_classes( $count = 1 ) {
 * Output a per-row class based on how many admin picked
 */
 function mtm_output_row_number( $num = 3, $field = 'mtm_grid_archive_per_row' ) {
-     if( get_field( $field ) ) {
+
+     if( get_sub_field( $field ) ) {
         
-        $num = get_field( $field );
-
-     } elseif( get_sub_field( $field ) ) {
-
         $num = get_sub_field( $field );
+
+     } elseif( get_field( $field ) ) {
+
+        $num = get_field( $field );
      }
 
     return 'mtm-per-row-' . $num;

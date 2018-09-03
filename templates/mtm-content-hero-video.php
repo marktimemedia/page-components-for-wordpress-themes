@@ -3,7 +3,7 @@ $headline = ( ( 'Custom Headline' == get_sub_field( 'mtm_hero_select_title' ) ) 
 ?>
 
 <section class="mtm-module--hero mtm-hero-video">
-	<div class="mtm-module--hero-media embed-container">
+	<div class="mtm-module--hero-media embed-container video-asset">
 
 		<?php the_sub_field( 'mtm_hero_embed' ); ?>
 

@@ -148,7 +148,7 @@ if ( ! class_exists( 'Mtm_Component_Templates' ) )  {
 
                     global $post;
 
-                    if ( !isset( $this->templates[ get_post_meta( $post->ID, '_wp_page_template', true ) ] ) || is_search() ) {		
+                    if ( !$post || !isset( $this->templates[ get_post_meta( $post->ID, '_wp_page_template', true ) ] ) || is_search() || is_404() ) {		
                         return $template;		
                     } 
 
