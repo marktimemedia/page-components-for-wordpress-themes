@@ -50,7 +50,7 @@ if ( ! class_exists( 'Gamajo_Template_Loader' ) ) {
 		 *
 		 * @var string
 		 */
-		protected $plugin_directory = 'YOUR_PLUGIN_DIR';
+		protected $plugin_directory = MTM_PLUGIN_DIR;
 		/**
 		 * Directory name where templates are found in this plugin.
 		 *

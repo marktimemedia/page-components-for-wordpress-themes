@@ -2,7 +2,9 @@
 
 global $mtm_grid_row_class;
 
-$grid_query = mtm_taxonomy_query( 'grid' );
+$orderbyvar = _get_field( 'mtm_randomize' ) ? 'rand' : 'date';
+$display = _get_field( 'mtm_grid_archive_taxonomy_number' ) ? _get_field( 'mtm_grid_archive_taxonomy_number' ) : 3 ;
+$grid_query = mtm_taxonomy_query( 'grid', $display, $orderbyvar );
 $taxonomy = mtm_acf_taxonomy_property( 'grid', 'taxonomy' ); 
 $term = mtm_acf_taxonomy_property( 'grid', 'slug' );
 $view = _get_field( 'mtm_show_view_all_link' );

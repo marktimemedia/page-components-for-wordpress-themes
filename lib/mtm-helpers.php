@@ -133,7 +133,7 @@ function mtm_taxonomy_query( $archivetype, $display = 3, $orderby = 'date', $ord
         $display = get_field( 'mtm_' . $archivetype . '_archive_taxonomy_number' );
     }
 
-    return mtm_page_component_taxonomy_query( $taxonomy, $terms, $display );
+    return mtm_page_component_taxonomy_query( $taxonomy, $terms, $display, $orderby, $order );
 }
 
 /**

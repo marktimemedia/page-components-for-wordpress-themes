@@ -1,6 +1,8 @@
 <?php // Taxonomy List Component
 
-$list_query = mtm_taxonomy_query( 'list' );
+$orderbyvar = _get_field( 'mtm_randomize' ) ? 'rand' : 'date';
+$display = _get_field( 'mtm_grid_archive_taxonomy_number' ) ? _get_field( 'mtm_grid_archive_taxonomy_number' ) : 3 ;
+$list_query = mtm_taxonomy_query( 'list', $display, $orderbyvar );
 $taxonomy = mtm_acf_taxonomy_property( 'list', 'taxonomy' ); 
 $term = mtm_acf_taxonomy_path( 'list', 'slug' );
 $view = _get_field( 'mtm_show_view_all_link' ); ?>

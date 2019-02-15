@@ -274,6 +274,66 @@ class Mtm_Field_Component_Definitions {
 		));
 	}
 
+	public function mtm_randomize_posts( $label = 'Post Order', $value = 'Pick From Taxonomy', $key = null ){
+
+		if( is_null( $key ) ) { $key = self::$str_key_child; }
+
+		return apply_filters( 'mtm_randomize_posts_filter', array(
+			'key' => 'field_5783e5dabcde03495comp',
+			'label' => 'Randomize Posts?',
+			'name' => 'mtm_randomize',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => '',
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $key,
+						'operator' => '==',
+						'value' => $value,
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+		));
+	}
+
+	public function mtm_randomize_posts_2( $label = 'Post Order', $value = 'Pick From Taxonomy', $key = null ){
+
+		if( is_null( $key ) ) { $key = self::$str_key_child2; }
+
+		return apply_filters( 'mtm_randomize_posts_2_filter', array(
+			'key' => 'field_5783e5dabcde03495comp2',
+			'label' => 'Randomize Posts?',
+			'name' => 'mtm_randomize',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => '',
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $key,
+						'operator' => '==',
+						'value' => $value,
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+		));
+	}
+
 	public function mtm_list_archive_manual( $label = 'Manual List Selection', $value1 = 'List Archive', $value2 = 'Pick Manually', $key1 = null, $key2 = null ){
 		
 		if( is_null( $key1 ) ) { $key1 = self::$str_key_parent; }
@@ -508,7 +568,7 @@ class Mtm_Field_Component_Definitions {
 		));
 	}
 
-	public function mtm_grid_archive_taxonomy_number( $label = 'Number of Items to Display', $value1 = 'Grid Archive', $value2 = 'Pick From Taxonomy', $key1 = null, $key2 = null ){
+	public function mtm_grid_archive_taxonomy_number( $label = 'Number of Items to Display', $value2 = 'Pick From Taxonomy', $key1 = null, $key2 = null ){
 
 		if( is_null( $key1 ) ) { $key1 = self::$str_key_parent; }
 		if( is_null( $key2 ) ) { $key2 = self::$str_key_child2; }
@@ -526,11 +586,6 @@ class Mtm_Field_Component_Definitions {
 						'field' => $key2,
 						'operator' => '==',
 						'value' => $value2,
-					),
-					array(
-						'field' => $key1,
-						'operator' => '==',
-						'value' => $value1,
 					),
 				),
 			),
