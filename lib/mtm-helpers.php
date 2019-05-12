@@ -108,13 +108,13 @@ if( !function_exists( 'mtm_acf_taxonomy_property' ) ) {
 * @todo it doesn't work if there's a custom rewrite such as in Settings -> Permalinks
 * @todo it only works for one level deep (parent) not grandparent, etc
 */
-if( !function_exists( 'mtm_page_component_post_query' ) ) {
-function mtm_acf_taxonomy_path( $archivetype ){
-    $taxid = get_field( 'mtm_' . $archivetype . '_archive_taxonomy' );
-    $taxterm = get_term( $taxid );
-    $parent = $taxterm->parent ? get_term( $taxterm->parent ) : false;
-    return $path = $parent ? $parent->slug . '/' . $taxterm->slug : $taxterm->slug;
-}
+if( !function_exists( 'mtm_acf_taxonomy_path' ) ) {
+  function mtm_acf_taxonomy_path( $archivetype ){
+      $taxid = get_field( 'mtm_' . $archivetype . '_archive_taxonomy' );
+      $taxterm = get_term( $taxid );
+      $parent = $taxterm->parent ? get_term( $taxterm->parent ) : false;
+      return $path = $parent ? $parent->slug . '/' . $taxterm->slug : $taxterm->slug;
+  }
 }
 
 /**
@@ -235,15 +235,15 @@ if( !function_exists( 'mtm_acf_image_property' ) ) {
 /**
 * Get Property from ACF Sub Image Object
 */
-if( !function_exists( 'mtm_page_component_post_query' ) ) {
-function mtm_acf_sub_image_property( $field = '', $property = '' ) {
+if( !function_exists( 'mtm_acf_sub_image_property' ) ) {
+  function mtm_acf_sub_image_property( $field = '', $property = '' ) {
 
-    if( get_sub_field( $field ) ) {
-        $image = get_sub_field( $field );
+      if( get_sub_field( $field ) ) {
+          $image = get_sub_field( $field );
 
-        return $image[ $property ];
-    }
-}
+          return $image[ $property ];
+      }
+  }
 }
 
 /**
