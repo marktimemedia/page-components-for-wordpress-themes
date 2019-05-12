@@ -3,18 +3,18 @@
 	Plugin Name: ACF Page Components
 	Description: Reusable page building components for layouts or single scroll sites
 	Author: Marktime Media
-	Version: 1.14.4
+	Version: 1.14.5
 	Author URI: http://www.marktimemedia.com
 	GitHub Plugin URI: https://github.com/marktimemedia/page-components-for-wordpress-themes
  */
- 
+
 define( 'MTM_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
-require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-field-definitions.php' ); 
-require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-field-groups.php' ); 
-require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-field-component-definitions.php' ); 
-require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-field-component-groups.php' ); 
-require_once( MTM_PLUGIN_DIR . 'lib/mtm-acf-fields.php' ); 
+require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-field-definitions.php' );
+require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-field-groups.php' );
+require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-field-component-definitions.php' );
+require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-field-component-groups.php' );
+require_once( MTM_PLUGIN_DIR . 'lib/mtm-acf-fields.php' );
 require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-component-template.php' );
 require_once( MTM_PLUGIN_DIR . 'lib/class-gamajo-template-loader.php' );
 require_once( MTM_PLUGIN_DIR . 'lib/class-mtm-template-loader.php' );
