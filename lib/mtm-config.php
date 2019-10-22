@@ -17,7 +17,7 @@ function mtm_load_wrap() {
 add_action( 'after_setup_theme', 'mtm_load_wrap' );
 
 /**
-* Load header on standard themes 
+* Load header on standard themes
 */
 function mtm_load_wrap_header() {
 
@@ -27,7 +27,7 @@ function mtm_load_wrap_header() {
 	}
 }
 /**
-* Load footer on standard themes 
+* Load footer on standard themes
 */
 function mtm_load_wrap_footer() {
 
@@ -41,21 +41,22 @@ function mtm_load_wrap_footer() {
 * Add options page for this plugin to be able to enqueue our own stuff
 *
 */
-add_action('acf/init', 'mtm_plugin_options_page');
+if( !function_exists( 'mtm_plugin_options_page' ) ) {
+	add_action('acf/init', 'mtm_plugin_options_page');
 
-function mtm_plugin_options_page() {
-    
-    if( function_exists('acf_add_options_sub_page') ) {
-        
-        $option_page = acf_add_options_sub_page(array(
-            'page_title'    => __('Page Components Plugin Settings', 'mtm'),
-            'menu_title'    => __('Page Components', 'mym'),
-            'menu_slug'     => 'page-components-settings',
-            'parent_slug'   =>  'options-general.php'
-        ));
-        
-    }
-    
+	function mtm_plugin_options_page() {
+
+	    if( function_exists('acf_add_options_sub_page') ) {
+
+	        $option_page = acf_add_options_sub_page(array(
+	            'page_title'    => __('Page & Block Display Settings', 'mtm'),
+	            'menu_title'    => __('Display Settings', 'mym'),
+	            'menu_slug'     => 'page-components-settings',
+	            'parent_slug'   =>  'options-general.php'
+	        ));
+
+	    }
+	 }
 }
 
 /**

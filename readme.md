@@ -1,6 +1,6 @@
 #ACF Page Components For WordPress
 
-Page builder plugin for WordPress that adds custom page templates to your theme for displaying custom content types and building single-scroll multipages. **Requires [Advanced Custom Fields Pro](http://advancedcustomfields.com/pro), [ACF Term and Taxonomy Chooser](https://github.com/marktimemedia/acf-term-and-taxonomy-chooser), [ACF Post Type Selector](https://github.com/TimPerry/acf-post-type-selector) and [ACF Widget Area Field](https://wordpress.org/plugins/advanced-custom-fields-widget-area-field/)**. Recommended for use with [ACF Options Page](https://github.com/marktimemedia/acf-theme-settings) and [Pink Spring Theme](https://github.com/marktimemedia/pink-spring)
+Page builder plugin for WordPress that adds custom page templates to your theme for displaying custom content types and building single-scroll multipages. **Requires [Advanced Custom Fields Pro](http://advancedcustomfields.com/pro), [ACF Term and Taxonomy Chooser](https://github.com/marktimemedia/acf-term-and-taxonomy-chooser), [ACF Post Type Selector](https://github.com/TimPerry/acf-post-type-selector) and [ACF Widget Area Field](https://wordpress.org/plugins/advanced-custom-fields-widget-area-field/)**. Recommended for use with [ACF Options Page](https://github.com/marktimemedia/acf-theme-settings) and [Pink Spring Theme](https://github.com/marktimemedia/pink-spring). Also compatible with ACF Block Components.
 
 Works with most standard WordPress themes, including Roots/Sage based themes with no theme wrapper.
 
@@ -62,7 +62,7 @@ Both landing pages have option for Single Scroll Page – Build a long page out 
 
 ### Screenshots
 
-##### Single Scroll Page Field Samples 
+##### Single Scroll Page Field Samples
 
 ![Home 1](screenshots/home-1.png)
 
@@ -100,4 +100,3 @@ In use with [Pink Spring Theme](https://github.com/marktimemedia/pink-spring) an
 
 ###### Modular Page
 ![Modules](screenshots/modules.png)
-
